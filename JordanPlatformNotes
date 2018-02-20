@@ -1,0 +1,16 @@
+Notes:
+-xspim didn't work naturally, had to change font settings: xspim -font 6x10
+-refresh task bar: unity --reset-icons
+sudo /etc/init.d/apache2 restart: will restart web server
+change what things need sudo with sudo visudo, look for %sudo ALL....
+lab passwd: jk
+MySql Root Pass: jthklo123
+restart nginx: systemctl reload nginx
+server ip: 155.47.45.243
+dyndns: jordanh, jazz1466
+filezilla:
+	Host: sftp://155.47.45.243
+	User: jordan
+	Pass: jk
+	Port: 22
+
