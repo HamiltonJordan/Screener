@@ -1,0 +1,5 @@
+Found following example of jQuery upload files on github.  I will play around with it and see if we can use it for large video files.
+
+Also going to see if we can transform it to a drag and drop system.
+
+-Danny
