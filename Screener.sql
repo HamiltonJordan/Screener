@@ -40,6 +40,7 @@ CREATE TABLE Video(
 CREATE TABLE Class(
    Id        INT NOT NULL AUTO_INCREMENT,
    ClassName VARCHAR(30) NOT NULL,
+   CRN       VARCHAR(20) NOT NULL,
    Active    BIT(1) NOT NULL,
    PRIMARY KEY ( Id )
 );
