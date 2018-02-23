@@ -2,4 +2,12 @@ Found following example of jQuery upload files on github.  I will play around wi
 
 Also going to see if we can transform it to a drag and drop system.
 
+** Github Repo for File Upload Demo **
+https://github.com/arjunyonjan/jquery-multi-form-file-uploader-and-progress-bootstrap
+
+** Update Note **
+I have tried 3 times now with large (over 1gb) movies and they don't seem to upload.
+
+Small (over 10mb less then 100mb) movies seem to work fine, large just doesn't want to go.
+
 -Danny
