@@ -4,7 +4,7 @@ lab user: jordan
 lab passwd: jk
 MySql Root Pass: jthklo123
 Start SQL: sudo mysql -u root -p, Enter Password: -> jthklo123
-restart nginx: systemctl reload nginx
+
 server ip: 155.47.45.243
 dyndns: jordanh, jazz1466
 filezilla:
@@ -12,4 +12,9 @@ filezilla:
 	User: jordan
 	Pass: jk
 	Port: 22
+
+NGINX
+restart nginx: systemctl reload nginx
+Change Root Directory: sudo nano /etc/nginx/sites-enabled/default 
+-> change root /var/www/html to -> root /var/www/Screener/html
 
