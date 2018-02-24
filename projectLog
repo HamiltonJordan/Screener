@@ -1,0 +1,3 @@
+#Project Update Notes#
+ 2/24/18 - 12:15pm - DJB - 
+	Added TestPHP folder to github repo.  This contains an html file, js file and a php file.  I wrote this code to go from html to database back to html (pull stuff from database and display it in html).  Let me know if you have any questions on it.  
