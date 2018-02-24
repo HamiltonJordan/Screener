@@ -3,7 +3,7 @@ $(document).ready(function() {
 	
 	var loginQuery = 'dbarber';
 	var notNeeded;
-
+	// loginQuery was not needed in this but is an example on how to pass info to server side (php).
   	$.get("test.php?login="+loginQuery, notNeeded, function (response) {
 				console.log('request sent');
 				var myObj = JSON.parse (response);
