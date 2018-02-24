@@ -3,4 +3,10 @@
 	Added TestPHP folder to github repo.  This contains an html file, js file and a php file.  
 	I wrote this code to go from html to database back to html (pull stuff from database and display it in html).  
 	Let me know if you have any questions on it.  
-	I also added the starwars movies to the server.  They are in a folder called 'starwars' on the desktop.
+	I also added the starwars movies to the server.  They are in a folder called 'starwars' on the desktop. 
+ 2/24/18 - 4:57pm - Jordan - 
+	Restructured how the server hosts our files. Now the repo is stored where "html" was before and Nginx looks inside the repo
+	Path name of new html directory: /var/www/Screener/html/
+	Added the /video/ directory to the .gitignore file so it doesn't clone all the videos to your pc when you pull
+	Added clickable scripts for stopping and restarting the server (.sh files)
+	Added 'Star Wars Viewer' to demo dynamic video shifting

@@ -12,11 +12,14 @@
 	<style type="text/css" media="screen">
   
 	</style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
+
   <body>
+  	<h1><a href="starWars.html">Star Wars Viewer</a></h1>
 	<h1>Our First Server!</h1>
 	<video width="320" height="240" controls>
-		<source src="/video/sample.mp4" type="video/mp4">
+		<source src="/video/bbb.mp4" type="video/mp4">
 		Your browser does not support the video tag..
 	</video> 
 	<br>
@@ -36,7 +39,7 @@
 		Browser does not support the video tag..
 	</video>
 <p id="demo"></p>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 <script type="text/javascript">
  $.get("index.php", function(data){
        document.getElementById("demo").innerHTML= "Data gathered from database: " + data ;
