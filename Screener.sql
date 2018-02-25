@@ -47,17 +47,17 @@ CREATE TABLE Class(
 
 CREATE TABLE EnrolledIn(
    StudentId INT NOT NULL,
-   ClassId   INT NOT NULL,
+   ClassId   INT NOT NULL
 );
 
 CREATE TABLE Teaches(
    ProfessorId INT NOT NULL,
-   ClassId     INT NOT NULL,
+   ClassId     INT NOT NULL
 );
 
 CREATE TABLE ClassVideo(
    ClassId     INT NOT NULL,
-   VideoId     INT NOT NULL,
+   VideoId     INT NOT NULL
 );
 
 -- ===================================================
@@ -69,21 +69,21 @@ CREATE TABLE ClassVideo(
 -- ================  INSERT TABLES ===================
 -- ===================================================
 
-INSERT INTO Student (FirtName,LastName,WheatonId,Active) VALUES("Daniel", "Barber", "w00328546", "1");
-INSERT INTO Student (FirtName,LastName,WheatonId,Active) VALUES("Jordan", "Hamilton", "w00320000", "1");
-INSERT INTO Student (FirtName,LastName,WheatonId,Active) VALUES("Kathleen", "Orechia", "w00320000", "1");
+INSERT INTO Student (FirtName,LastName,WheatonId,Active) VALUES("Daniel", "Barber", "w00328546", 1);
+INSERT INTO Student (FirtName,LastName,WheatonId,Active) VALUES("Jordan", "Hamilton", "w00320000", 1);
+INSERT INTO Student (FirtName,LastName,WheatonId,Active) VALUES("Kathleen", "Orechia", "w00320000", 1);
 
-INSERT INTO Professor (FirtName,LastName,WheatonId,Active) VALUES("Mark", "LeBlanc", "w00320000", "1");
-INSERT INTO Professor (FirtName,LastName,WheatonId,Active) VALUES("Michael", "Gousie", "w00320000", "1");
-INSERT INTO Professor (FirtName,LastName,WheatonId,Active) VALUES("Tom", "Armstrong", "w00320000", "1");
+INSERT INTO Professor (FirtName,LastName,WheatonId,Active) VALUES("Mark", "LeBlanc", "w00320000", 1);
+INSERT INTO Professor (FirtName,LastName,WheatonId,Active) VALUES("Michael", "Gousie", "w00320000", 1);
+INSERT INTO Professor (FirtName,LastName,WheatonId,Active) VALUES("Tom", "Armstrong", "w00320000", 1);
 
-INSERT INTO Video (Title,URL,Active) VALUES("Video Title for Comp401", "URL" "1");
-INSERT INTO Video (Title,URL,Active) VALUES("Video Title for Comp115", "URL" "1");
-INSERT INTO Video (Title,URL,Active) VALUES("Video Title for Comp116", "URL" "1");
+INSERT INTO Video (Title,URL,Active) VALUES("Video Title for Comp401", "URL", 1);
+INSERT INTO Video (Title,URL,Active) VALUES("Video Title for Comp115", "URL", 1);
+INSERT INTO Video (Title,URL,Active) VALUES("Video Title for Comp116", "URL", 1);
 
-INSERT INTO Class (ClassName,Active) VALUES("Comp401", "1");
-INSERT INTO Class (ClassName,Active) VALUES("Comp115", "1");
-INSERT INTO Class (ClassName,Active) VALUES("Comp116", "1");
+INSERT INTO Class (ClassName,Active) VALUES("Comp401", 1);
+INSERT INTO Class (ClassName,Active) VALUES("Comp115", 1);
+INSERT INTO Class (ClassName,Active) VALUES("Comp116", 1);
 
 INSERT INTO EnrolledIn (StudentId,ClassId) VALUES(1, 1); -- Danny is enrolled in 401
 INSERT INTO EnrolledIn (StudentId,ClassId) VALUES(1, 2); -- Danny is enrolled in 115

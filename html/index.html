@@ -1,0 +1,51 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!--
+	Modified from the Debian original for Ubuntu
+	Last updated: 2014-03-19
+	See: https://launchpad.net/bugs/1288690
+  -->
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Apache2 Ubuntu Default Page: It works</title>
+	<style type="text/css" media="screen">
+  
+	</style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+
+  <body>
+  	<h1><a href="starWars.html">Star Wars Viewer</a></h1>
+	<h1>Our First Server!</h1>
+	<video width="320" height="240" controls>
+		<source src="/video/bbb.mp4" type="video/mp4">
+		Your browser does not support the video tag..
+	</video> 
+	<br>
+	<h1>HD Test (MP4)</h1>
+	<video width="320" height="240" controls>
+		<source src="/video/hdSample.mp4" type="video/mp4">
+		Your browser does not support the video tag..
+	</video> 
+	<h1>OGG Test</h1>
+	<video width="320" height="240" controls>
+		<source src="/video/oggSample.ogv" type="video/ogg">
+		Your browser does not support the video tag..
+	</video>
+	<h1>Long Film Test</h1>
+	<video controls>
+		<source src="/video/nold.mp4" type="video/mp4">
+		Browser does not support the video tag..
+	</video>
+<p id="demo"></p>
+
+<script type="text/javascript">
+ $.get("index.php", function(data){
+       document.getElementById("demo").innerHTML= "Data gathered from database: " + data ;
+   });
+
+</script> 
+  </body>
+</html>
+

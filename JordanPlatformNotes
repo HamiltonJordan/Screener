@@ -14,3 +14,8 @@ filezilla:
 	Pass: jk
 	Port: 22
 
+NGINX
+restart nginx: systemctl reload nginx
+Change Root Directory: sudo nano /etc/nginx/sites-enabled/default 
+-> change root /var/www/html to -> root /var/www/Screener/html
+

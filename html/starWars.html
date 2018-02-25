@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Title of the document</title>
+	<style>
+		body {
+			background-color: #222;
+			margin: auto;
+			text-align: center;
+		}
+		ul {
+			float: right;
+			text-align: left;
+			text-decoration: none;
+			list-style: none;
+			margin-right: 10%;
+		}
+		li	{
+			background-color: white;
+			border-radius: 10px;
+			padding: 10px;
+			margin-bottom: 10px;
+			width: 150px;
+			cursor: pointer;
+		}
+		li:hover{
+			background-color: black;
+			color: white;
+		}
+		h1 {
+			color: white;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		video {
+			max-width: 60%;
+		}
+	</style> 
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+<h1>Star Wars</h1>
+<ul>
+<li id="a">Episode I</li>
+<li id="b">Episode II</li>
+<li id="c">Episode III</li>
+<li id="d">Episode IV</li>
+<li id="e">Episode V</li>
+<li id="f">Episode VI</li>
+</ul>
+<video id="viewer" controls>
+	<source id="video_address" src="/video/episode1.mp4" type="video/mp4">
+	Your browser does not support the video tag..
+</video> 
+<script type="text/javascript">
+	
+
+	$("#a").click(function(){
+		var newAddress = '/video/episode1.mp4';
+		$('#viewer').get(0).pause();
+		$('#video_address').attr('src', newAddress);
+		$('#viewer').get(0).load();
+	});
+	$("#b").click(function(){
+		var newAddress = '/video/episode2.mp4';
+		$('#viewer').get(0).pause();
+		$('#video_address').attr('src', newAddress);
+		$('#viewer').get(0).load();
+	});
+	$("#c").click(function(){
+		var newAddress = '/video/episode3.mp4';
+		$('#viewer').get(0).pause();
+		$('#video_address').attr('src', newAddress);
+		$('#viewer').get(0).load();
+	});
+	$("#d").click(function(){
+		var newAddress = '/video/episode4.mp4';
+		$('#viewer').get(0).pause();
+		$('#video_address').attr('src', newAddress);
+		$('#viewer').get(0).load();
+	});
+	$("#e").click(function(){
+		var newAddress = '/video/episode5.mp4';
+		$('#viewer').get(0).pause();
+		$('#video_address').attr('src', newAddress);
+		$('#viewer').get(0).load();
+	});
+	$("#f").click(function(){
+		var newAddress = '/video/episode6.mp4';
+		$('#viewer').get(0).pause();
+		$('#video_address').attr('src', newAddress);
+		$('#viewer').get(0).load();
+	});
+
+
+</script>
+</body>
+
+</html> 
