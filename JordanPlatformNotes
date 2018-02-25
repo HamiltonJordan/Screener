@@ -4,6 +4,7 @@ lab user: jordan
 lab passwd: jk
 MySql Root Pass: jthklo123
 Start SQL: sudo mysql -u root -p, Enter Password: -> jthklo123
+Access sql: boot up workbench, choose local instance, enter password
 restart nginx: systemctl reload nginx
 server ip: 155.47.45.243
 dyndns: jordanh, jazz1466
