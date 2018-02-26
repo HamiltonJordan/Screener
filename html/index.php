@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 } 
 echo "Connected successfully";
 
-$sql = "SELECT *  FROM user";
+$sql = "SELECT *  FROM Video";
 $result = $conn->query($sql);
 
 
@@ -20,9 +20,10 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $show= " id: ". $row["id"]. " - Type: ". $row["usertype"].$show;
     }
+
 } else {
     $show= "0 results";
 }
+echo $show;
 
-echo  json_encode($show);
 ?>

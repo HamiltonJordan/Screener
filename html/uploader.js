@@ -28,6 +28,7 @@ $(document).ready(function() {
             $form.find('.progress-bar').addClass('progress-bar-success').html('upload completed....');
         });
         request.open('post', 'uploader.php');
+        console.log('here');
         request.send(formdata);
         $form.on('click','.cancel',function(){
             request.abort();
