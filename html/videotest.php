@@ -55,7 +55,7 @@ if ($result->num_rows > 0) {
 else {
     $returnObj = new ReturnObject();
     $returnObj->success = False;
-    $returnObj->error = "No videos found in database';
+    $returnObj->error = "No videos found in database";
     echo json_encode($returnObj);
 }
 $conn->close();
