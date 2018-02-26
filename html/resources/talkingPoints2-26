@@ -8,6 +8,7 @@ Things to Talk About with Group:
 	-Upload page link(upload not working)
 
 -What's Next:
+	-SSH keys
 	-Figure out how server chooses which php to run (nginx settings? Will it run them all?)
 	-Uniform header for all html files
 		a. Need a comment section at the top
