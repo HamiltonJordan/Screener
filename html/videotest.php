@@ -1,8 +1,8 @@
  <?php
-$servername = "localhost";
-$username = "root";
-$password = "jthklo123";
-$dbname = 'websitedb';
+#$servername = "localhost";
+#$username = "root";
+#$password = "jthklo123";
+#$dbname = 'websitedb';
 
 echo "Start videotest.php";
 class Video {
