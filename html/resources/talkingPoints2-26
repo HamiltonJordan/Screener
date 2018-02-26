@@ -1,0 +1,27 @@
+Things to Talk About with Group:
+-What I've done this week:
+	-Told Git to ignore videos directory
+	-Server Scripts (stop/start)
+	-Embedded Repo on Server
+	-Pulling/Pushing directly to the server
+	-Star Wars Page (talk about what's next)
+	-Upload page link(upload not working)
+
+-What's Next:
+	-Figure out how server chooses which php to run (nginx settings? Will it run them all?)
+	-Uniform header for all html files
+		a. Need a comment section at the top
+		b. Need to source jquery the same way every time
+		c. Need to setup external files for jquery and CSS in a uniform way
+	-Fix new upload page
+	-Create the first login page (contacting SQL with php)
+	-Write the php for responding to a successful upload
+		-php should be creating a video entry in the database on upload
+	-Make a demo of a viewer page that sources video URL from SQL database
+	-How to host our website publicly? 
+		a. File upload should be possible from off-campus
+		b. This will allow professors to upoad videos from their computers at home
+	-Find a new home
+		a. CS lab is too public
+		b. Running out of storage/RAID setup
+		c. Ask Mark for a new box/money
