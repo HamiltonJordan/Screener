@@ -18,4 +18,4 @@ NGINX
 restart nginx: systemctl reload nginx
 Change Root Directory: sudo nano /etc/nginx/sites-enabled/default 
 -> change root /var/www/html to -> root /var/www/Screener/html
-
+ssh into box: ssh jordan@155.47.45.243
