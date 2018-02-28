@@ -2,7 +2,6 @@ Things to Talk About with Group:
 -What I've done this week:
 	-Told Git to ignore videos directory
 	-Server Scripts (stop/start)
-	-Backup Scripts (directory and database)
 	-Embedded Repo on Server
 	-Pulling/Pushing directly to the server
 	-Star Wars Page (talk about what's next)
@@ -27,3 +26,16 @@ Things to Talk About with Group:
 		a. CS lab is too public
 		b. Running out of storage/RAID setup
 		c. Ask Mark for a new box/money
+
+-Reinstall LEMP stack:
+	sudo apt-get update
+	sudo apt-get install nginx
+	sudo ufw allow 'Nginx HTTP'
+	(check ip)ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+	sudo apt-get install mysql-server
+	(choose password, configure sql)
+	mysql_secure_installation
+	sudo apt-get install php-fpm php-mysql
+
+https://github.com/JordanHelpsAlot/Screener.git
+	
