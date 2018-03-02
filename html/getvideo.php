@@ -5,7 +5,12 @@
     session_start();
 
 
-    $_SESSION['video']=$video;
+    if($userN=="already"){
+    $video=$_SESSION['savedv'];
+}
+    if ($userN!="already"){
+    $_SESSION['savedv']=$video;
+}
     
 
     echo json_encode($video); 
