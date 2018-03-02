@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.o$
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!--
+        Modified from the Debian original for Ubuntu
+        Last updated: 2014-03-19
+        See: https://launchpad.net/bugs/1288690
+  -->
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Dynamicvid</title>
+        <style type="text/css" media="screen">
+  
+        </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+
+  <body oncontextmenu="return false;">
+<script type="text/javascript">
+json=[{"Title":"bigbuckbunny","URL":"video/bbb.mp4"},{"Title":"sample","URL":"video/hdSample.mp4"}]
+
+
+var table = document.createElement('table');
+for (i = 0; i < json.length; i++){
+    var tr = document.createElement("tr");   
+
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+
+    var text1 = document.createTextNode(json[i].Title);
+    var text2 = document.createTextNode(json[i].URL);
+td1.appendChild(text1);
+    td2.appendChild(text2);
+	var x=json[i].URL;
+ 	$(td1).click(function(x){
+	alert("hello");
+	$.get("getvideo.php?video="+x, "", function (response) {
+})})
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+
+    table.appendChild(tr);
+
+
+}
+document.body.appendChild(table);
+
+</script>
+  </body>
+</html>
+
+
