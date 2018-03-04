@@ -11,8 +11,8 @@
     $_SESSION['savedv']=$video;
 }
     
-
-    echo json_encode($video); 
+$obj1 = (object)array("title"=>$video);
+     echo json_encode($obj1); 
 
 
 ?>

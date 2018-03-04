@@ -33,9 +33,9 @@ html.appendChild(text1);
 html.href="testdynvid.html";
     td2.appendChild(text2);
 	var x=json[i].URL;
- 	$(html).click(function(x){
-	alert("hello");
-	$.get("getvideo.php?video=hello", "", function (response) {
+ 	$(html).click(function(event,x){
+	alert(x);
+	$.get("getvideo.php?video="+x, "", function (response) {
 })})
     tr.appendChild(td1);
     tr.appendChild(td2);

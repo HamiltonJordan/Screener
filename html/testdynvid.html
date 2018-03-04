@@ -16,10 +16,10 @@
 
   <body oncontextmenu="return false;">
 <script type="text/javascript">
-  $.get("getvideo.php?video=already", "", function (response) {
+  $.get("getvideo.php?video=already", "", function (response){
 	json=JSON.parse(response);
-	alert(json);
-})})
+	alert(json.title);
+})
 
 
 json=[{"Title":"bigbuckbunny","URL":["video/bbb.mp4","video/bbb.ogg"]},{"Title":"sample","URL":["video/hdSample.mp4","video/hdSample.mp4"]}]
