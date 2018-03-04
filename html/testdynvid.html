@@ -16,25 +16,18 @@
 
   <body oncontextmenu="return false;">
 <script type="text/javascript">
-  $.get("getvideo.php?video=already", "", function (response){
+  $.get("getvideo.php?video=already&titlev=already", "", function (response){
 	json=JSON.parse(response);
-	alert(json.title);
-})
-
-
-json=[{"Title":"bigbuckbunny","URL":["video/bbb.mp4","video/bbb.ogg"]},{"Title":"sample","URL":["video/hdSample.mp4","video/hdSample.mp4"]}]
-for (i = 0; i < json.length; i++){ 
+	alert("already " +json.video + json.title);
 
 var title= document.createElement("H2");
-var t = document.createTextNode(json[i].Title);    
+var t = document.createTextNode(json.title);    
 title.appendChild(t);
 
 var v = document.createElement("VIDEO");
 
 if (v.canPlayType("video/mp4")) {
-    v.setAttribute("src",json[i].URL[0]);
-} else {
-    v.setAttribute("src",json[i].URL[1]);
+    v.setAttribute("src",json.video);
 }
 
 v.setAttribute("width", "800");
@@ -42,7 +35,7 @@ v.setAttribute("height", "400");
 v.setAttribute("controls", "controls");
 document.body.appendChild(title);
 document.body.appendChild(v);
-}
+})
 </script>
   </body>
 </html>
