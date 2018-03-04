@@ -25,15 +25,17 @@ for (i = 0; i < json.length; i++){
 
     var td1 = document.createElement("td");
     var td2 = document.createElement("td");
-
+	var html=document.createElement("a");
     var text1 = document.createTextNode(json[i].Title);
     var text2 = document.createTextNode(json[i].URL);
-td1.appendChild(text1);
+td1.appendChild(html);
+html.appendChild(text1);
+html.href="testdynvid.html";
     td2.appendChild(text2);
 	var x=json[i].URL;
- 	$(td1).click(function(x){
+ 	$(html).click(function(x){
 	alert("hello");
-	$.get("getvideo.php?video="+x, "", function (response) {
+	$.get("getvideo.php?video=hello", "", function (response) {
 })})
     tr.appendChild(td1);
     tr.appendChild(td2);
