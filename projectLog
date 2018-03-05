@@ -10,3 +10,4 @@
 	Added the /video/ directory to the .gitignore file so it doesn't clone all the videos to your pc when you pull
 	Added clickable scripts for stopping and restarting the server (.sh files)
 	Added 'Star Wars Viewer' to demo dynamic video shifting
+	testdynvideo1 -> Viewer, testdynvideo2 -> Selector

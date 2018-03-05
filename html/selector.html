@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.o$
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!--
+		Modified from the Debian original for Ubuntu
+		Last updated: 2014-03-19
+		See: https://launchpad.net/bugs/1288690
+  -->
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Dynamicvid</title>
+		<style type="text/css" media="screen">
+  
+		</style>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+
+  <body oncontextmenu="return false;">
+<script type="text/javascript">
+	myFilms=[{"Title":"bigbuckbunny","URL":"video/bbb.mp4"},{"Title":"sample","URL":"video/hdSample.mp4"}]
+	var table = document.createElement('table');
+	for (i = 0; i < myFilms.length; i++){
+		var tr = document.createElement("tr");   
+
+		var td1 = document.createElement("td");
+		var td2 = document.createElement("td");
+		var html=document.createElement("a");
+		var text1 = document.createTextNode(myFilms[i].Title);
+		var text2 = document.createTextNode(myFilms[i].URL);
+		td1.appendChild(html);
+		html.appendChild(text1);
+		html.href='viewer.html';
+		td2.appendChild(text2);
+		var x=myFilms[i].URL;
+		var y=myFilms[i].Title;
+
+		$(html).click({p1:x,p2:y},function(event){
+			url=event.data.p1;
+			title=event.data.p2;
+			$.get("getvideo.php?video="+url+"&&titlev="+title, "", function (response){
+				json=JSON.parse(response);
+				//alert( url + " " +json.title);
+			})
+		})
+		tr.appendChild(td1);
+		tr.appendChild(td2);
+
+		table.appendChild(tr);
+	}
+	document.body.appendChild(table);
+
+</script>
+  </body>
+</html>
+
+
