@@ -16,7 +16,13 @@
 
   <body oncontextmenu="return false;">
 <script type="text/javascript">
-	myFilms=[{"Title":"bigbuckbunny","URL":"video/bbb.mp4"},{"Title":"sample","URL":"video/hdSample.mp4"}]
+	//PHP - request the JSON list of film information available to user
+	//JQUERY: myClass = myCookie.classID
+	$.get("fetchMyFilms.php?classID="+myClass, "", function (response){
+		myFilms=JSON.parse(response);
+		//alert( url + " " +json.title);
+	})
+	//myFilms=[{"Title":"bigbuckbunny","URL":"video/bbb.mp4"},{"Title":"sample","URL":"video/hdSample.mp4"}]
 	var table = document.createElement('table');
 	for (i = 0; i < myFilms.length; i++){
 		var tr = document.createElement("tr");   

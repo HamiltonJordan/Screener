@@ -8,6 +8,8 @@
 	$password = "jthklo123";
 	$dbname = 'websitedb';
 
+	$classID=$_GET["classID"];
+
 	class ReturnObject {
 		public $success = false;
 		public $loginCheck = false;
