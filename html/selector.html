@@ -46,11 +46,14 @@
 		td2.appendChild(urlText);
 		var x=myFilms[i].URL;
 		var y=myFilms[i].Title;
+		alert("c");
 
 		$(html).click({p1:x,p2:y},function(event){
 			url=event.data.p1;
 			title=event.data.p2;
+			alert("d");
 			$.get("getvideo.php?video="+url+"&&titlev="+title, "", function (response){
+				alert("e");
 				json=JSON.parse(response);
 				alert("boo");
 				//alert( url + " " +json.title);
