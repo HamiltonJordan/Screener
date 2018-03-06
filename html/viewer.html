@@ -24,15 +24,12 @@
 	</video> 
 	<script type="text/javascript">
 		$url = Cookies.get('URL');
-		alert("hey");
 		alert("url:" + $url);
-		$url="video/nold.mp4";
-		alert("yo");
-		//$("#portal").setAttribute("src", $url);
+		//$url="video/nold.mp4";
 		$('#portal').get(0).pause(); 
 		$('#video_address').attr('src', $url);
 		$('#portal').get(0).load();
-		alert("done");
+		alert("loaded");
 		/*
 		$.get("getvideo.php?video=already&titlev=already", "", function (response){
 			json=JSON.parse(response);
