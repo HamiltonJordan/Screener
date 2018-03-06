@@ -29,14 +29,6 @@
 			<th>Title</th>
 			<th>URL</th> 
 		</tr>
-		<tr>
-			<td id="">1</td>
-			<td id="">a</td>
-		</tr>
-		<tr>
-			<td id="">2</td>
-			<td id="">b</td>
-		</tr>
 	</tbody>
 	</table>
 <script type="text/javascript">
@@ -51,7 +43,6 @@
 			console.log("myFilms: " + myFilms);
 
 			for (i = 0; i < 4; i++){
-			//alert(i);
 			$("#selector_table").append('<tr><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>'+myFilms[i].URL+'</td></tr>');
 			$("#a"+i).data("URL", myFilms[i].URL);
 			//$("#a"+i).data("URL", myFilms[i].URL);
