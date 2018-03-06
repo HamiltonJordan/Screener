@@ -24,6 +24,7 @@
 <body oncontextmenu="return false;">
 	<h1>SELECTOR</h1>
 	<table id="selector_table">
+	<tbody>
 		<tr>
 			<th>Title</th>
 			<th>URL</th> 
@@ -36,6 +37,7 @@
 			<td id="">2</td>
 			<td id="">b</td>
 		</tr>
+	</tbody>
 	</table>
 <script type="text/javascript">
 	//PHP - request the JSON list of film information available to user
@@ -48,8 +50,9 @@
 	//myFilms=[{"Title":"bigbuckbunny","URL":"video/bbb.mp4"},{"Title":"sample","URL":"video/hdSample.mp4"}]
 	//var table = document.createElement('table');
 	for (i = 0; i < 4; i++){
-		alert(i);
+		$("#selector_table").append('<tr><td>'+myFilms[i].Title+'</td><td>'+myFilms[i].URL+'</td></tr>');
 	}
+	/*
 	for (i = 0; i < myFilms.length; i++){
 		
 		alert("a");
@@ -87,6 +90,8 @@
 		alert("row add attempt complete");
 	}
 	//document.body.appendChild(table);
+	*/
+
 
 </script>
   </body>
