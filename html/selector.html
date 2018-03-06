@@ -51,8 +51,23 @@
 		//myFilms=[{"Title":"bigbuckbunny","URL":"video/bbb.mp4"},{"Title":"sample","URL":"video/hdSample.mp4"}]
 		//var table = document.createElement('table');
 		for (i = 0; i < 4; i++){
-			alert(i);
+			//alert(i);
 			$("#selector_table").append('<tr><td>'+myFilms[i].Title+'</td><td>'+myFilms[i].URL+'</td></tr>');
+			var x=myFilms[i].URL;
+			var y=myFilms[i].Title;
+			$(html).click({p1:x,p2:y},function(event){
+				alert("yoo");
+				url=event.data.p1;
+				title=event.data.p2;
+				alert("d");
+				$.get("getvideo.php?video="+url+"&&titlev="+title, "", function (response){
+					alert("e");
+					json=JSON.parse(response);
+					alert("boo");
+					//alert( url + " " +json.title);
+				})
+			})
+
 		}
 		/*
 		for (i = 0; i < myFilms.length; i++){
