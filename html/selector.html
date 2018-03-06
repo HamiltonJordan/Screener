@@ -27,7 +27,7 @@
 	$myId = 2;
 	$.get("fetchMyFilms.php?userId="+$myId, "", function (response){
 		myFilms=JSON.parse(response);
-		//alert(myFilms[2].Title);
+		alert(myFilms[2].Title);
 	})
 	//myFilms=[{"Title":"bigbuckbunny","URL":"video/bbb.mp4"},{"Title":"sample","URL":"video/hdSample.mp4"}]
 	//var table = document.createElement('table');
