@@ -18,6 +18,7 @@
 		}
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="/javascript/jquery.cookie.js"></script>
 
 </head>
 
@@ -44,6 +45,7 @@
 		//PHP - request the JSON list of film information available to user
 		//JQUERY: myClass = myCookie.classID
 		$myId = 2;
+		$.cookie('Title',$myFilms)
 		$.get("fetchMyFilms.php?userId="+$myId, "", function (response){
 			myFilms=JSON.parse(response);
 			//alert("len: "+myFilms.length);
@@ -71,7 +73,6 @@
 				})
 			})
 			*/
-
 		}
 		/*
 		for (i = 0; i < myFilms.length; i++){
@@ -113,6 +114,10 @@
 		//document.body.appendChild(table);
 		*/
 	});
+	alert("made it here");
+	$(a).click(function(){
+		alert("clicked link");
+	})
 </script>
   </body>
 </html>
