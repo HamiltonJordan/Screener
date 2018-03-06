@@ -31,7 +31,6 @@
 	})
 	//myFilms=[{"Title":"bigbuckbunny","URL":"video/bbb.mp4"},{"Title":"sample","URL":"video/hdSample.mp4"}]
 	//var table = document.createElement('table');
-	alert("a");
 	for (i = 0; i < myFilms.length; i++){
 		var tr = document.createElement("tr");   
 		var td1 = document.createElement("td");
@@ -39,7 +38,6 @@
 		var link=document.createElement("a");
 		var titleText = document.createTextNode(myFilms[i].Title);
 		var urlText = document.createTextNode(myFilms[i].URL);
-		alert("b");
 		td1.appendChild(link);
 		link.appendChild(titleText);
 		link.href='viewer.html';
@@ -49,6 +47,7 @@
 		alert("c");
 
 		$(html).click({p1:x,p2:y},function(event){
+			alert("yoo");
 			url=event.data.p1;
 			title=event.data.p2;
 			alert("d");
