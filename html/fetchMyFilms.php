@@ -32,6 +32,7 @@
 			echo $row['Title'];
 			echo "\t";
 			echo $row['URL'];
+			echo "\n";
 		}
 	
 		/* free result set */
