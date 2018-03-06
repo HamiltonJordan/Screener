@@ -74,8 +74,9 @@
 		}
 		alert("made it here");
 		$("a").click(function(){
-			$.cookie('URL',$("#"+this.id).data("URL"));
-			alert("Cookie: "+$.cookie('URL'));
+			alert($("#"+this.id).data("URL"));
+			//$.cookie('URL',$("#"+this.id).data("URL"));
+			//alert("Cookie: "+$.cookie('URL'));
 		})
 		/*
 		for (i = 0; i < myFilms.length; i++){
