@@ -46,11 +46,13 @@
 				$("#selector_table").append('<tr><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>'+myFilms[i].URL+'</td></tr>');
 				$("#a"+i).data("URL", myFilms[i].URL);
 			}
+			$("a").click(function(){
+				alert($("#"+this.id).data("URL"));
+				Cookies.set('URL', $("#"+this.id).data("URL"));
+			});
 		});		
 		
-		$("a").click(function(){
-			Cookies.set('URL', $("#"+this.id).data("URL"));
-		})
+
 	});
 
 </script>
