@@ -73,7 +73,7 @@
 		}
 		alert("made it here");
 		$("a").click(function(){
-			alert($("#"+this.id).data("URL"));
+			alert($("#"+this.id).data());
 			Cookies.set('name', 'value');
 			alert(Cookies.get('name'));
 			//$.cookie('URL',$("#"+this.id).data("URL"));
