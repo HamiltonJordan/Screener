@@ -29,10 +29,11 @@
 		")) 
 	{
 		while ($row = mysqli_fetch_assoc($result)) {
+			echo "Title: ";
 			echo $row['Title'];
-			echo "\t";
+			echo ", Location: ";
 			echo $row['URL'];
-			echo ",\t\t";
+			echo "/  ";
 		}
 	
 		/* free result set */
