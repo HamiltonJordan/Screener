@@ -1,9 +1,10 @@
 //splash.js
 
 $("#submit").click(function() {
-	var user = $("#username").val();
+	var user = $("#email").val();
 	var pass = $("#password").val();
-	$.get("/../login.php?username="+user+"&password="+pass, function(response){
+	console.log(user);
+	$.get("login.php?email="+user+"&password="+pass, function(response){
 		console.log(response);
 		var myObj = JSON.parse(response);
 		if (myObj.success && myObj.loginCheck) {

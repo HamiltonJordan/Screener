@@ -23,7 +23,7 @@
     }
 
     $returnObj = new ReturnObject();
-    if ($result = $conn->query("SELECT * FROM Student WHERE Email = '$email' AND Password = '$pword'")) {
+    if ($result = $conn->query("SELECT * FROM User WHERE Email = '$email' AND Password = '$pword'")) {
         while ($row = mysqli_fetch_assoc($result)) {
             $returnObj->loginCheck = true;
             $returnObj->success = true;
