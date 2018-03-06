@@ -27,9 +27,10 @@
 		alert("hey");
 		alert("url:" + $url);
 		$url="/video/sw_ep1.mp4";
+		alert("yo");
 		//$("#portal").setAttribute("src", $url);
 		$('#portal').get(0).pause(); 
-		$('#video_address').attr('src', newAddress);
+		$('#video_address').attr('src', $url);
 		$('#portal').get(0).load();
 		alert("done");
 		/*
