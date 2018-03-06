@@ -74,7 +74,7 @@
 		}
 		alert("made it here");
 		$("a").click(function(){
-			alert($("#"+this.id).data());
+			alert($("#"+this.id).data("Test"));
 			Cookies.set('name', 'value');
 			alert(Cookies.get('name'));
 			//$.cookie('URL',$("#"+this.id).data("URL"));
