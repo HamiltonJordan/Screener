@@ -48,13 +48,12 @@
 		//$.cookie('Title',$myFilms);
 		$.get("fetchMyFilms.php?userId="+$myId, "", function (response){
 			myFilms=JSON.parse(response);
-			//alert("len: "+myFilms.length);
 		});
-		//myFilms=[{"Title":"bigbuckbunny","URL":"video/bbb.mp4"},{"Title":"sample","URL":"video/hdSample.mp4"}]
-		//var table = document.createElement('table');
 		for (i = 0; i < 4; i++){
 			alert(i);
-			$("#selector_table").append('<tr><td class="Title"><a href="viewer.html">'+myFilms[i].Title+'</a></td><td>'+myFilms[i].URL+'</td></tr>');
+			$("#selector_table").append('<tr><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>'+myFilms[i].URL+'</td></tr>');
+			$("#a"+i).data("URL", myFilms[i].URL);
+			alert($("#a"+i).data("URL"));
 			/*
 			var x=myFilms[i].URL;
 			var y=myFilms[i].Title;
