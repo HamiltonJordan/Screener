@@ -27,7 +27,11 @@
 		alert("hey");
 		alert("url:" + $url);
 		$url="/video/sw_ep1.mp4";
-		$("#portal").setAttribute("src", $url);
+		//$("#portal").setAttribute("src", $url);
+		$('#portal').get(0).pause(); 
+		$('#video_address').attr('src', newAddress);
+		$('#portal').get(0).load();
+		alert("done");
 		/*
 		$.get("getvideo.php?video=already&titlev=already", "", function (response){
 			json=JSON.parse(response);
