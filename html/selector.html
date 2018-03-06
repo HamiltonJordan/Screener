@@ -51,7 +51,8 @@
 		for (i = 0; i < 4; i++){
 			alert(i);
 			$("#selector_table").append('<tr><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>'+myFilms[i].URL+'</td></tr>');
-			$("#a"+i).data("URL", myFilms[i].URL);
+			$("#a"+i).data("Test", "worked!");
+			//$("#a"+i).data("URL", myFilms[i].URL);
 			/*
 			var x=myFilms[i].URL;
 			var y=myFilms[i].Title;
