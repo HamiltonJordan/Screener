@@ -9,6 +9,7 @@ $("#submit").click(function() {
 		var myObj = JSON.parse(response);
 		if (myObj.success && myObj.loginCheck) {
 			console.log('here');
+			document.location.replace('selector.html?id='+myObj.id);
 		
 		}
 		else {
