@@ -16,29 +16,32 @@
 
 <body oncontextmenu="return false;">
 <h1>SELECTOR</h1>
+<table id="selector_table">
+	<tr id="row-1" class="table-row">
+		Here is some Text
+	</tr>
+</table>
 <script type="text/javascript">
 	//PHP - request the JSON list of film information available to user
 	//JQUERY: myClass = myCookie.classID
 	$myId = 2;
 	$.get("fetchMyFilms.php?userId="+$myId, "", function (response){
-		alert("here");
 		myFilms=JSON.parse(response);
-		alert("still here");
 		alert(myFilms[2].Title);
 	})
 	//myFilms=[{"Title":"bigbuckbunny","URL":"video/bbb.mp4"},{"Title":"sample","URL":"video/hdSample.mp4"}]
-	var table = document.createElement('table');
+	//var table = document.createElement('table');
 	for (i = 0; i < myFilms.length; i++){
 		var tr = document.createElement("tr");   
 		var td1 = document.createElement("td");
 		var td2 = document.createElement("td");
-		var html=document.createElement("a");
-		var text1 = document.createTextNode(myFilms[i].Title);
-		var text2 = document.createTextNode(myFilms[i].URL);
-		td1.appendChild(html);
-		html.appendChild(text1);
-		html.href='viewer.html';
-		td2.appendChild(text2);
+		var link=document.createElement("a");
+		var titleText = document.createTextNode(myFilms[i].Title);
+		var urlText = document.createTextNode(myFilms[i].URL);
+		td1.appendChild(link);
+		link.appendChild(titleText);
+		link.href='viewer.html';
+		td2.appendChild(urlText);
 		var x=myFilms[i].URL;
 		var y=myFilms[i].Title;
 
@@ -53,7 +56,7 @@
 		tr.appendChild(td1);
 		tr.appendChild(td2);
 
-		table.appendChild(tr);
+		$("#selector_table").appendChild(tr);
 	}
 	document.body.appendChild(table);
 
