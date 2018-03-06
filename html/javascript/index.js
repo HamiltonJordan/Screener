@@ -3,17 +3,17 @@
 $("#submit").click(function() {
 	var user = $("#email").val();
 	var pass = $("#password").val();
-	console.log(user);
 	$.get("login.php?email="+user+"&password="+pass, function(response){
-		console.log(response);
 		var myObj = JSON.parse(response);
 		if (myObj.success && myObj.loginCheck) {
-			console.log('here');
-			document.location.replace('selector.html?id='+myObj.id);
-		
+			Cookies.remove('loginId');
+			Cookies.set('loginId', myObj.id);
+			alert(Cookies.get('loginId'));
+			document.location.replace('selector.html');
+
 		}
 		else {
-			console.log('failed to login.')
+			alert('failed to login.');
 		}
 	});
 });
