@@ -53,7 +53,6 @@
 			alert(i);
 			$("#selector_table").append('<tr><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>'+myFilms[i].URL+'</td></tr>');
 			$("#a"+i).data("URL", myFilms[i].URL);
-			alert($("#a"+i).data("URL"));
 			/*
 			var x=myFilms[i].URL;
 			var y=myFilms[i].Title;
@@ -75,7 +74,7 @@
 		}
 		alert("made it here");
 		$("a").click(function(){
-			alert("clicked link");
+			alert($("#"+this.id).data("URL"));
 		})
 		/*
 		for (i = 0; i < myFilms.length; i++){
