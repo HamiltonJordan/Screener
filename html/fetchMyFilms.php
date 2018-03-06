@@ -39,6 +39,6 @@
 
 	mysqli_close($conn);
 	//$returnObj = new ReturnObject();
-	echo json_encode($returnObj);
+	//echo json_encode($returnObj);
 
 ?>
