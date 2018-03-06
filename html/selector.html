@@ -49,8 +49,8 @@
 			myFilms=JSON.parse(response);
 			console.log("response: " + response);
 			console.log("myFilms: " + myFilms);
-		});
-		for (i = 0; i < 4; i++){
+
+			for (i = 0; i < 4; i++){
 			//alert(i);
 			$("#selector_table").append('<tr><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>'+myFilms[i].URL+'</td></tr>');
 			$("#a"+i).data("URL", myFilms[i].URL);
@@ -74,6 +74,8 @@
 			})
 			*/
 		}
+		});
+		
 		alert("made it here");
 		$("a").click(function(){
 			//alert($("#"+this.id).data("URL"));
