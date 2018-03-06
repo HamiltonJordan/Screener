@@ -48,7 +48,6 @@
 				$("#a"+i).data("URL", myFilms[i].URL);
 			}
 			$("a").click(function(){
-				alert("test");
 				Cookies.remove('URL');
 				Cookies.set('URL', $("#"+this.id).data("URL"));
 			});
