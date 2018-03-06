@@ -47,6 +47,8 @@
 		
 		$.get("fetchMyFilms.php?userId="+$myId, "", function (response){
 			myFilms=JSON.parse(response);
+			console.log("response: " + response);
+			console.log("myFilms: " + myFilms);
 		});
 		for (i = 0; i < 4; i++){
 			//alert(i);
