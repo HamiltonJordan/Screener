@@ -18,8 +18,7 @@
 		}
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="/javascript/jquery.cookie.js"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 </head>
 
 <body oncontextmenu="return false;">
@@ -75,6 +74,8 @@
 		alert("made it here");
 		$("a").click(function(){
 			alert($("#"+this.id).data("URL"));
+			Cookies.set('name', 'value');
+			alert(Cookies.get('name'));
 			//$.cookie('URL',$("#"+this.id).data("URL"));
 			//alert("Cookie: "+$.cookie('URL'));
 		})
