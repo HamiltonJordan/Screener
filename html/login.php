@@ -10,6 +10,7 @@
     class ReturnObject {
         public $success = false;
         public $loginCheck = false;
+        public $id = 0;
     }
 
     $email = $_GET["email"];
@@ -27,6 +28,7 @@
         while ($row = mysqli_fetch_assoc($result)) {
             $returnObj->loginCheck = true;
             $returnObj->success = true;
+            $returnObj->id = row["Id"];
         }
     
         /* free result set */
