@@ -9,18 +9,34 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Dynamicvid</title>
 	<style type="text/css" media="screen">
-
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		th, td {
+			padding: 15px;
+		}
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 </head>
 
 <body oncontextmenu="return false;">
-<h1>SELECTOR</h1>
-<table id="selector_table">
-	<tr id="row-1" class="table-row">
-		Here is some Text
-	</tr>
-</table>
+	<h1>SELECTOR</h1>
+	<table id="selector_table">
+		<tr>
+			<th>Title</th>
+			<th>URL</th> 
+		</tr>
+		<tr>
+			<td id="">1</td>
+			<td id="">a</td>
+		</tr>
+		<tr>
+			<td id="">2</td>
+			<td id="">b</td>
+		</tr>
+	</table>
 <script type="text/javascript">
 	//PHP - request the JSON list of film information available to user
 	//JQUERY: myClass = myCookie.classID
