@@ -12,8 +12,8 @@
         public $loginCheck = false;
     }
 
-    $name = $_GET["username"];
-    $lname = $_GET["password"];
+    $email = $_GET["email"];
+    $pword = $_GET["password"];
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,7 +23,7 @@
     }
 
     $returnObj = new ReturnObject();
-    if ($result = $conn->query("SELECT * FROM Student WHERE FirstName = '$name' AND LastName = '$lname'")) {
+    if ($result = $conn->query("SELECT * FROM Student WHERE Email = '$email' AND Password = '$pword'")) {
         while ($row = mysqli_fetch_assoc($result)) {
             $returnObj->loginCheck = true;
             $returnObj->success = true;
