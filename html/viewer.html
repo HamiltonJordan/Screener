@@ -25,34 +25,10 @@
 	<script type="text/javascript">
 		$url = Cookies.get('URL');
 		alert("url:" + $url);
-		//$url="video/nold.mp4";
 		$('#portal').get(0).pause(); 
 		$('#video_address').attr('src', $url);
 		$('#portal').get(0).load();
-		alert("loaded");
-		/*
-		$.get("getvideo.php?video=already&titlev=already", "", function (response){
-			json=JSON.parse(response);
-			alert("already " +json.video + json.title);
-
-			var title= document.createElement("H2");
-			var t = document.createTextNode(json.title);    
-			title.appendChild(t);
-
-			$("#portal").setAttribute("src", json.video);
-			
-			var v = document.createElement("VIDEO");
-
-			if (v.canPlayType("video/mp4")) {
-			v.setAttribute("src",json.video);
-			}
-
-			v.setAttribute("width", "800");
-			v.setAttribute("height", "400");
-			v.setAttribute("controls", "controls");
-			document.body.appendChild(title);
-			document.body.appendChild(v);
-		*/
+		//alert("loaded");
 
 	</script>
 </body>
