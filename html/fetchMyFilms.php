@@ -33,7 +33,7 @@
 			echo $row['Title'];
 			echo ", Location: ";
 			echo $row['URL'];
-			echo "/  ";
+			echo ".......";
 		}
 	
 		/* free result set */
