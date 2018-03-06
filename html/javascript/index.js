@@ -8,9 +8,7 @@ $("#submit").click(function() {
 		if (myObj.success && myObj.loginCheck) {
 			Cookies.remove('loginId');
 			Cookies.set('loginId', myObj.id);
-			alert(Cookies.get('loginId'));
 			document.location.replace('selector.html');
-
 		}
 		else {
 			alert('failed to login.');
