@@ -18,7 +18,8 @@
 <script type="text/javascript">
 	//PHP - request the JSON list of film information available to user
 	//JQUERY: myClass = myCookie.classID
-	$.get("fetchMyFilms.php?classID="+myClass, "", function (response){
+	//$myId = 
+	$.get("fetchMyFilms.php?userId="+$myId, "", function (response){
 		myFilms=JSON.parse(response);
 		//alert( url + " " +json.title);
 	})
@@ -26,7 +27,6 @@
 	var table = document.createElement('table');
 	for (i = 0; i < myFilms.length; i++){
 		var tr = document.createElement("tr");   
-
 		var td1 = document.createElement("td");
 		var td2 = document.createElement("td");
 		var html=document.createElement("a");

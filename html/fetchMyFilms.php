@@ -8,12 +8,7 @@
 	$password = "jthklo123";
 	$dbname = 'websitedb';
 
-	$classID=$_GET["classID"];
-
-	class ReturnObject {
-		public $success = false;
-		public $loginCheck = false;
-	}
+	$userId=$_GET["userId"];
 	
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -22,12 +17,20 @@
 		die("Connection failed: " . $conn->connect_error);
 	}
 
-	//Psuedo-Code
-	$classID = $_SESSION($classID);
-
-	$returnObj = new ReturnObject();
-	if ($result = $conn->query("SELECT * FROM Video WHERE ClassID = '$classID'")) {
+	if ($result = $conn->query("
+		SELECT Video.Title, Video.URL FROM User
+		INNER JOIN EnrolledIn ON
+		User.Id = EnrolledIn.UserId
+		INNER JOIN ClassVideo ON
+		EnrolledIn.ClassId = ClassVideo.ClassId
+		INNER JOIN Video ON
+		ClassVideo.VideoId = Video.Id
+		WHERE User.Id = '$userId';
+		")) 
+	{
 		while ($row = mysqli_fetch_assoc($result)) {
+			echo $row['Title'];
+			echo $row['URL'];
 		}
 	
 		/* free result set */
@@ -35,6 +38,7 @@
 	}
 
 	mysqli_close($conn);
+	//$returnObj = new ReturnObject();
 	echo json_encode($returnObj);
 
 ?>
