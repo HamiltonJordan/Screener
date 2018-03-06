@@ -21,6 +21,7 @@
 	//JQUERY: myClass = myCookie.classID
 	$myId = 2;
 	$.get("fetchMyFilms.php?userId="+$myId, "", function (response){
+		alert("here");
 		myFilms=JSON.parse(response);
 		alert( myFilms[0].Title + " " +json.title);
 	})
