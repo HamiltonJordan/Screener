@@ -9,6 +9,7 @@
 	$dbname = 'websitedb';
 
 	$userId=$_GET["userId"];
+	$return_arr = array();
 	
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -29,11 +30,16 @@
 		")) 
 	{
 		while ($row = mysqli_fetch_assoc($result)) {
+			$row_array['Title'] = $row['Title'];
+			$row_array['URL'] = $row['URL'];
+			array_push($return_arr, $row_array);
+			/*
 			echo "Title: ";
 			echo $row['Title'];
 			echo ", Location: ";
 			echo $row['URL'];
 			echo ".......";
+			*/
 		}
 	
 		/* free result set */
@@ -41,6 +47,7 @@
 	}
 
 	mysqli_close($conn);
+	echo json_encode($return_arr);
 	//$returnObj = new ReturnObject();
 	//echo json_encode($returnObj);
 

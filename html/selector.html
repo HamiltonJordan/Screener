@@ -5,20 +5,21 @@
 		Last updated: 2014-03-19
 		See: https://launchpad.net/bugs/1288690
   -->
-  <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Dynamicvid</title>
-		<style type="text/css" media="screen">
-  
-		</style>
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  </head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Dynamicvid</title>
+	<style type="text/css" media="screen">
 
-  <body oncontextmenu="return false;">
+	</style>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body oncontextmenu="return false;">
+	
 <script type="text/javascript">
 	//PHP - request the JSON list of film information available to user
 	//JQUERY: myClass = myCookie.classID
-	//$myId = 
+	$myId = 2;
 	$.get("fetchMyFilms.php?userId="+$myId, "", function (response){
 		myFilms=JSON.parse(response);
 		//alert( url + " " +json.title);
