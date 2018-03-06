@@ -9,7 +9,7 @@ $("#submit").click(function() {
 		var myObj = JSON.parse(response);
 		if (myObj.success && myObj.loginCheck) {
 			console.log('here');
-			document.location.replace('https://screener.onthewifi.com/selector.html');
+			document.location.replace('screener.onthewifi.com/selector.html');
 		
 		}
 		else {
