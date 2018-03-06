@@ -45,7 +45,7 @@
 		//PHP - request the JSON list of film information available to user
 		//JQUERY: myClass = myCookie.classID
 		$myId = 2;
-		$.cookie('Title',$myFilms)
+		//$.cookie('Title',$myFilms);
 		$.get("fetchMyFilms.php?userId="+$myId, "", function (response){
 			myFilms=JSON.parse(response);
 			//alert("len: "+myFilms.length);
