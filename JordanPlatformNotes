@@ -19,3 +19,9 @@ restart nginx: systemctl reload nginx
 Change Root Directory: sudo nano /etc/nginx/sites-enabled/default 
 -> change root /var/www/html to -> root /var/www/Screener/html
 ssh into box: ssh jordan@155.47.45.32
+Sample modifying DB:
+	SELECT * FROM User;
+
+	UPDATE User
+	SET Password = "admin"
+	WHERE id = 2;
