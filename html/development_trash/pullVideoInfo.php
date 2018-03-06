@@ -18,9 +18,8 @@
         public $movies = [];
     }
     class Movie {
-        public $movieTitle
-        public $URL
-        public $classTitle
+        public $movieTitle = "";
+        public $classTitle;
         //public $length <- could be a cool idea
     }
 
