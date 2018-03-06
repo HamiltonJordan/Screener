@@ -28,7 +28,7 @@
         while ($row = mysqli_fetch_assoc($result)) {
             $returnObj->loginCheck = true;
             $returnObj->success = true;
-            $returnObj->id = row["Id"];
+            $returnObj->id = $row["Id"];
         }
     
         /* free result set */
