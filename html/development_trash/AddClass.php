@@ -25,10 +25,9 @@
     $studentIds = $classData->studentList;
 
     if(is_array($studentIds)) {
-        echo "here sir";
-    }
-    else {
-        echo "nope";
+        foreach($studentIds as $Id) {
+            echo "here - $Id";
+        }
     }
 
    
