@@ -24,9 +24,14 @@
 
     $studentIds = $classData->studentList;
 
+    $classId = 69;
+
     if(is_array($studentIds)) {
         foreach($studentIds as $Id) {
-            echo "here - $Id";
+            echo $Id;
+            //$query1 = mysql_real_escape_string($Id);
+            //$query ="INSERT INTO EnrolledIn (ClassId, StudentId) VALUES ( '". $classId."','".$Id."' )";
+            //mysqli_query($conn, $query);
         }
     }
 
