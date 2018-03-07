@@ -18,15 +18,14 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    else {
-        echo "here";
-    }
 
     $classObject = $_GET["classObject"];
 
+    echo $classObject;
+
     $classData = json_decode($classObject);
 
-    echo $classData;
+   // echo $classData;
 
 
 

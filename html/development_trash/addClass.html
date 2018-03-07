@@ -38,8 +38,11 @@
 				}
 
 				// Updates last values in newClass object.
-				newClass.classTitle = $("classTitle").val();
-				newClass.classCode  = $("classCode").val();
+				newClass.classTitle = $("#classTitle").val();
+				newClass.classCode  = $("#classCode").val();
+				
+				console.log(newClass.classTitle);
+				console.log(newClass.classCode);
 
 				// Turns the object into JSON string
 				var json = JSON.stringify(newClass);
