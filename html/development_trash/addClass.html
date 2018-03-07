@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portal</title>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+	<style type="text/css">
+		#studentIds {
+			width: 30%;
+			height: 120%;
+		}
+	</style>
+</head>
+<body>
+
+	<form>
+		Class Title:<br>
+  		<input type="text" name="classTitle" id="classTitle"><br>
+		Class Code:<br>
+		<input type="text" name="classCode" id="classCode"><br>
+		Student Wheaton Ids<br>
+		<textarea type="text" name="lastname" id="studentIds"></textarea> <br>
+		<button type="button" id="button">here</button>
+	</form>
+
+	<script type="text/javascript">
+
+		// Creates a variable object that will be used to send data to php
+		var newClass = {
+			classTitle: "",
+			classCode: "",
+			studentList: []
+		};
+
+
+		$(document).ready(function () {
+
+			$("#button").click(function(){
+				// Grabs student Ids.
+				var a = $("#studentIds").val().split(',');
+				var length = a.length;
+				
+				// Cleans the input of student IDs.
+				for (var i=0; i < length; i++) {
+					a[i] = a[i].replace(/\s/g, "");
+					newClass.studentList.push(a[i]);
+				}
+
+				// Adds Student Ids to object list
+				for (var i=0; i < newClass.studentList.length; i++) {
+					console.log("Student: " + newClass.studentList[i]);
+				}
+
+				// Updates last values in newClass object.
+				newClass.classTitle = $("classTitle").val();
+				newClass.classCode  = $("classCode").val();
+
+				// Turns the object into JSON string
+				var json = JSON.stringify(newClass);
+
+				// Sends the data to PHP to update the list.
+				$.get("AddClass.php?jsonObject="+json, function(response){
+					var myObj = JSON.parse(response);
+					// If we are good
+					if (myObj.success) {
+						alert('we gucci');
+					}
+					// Something went wrong
+					else {
+						alert('failed to post data.');
+					}
+				});
+
+			}); // End of Button.Click Function
+	
+
+		}); // End of Document.Ready function
+
+		// ===========================================
+		// Test student Ids I was using for practice
+		// ============================================
+		// w00328546, w00328544, w00328541, w00328532, w00328515, w00328590, w00328549, w00328548, w00328547, w00328596, w00328508, w00328507, w00328506, w00328505, w00328504, w00328509, w00328500, w00328501, w00328502, w00328523
+
+	</script>
+
+</body>
+</html>
