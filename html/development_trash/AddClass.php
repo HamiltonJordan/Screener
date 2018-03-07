@@ -11,7 +11,6 @@
         public $success = false;
     }
 
-
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -23,9 +22,16 @@
 
     $classData = json_decode($classObject);
 
-    echo $classData->classTitle;
+    $studentIds = $classData->studentList;
 
+    if(is_array($studentIds)) {
+        echo "here sir";
+    }
+    else {
+        echo "nope";
+    }
 
+   
 
 
 ?>
