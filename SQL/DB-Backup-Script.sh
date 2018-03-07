@@ -7,7 +7,7 @@ host="localhost"
 db_name="websitedb"
 
 # Other options
-backup_path="/tmp/Video_BackUp"
+backup_path="/tmp/DB_BackUp"
 date=$(date +"%d-%b-%Y")
 
 # Set default file permissions
