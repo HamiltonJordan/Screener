@@ -50,15 +50,15 @@
 				// Sends the data to PHP to update the list.
 				$.get("AddClass.php?classObject="+json, function(response){
 					console.log(response);
-					// var myObj = JSON.parse(response);
-					// // If we are good
-					// if (myObj.success) {
-					// 	alert('we gucci');
-					// }
-					// // Something went wrong
-					// else {
-					// 	alert('failed to post data.');
-					// }
+					var myObj = JSON.parse(response);
+					// If we are good
+					if (myObj.success) {
+						alert('we gucci, we updated ' + myObj.rowCount);
+					}
+					// Something went wrong
+					else {
+						alert('failed to post data.');
+					}
 				});
 
 			}); // End of Button.Click Function
