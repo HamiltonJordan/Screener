@@ -3,14 +3,6 @@
 <head>
 	<title>Portal</title>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
-
-	<style type="text/css">
-		#studentIds {
-			width: 30%;
-			height: 120%;
-		}
-	</style>
 </head>
 <body>
 
@@ -25,15 +17,13 @@
 	</form>
 
 	<script type="text/javascript">
-
 		// Creates a variable object that will be used to send data to php
 		var newClass = {
 			classTitle: "",
 			classCode: "",
 			studentList: []
 		};
-
-
+		
 		$(document).ready(function () {
 
 			$("#button").click(function(){
@@ -41,15 +31,10 @@
 				var a = $("#studentIds").val().split(',');
 				var length = a.length;
 				
-				// Cleans the input of student IDs.
+				// Cleans the input of student IDs and adds to newClass list.
 				for (var i=0; i < length; i++) {
 					a[i] = a[i].replace(/\s/g, "");
 					newClass.studentList.push(a[i]);
-				}
-
-				// Adds Student Ids to object list
-				for (var i=0; i < newClass.studentList.length; i++) {
-					console.log("Student: " + newClass.studentList[i]);
 				}
 
 				// Updates last values in newClass object.
