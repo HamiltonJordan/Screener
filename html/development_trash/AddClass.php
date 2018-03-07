@@ -21,11 +21,9 @@
 
     $classObject = $_GET["classObject"];
 
-    echo $classObject;
-
     $classData = json_decode($classObject);
 
-   // echo $classData;
+    echo $classData->classTitle;
 
 
 
