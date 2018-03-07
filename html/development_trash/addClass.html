@@ -28,21 +28,18 @@
 
 			$("#button").click(function(){
 				// Grabs student Ids.
-				var a = $("#studentIds").val().split(',');
-				var length = a.length;
+				var studentIds = $("#studentIds").val().split(',');
+				var length = studentIds.length;
 				
 				// Cleans the input of student IDs and adds to newClass list.
 				for (var i=0; i < length; i++) {
-					a[i] = a[i].replace(/\s/g, "");
-					newClass.studentList.push(a[i]);
+					studentIds[i] = studentIds[i].replace(/\s/g, "");
+					newClass.studentList.push(studentIds[i]);
 				}
 
 				// Updates last values in newClass object.
 				newClass.classTitle = $("#classTitle").val();
 				newClass.classCode  = $("#classCode").val();
-				
-				console.log(newClass.classTitle);
-				console.log(newClass.classCode);
 
 				// Turns the object into JSON string
 				var json = JSON.stringify(newClass);
@@ -65,12 +62,6 @@
 	
 
 		}); // End of Document.Ready function
-
-		// ===========================================
-		// Test student Ids I was using for practice
-		// ============================================
-		// w00328546, w00328544, w00328541, w00328532, w00328515, w00328590, w00328549, w00328548, w00328547, w00328596, w00328508, w00328507, w00328506, w00328505, w00328504, w00328509, w00328500, w00328501, w00328502, w00328523
-
 	</script>
 
 </body>
