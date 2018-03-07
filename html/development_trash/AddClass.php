@@ -9,6 +9,7 @@
 
     class ReturnObject {
         public $success = false;
+        public $rowCount = 0;
     }
 
     // Create connection
@@ -26,15 +27,19 @@
 
     $classId = 69;
 
+    $counter = 0;
+
+    $returnObj = new ReturnObject();
     if(is_array($studentIds)) {
         foreach($studentIds as $Id) {
             $query1 = mysqli_real_escape_string($conn, $Id);
             $query ="INSERT INTO EnrolledIn (UserId, ClassId) VALUES ( '". $Id."','".$classId."' )";
             mysqli_query($conn, $query);
+            $returnObj->rowCount = $returnObj->rowCount + 1;
         }
+        $returnObj->success = true;
     }
 
-   
-
+    echo json_encode($returnObj);
 
 ?>
