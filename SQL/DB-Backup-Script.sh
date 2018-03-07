@@ -7,7 +7,7 @@ host="localhost"
 db_name="websitedb"
 
 # Other options
-backup_path="/home/jordan/Desktop"
+backup_path="/home/screener/Screener/SQL"
 date=$(date +"%d-%b-%Y")
 
 # Set default file permissions
