@@ -29,7 +29,7 @@
     if(is_array($studentIds)) {
         foreach($studentIds as $Id) {
             $query1 = mysqli_real_escape_string($conn, $Id);
-            $query ="INSERT INTO EnrolledIn (ClassId, StudentId) VALUES ( '". $classId."','".$Id."' )";
+            $query ="INSERT INTO EnrolledIn (UserId, ClassId) VALUES ( '". $Id."','".$classId."' )";
             mysqli_query($conn, $query);
         }
     }
