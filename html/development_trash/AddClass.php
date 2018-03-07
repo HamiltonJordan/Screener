@@ -28,7 +28,7 @@
 
     if(is_array($studentIds)) {
         foreach($studentIds as $Id) {
-            $query1 = mysql_real_escape_string($Id);
+            $query1 = mysqli_real_escape_string($Id);
             $query ="INSERT INTO EnrolledIn (ClassId, StudentId) VALUES ( '". $classId."','".$Id."' )";
             mysqli_query($conn, $query);
         }
