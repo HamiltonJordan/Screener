@@ -2,6 +2,8 @@
 
     $conn = include("DBConnect.php");
 
+    $userId = "1";
+
     if ($result = $conn->query("
 		SELECT Video.Title, Video.URL FROM User
 		INNER JOIN EnrolledIn ON
