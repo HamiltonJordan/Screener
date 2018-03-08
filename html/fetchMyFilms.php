@@ -3,9 +3,12 @@
 	error_reporting(E_ALL); 
 	ini_set('display_errors',1);
 
-	// Connect to the database
-	require("DBConnect.php");
-	$conn = db_connect();
+    // Connect to the database
+    require("DBConnect.php");
+	$conn = db_connect();	
+
+	$userId=$_GET["userId"];
+	$return_arr = array();
 
 	if ($result = $conn->query("
 		SELECT Video.Title, Video.URL FROM User
