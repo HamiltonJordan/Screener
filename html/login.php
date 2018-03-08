@@ -2,10 +2,9 @@
     error_reporting(E_ALL); 
     ini_set('display_errors',1);
 
-    $servername = "127.0.0.1";
-    $username = "root";
-    $password = "jthklo123";
-    $dbname = 'websitedb';
+    // Connect to the database
+    require("DBConnect.php");
+	$conn = db_connect();
 
     class ReturnObject {
         public $success = false;
@@ -15,13 +14,6 @@
 
     $email = $_GET["email"];
     $pword = $_GET["password"];
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     $returnObj = new ReturnObject();
     if ($result = $conn->query("SELECT * FROM User WHERE Email = '$email' AND Password = '$pword'")) {

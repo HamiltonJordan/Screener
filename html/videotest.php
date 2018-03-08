@@ -1,8 +1,7 @@
  <?php
-$servername = "localhost";
-$username = "root";
-$password = "jthklo123";
-$dbname = 'websitedb';
+    // Connect to the database
+    require("DBConnect.php");
+	$conn = db_connect();
 
 echo "Start videotest.php";
 class Video {
@@ -14,14 +13,6 @@ class ReturnObject {
   public $success = false;
   public $videos = "";
   public $error = "";
-}
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
 }
 
 echo "Connected successfully";

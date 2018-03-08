@@ -1,8 +1,7 @@
  <?php
-$servername = "localhost";
-$username = "root";
-$password = "jthklo123";
-$dbname = 'websitedb';
+    // Connect to the database
+    require("DBConnect.php");
+	$conn = db_connect();
 
 echo "Start videotest.php";
 class Video {
@@ -14,14 +13,6 @@ class ReturnObject {
   public $success = false;
   public $videos = "";
   public $error = "";
-}
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
 }
 
 echo "Connected successfully";
@@ -48,14 +39,14 @@ if ($result->num_rows > 0) {
     else {
     	$returnObj = new ReturnObject();
     	$returnObj->success = False;
-    	$returnObj->error = "Videos found in database, but fetch/push failed';
+    	$returnObj->error = "Videos found in database, but fetch/push failed";
     	echo json_encode($returnObj);
     }
 } 
 else {
     $returnObj = new ReturnObject();
     $returnObj->success = False;
-    $returnObj->error = "No videos found in database';
+    $returnObj->error = "No videos found in database";
     echo json_encode($returnObj);
 }
 ?>
