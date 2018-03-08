@@ -10,7 +10,7 @@
 
 
 return (object) array(
-    'servername' => "localhost",
+    'servername' => "127.0.0.1",
     'username' => "root",
     'password' => "jthklo123",
     'dbname' => "websitedb"

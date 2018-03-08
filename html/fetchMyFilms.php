@@ -3,12 +3,14 @@
 	error_reporting(E_ALL); 
 	ini_set('display_errors',1);
 
-	$servername = "127.0.0.1";
-	$username = "root";
-	$password = "jthklo123";
-	$dbname = 'websitedb';
+	require 'DBConnect.php';
 
-	$userId=$_GET["userId"];
+	// $servername = "127.0.0.1";
+	// $username = "root";
+	// $password = "jthklo123";
+	// $dbname = 'websitedb';
+
+	$userId="1";  //$_GET["userId"];
 	$return_arr = array();
 	
 	// Create connection
