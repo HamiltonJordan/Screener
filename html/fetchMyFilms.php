@@ -3,7 +3,7 @@
 	error_reporting(E_ALL); 
 	ini_set('display_errors',1);
 
-	require 'DBConnect.php';
+	require('DBConnect.php');
 
 	// $servername = "127.0.0.1";
 	// $username = "root";
