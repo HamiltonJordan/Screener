@@ -25,8 +25,8 @@
     if(is_array($studentIds)) {
         foreach($studentIds as $Id) {
 
-            $result = mysqli_query("SELECT Id FROM Users WHERE WheatonId='$Id' LIMIT 1");
-            $row = mysql_fetch_assoc($result);
+            $result = mysqli_query($conn, "SELECT Id FROM Users WHERE WheatonId='$Id' LIMIT 1");
+            $row = mysqli_fetch_assoc($conn, $result);
             echo $row['Id'];
 
 
