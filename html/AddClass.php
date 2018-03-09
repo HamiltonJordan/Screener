@@ -25,9 +25,18 @@
     if(is_array($studentIds)) {
         foreach($studentIds as $Id) {
 
-            $result = mysqli_query($conn, "SELECT Id FROM Users WHERE WheatonId='$Id' LIMIT 1");
-            $row = mysqli_fetch_assoc($result);
-            echo $row['Id'];
+            if ($result = $conn->query("
+                SELECT Id
+                From User
+                WHERE User.WheatonId = '$Id'
+                Limit 1;
+                ")) 
+            {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo $row['Id'];
+                    
+                }
+            }
 
 
             // $query1 = mysqli_real_escape_string($conn, $Id);
