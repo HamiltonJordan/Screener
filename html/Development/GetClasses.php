@@ -57,15 +57,7 @@
         $returnObj->error = "No classes found in database";
         echo json_encode($returnObj);
     }
-    $conn->close();
     $result->close();
 		/* free result set */
-	
-
-
-	mysqli_close($conn);
-	//$returnObj = new ReturnObject();
-	//echo json_encode($returnObj);
-
 
 ?>
