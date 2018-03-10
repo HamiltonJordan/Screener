@@ -18,7 +18,7 @@
         public $Number = "";
     }
 
-	$userId='1';//$_GET["userId"];
+	$userId=$_GET["userId"];
 	$class_array = array();
 
 	if ($result = $conn->query("

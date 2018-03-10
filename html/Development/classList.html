@@ -13,8 +13,8 @@
         <table id="selector_table">
         <tbody>
             <tr>
-                <th>Title</th>
-                <th>URL</th> 
+                <th>Class Tile</th>
+                <th>Class Number</th> 
             </tr>
         </tbody>
         </table>
@@ -27,17 +27,15 @@
             var myId = 4;
 
             $.get("GetClasses.php?userId="+myId, "", function (response){
-			    myFilms=JSON.parse(response);
-			    console.log("response: " + response);
-
-                // for (i = 0; i < myFilms.length; i++){
-                //     $("#selector_table").append('<tr><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>'+myFilms[i].URL+'</td></tr>');
-                //     $("#a"+i).data("URL", myFilms[i].URL);
-                // }
-                // $("a").click(function(){
-                //     Cookies.remove('URL');
-                //     Cookies.set('URL', $("#"+this.id).data("URL"));
-                // });
+			    var returnObject=JSON.parse(response);
+                var classList = returnObject.classes;
+                for (i = 0; i < classList.length; i++){
+                    $("#selector_table").append('<tr><td class="Title"><a href="classviewer.html" id="a'+i+'">'+classList[i].Title+'</a></td><td>'+classList[i].Number+'</td></tr>');
+                }
+                $("a").click(function(){
+                    Cookies.remove('URL');
+                    Cookies.set('URL', $("#"+this.id).data("URL"));
+                });
 		    });		
             
 
