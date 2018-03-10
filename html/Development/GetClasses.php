@@ -64,7 +64,6 @@
 
 
 	mysqli_close($conn);
-	echo json_encode($return_arr);
 	//$returnObj = new ReturnObject();
 	//echo json_encode($returnObj);
 
