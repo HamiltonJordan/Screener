@@ -18,7 +18,7 @@
         public $Number = "";
     }
 
-	$userId=$_GET["userId"];
+	$userId='1';//$_GET["userId"];
 	$class_array = array();
 
 	if ($result = $conn->query("
@@ -30,10 +30,10 @@
 	{
 		while ($row = mysqli_fetch_assoc($result)) {
             $newClassList =new ClassObject();
-            $newClassList['FirstName'] = $row['FirstName'];
-            $newClassList['LastName'] = $row['LastName'];
-			$newClassList['Title'] = $row['ClassName'];
-			$newClassList['Number'] = $row['ClassNumber'];
+            $newClassList->FirstName = $row['FirstName'];
+            $newClassList->LastName = $row['LastName'];
+			$newClassList->Title = $row['ClassName'];
+			$newClassList->Number = $row['ClassNumber'];
 			array_push($class_array, $newClassList);
 			
         }
