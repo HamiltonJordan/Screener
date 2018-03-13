@@ -24,15 +24,32 @@
 		ORDER BY Class.ClassName;
 		")) 
 	{
+		$last_class="null";
+		$class_count=0;
 		while ($row = mysqli_fetch_assoc($result)) {
-			$row_data['Title'] = $row['Title'];
-			$row_data['URL'] = $row['URL'];
+			/*
+			$className=$row['ClassName'];
+			//If the class is new, increment the slot for classes
+			if ($className != $last_class){
+				$class_count=$class_count+1;
+				$last_class=$className;
+				$row_data['name']=$className;
+			}
+			//Otherwise, continue previous class
+			else
+			
+			$row_data[$class_count]['Title'] = $row['Title'];
+			$row_data[$class_count]['URL'] = $row['URL'];
+
 			array_push($return_arr, $row_data);
+			*/
+			$return_arr[] = $row;
 		}
 	
 		/* free result set */
 		$result->close();
 	}
+	echo "woah!";
 
 	mysqli_close($conn);
 	echo json_encode($return_arr);
