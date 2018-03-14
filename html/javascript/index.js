@@ -1,5 +1,10 @@
 //splash.js
 
+$("#test").click(function(){
+	alert("get clicked");
+});
+
+alert("woah");
 $("#submit").click(function() {
 	var user = $("#email").val();
 	var pass = $("#password").val();
