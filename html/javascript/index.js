@@ -1,12 +1,6 @@
-//splash.js
-
-$("#test").click(function(){
-	alert("get clicked");
-});
-
-alert("woah");
+//index.js
 $("#submit").click(function() {
-	var user = $("#email").val();
+	var user = $("#username").val();
 	var pass = $("#password").val();
 	$.get("login.php?email="+user+"&password="+pass, function(response){
 		var myObj = JSON.parse(response);

@@ -49,7 +49,6 @@
 		/* free result set */
 		$result->close();
 	}
-	echo "woah!";
 
 	mysqli_close($conn);
 	echo json_encode($return_arr);
