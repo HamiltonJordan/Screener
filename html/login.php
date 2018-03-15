@@ -1,4 +1,5 @@
 <?php
+//session_start();
     error_reporting(E_ALL); 
     ini_set('display_errors',1);
 
@@ -11,7 +12,6 @@
         public $loginCheck = false;
         public $id = 0;
     }
-//session_start();
     $email = $_GET["email"];
     $pword = $_GET["password"];
 

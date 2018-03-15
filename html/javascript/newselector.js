@@ -15,7 +15,7 @@ $(document).ready(function () {
 	$("#a"+i).click({p1:myFilms[i].URL,p2:myFilms[i].Title},function(event){
 		url=event.data.p1;
 		title=event.data.p2;
-		 $.get("getvideo.php?video="+url+"&&titlev="+title, "", function (response){
+		 $.get("getvideo.php?video="+url+"&titlev="+title, "", function (response){
         	json=JSON.parse(response);
 		 })})}
 }
