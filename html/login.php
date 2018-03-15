@@ -11,7 +11,7 @@
         public $loginCheck = false;
         public $id = 0;
     }
-
+//session_start();
     $email = $_GET["email"];
     $pword = $_GET["password"];
 
@@ -21,6 +21,8 @@
             $returnObj->loginCheck = true;
             $returnObj->success = true;
             $returnObj->id = $row["Id"];
+	//$_SESSION["id"]=$row["Id"];
+	   // $_SESSION['auth'] = true;
         }
     
         /* free result set */

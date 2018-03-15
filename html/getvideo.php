@@ -1,5 +1,6 @@
 <?php
 	session_start();
+if ($_SESSION['auth'] == true) {
 	$video=$_GET["video"];
 	$title=$_GET["titlev"]; 
 
@@ -13,7 +14,8 @@
 		$_SESSION['savedt']=$title;
 	}  
 	$obj1 = (object)array("title"=> $title,"video"=> $video);
-	echo  json_encode($obj1); 
+	echo  json_encode($obj1);
+} 
 
 
 ?>
