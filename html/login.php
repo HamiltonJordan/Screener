@@ -16,6 +16,8 @@
     $email = $_GET["email"];
     $pword = $_GET["password"];
 
+    echo ($email, $pword);
+
     $returnObj = new ReturnObject();
     if ($result = $conn->query("SELECT * FROM User WHERE Email = '$email' AND Password = '$pword'")) {
         while ($row = mysqli_fetch_assoc($result)) {
