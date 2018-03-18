@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Spectral+SC');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 html,
 body {
 	height: 100vh;
 	width: 100vw;
-	overflow-x: hidden;
+	overflow: hidden;
 	background-color: powderblue;
 }
 .row.no-gutter {
@@ -20,20 +21,30 @@ body {
    padding: 0 !important;
    margin: 0 !important;
 }
-#graphic_window img{
-    position: relative;
-    overflow: hidden;
-    background-color: #abc;
-    height: 35%;
-    top: 30vh;
-    left: 0;
+.navbar{
+	height: 56px;
+}
+.navbar-brand h1
+{
+    font-family: 'Roboto Condensed', sans-serif;
+	color: #eee;
+	font-size: 50px;
+	margin: 0px;
+	padding: 0px;
+	line-height: 0px;
+}
+#graphic_window {
+	height: calc(100vh - 56px);
+	min-height: 550px;
+
 }
 .slideshow {
 	position: relative;
     overflow: hidden;
 }
 .images {
-	background: url('../resources/staticBanner.jpg');
+	background: url('../resources/staticBanner2.jpg');
+	background-size: contain;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -66,7 +77,8 @@ body {
 	height: 100%;
 }
 #login_wrapper {
-	height: 100%;
+	height: calc(100vh - 56px);
+	min-height: 550px;
 	display: -ms-flexbox;
 	display: -webkit-box;
 	display: flex;

@@ -1,7 +1,29 @@
-	table, th, td {
-		border: 1px solid black;
-		border-collapse: collapse;
-	}
-	th, td {
-		padding: 15px;
-	}
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+.navbar-brand h1
+{
+    font-family: 'Roboto Condensed', sans-serif;
+	color: #eee;
+	font-size: 50px;
+	margin: 0px;
+	padding: 0px;
+	line-height: 0px;
+}
+
+body {
+	background-color: #001f51;
+}
+.navbar{
+	height: 56px;
+}
+#main {
+	/*nav height = 56, margin-top=20, 56+20=76*/
+	height: calc(100vh - 76px);
+}
+#selector-table {
+	border-radius: 5px;
+	padding: 15px;
+	background-color: white;
+	margin-top: 20px;
+}
+
+
