@@ -4,6 +4,7 @@
   //  ini_set('display_errors',1);
 
     // Connect to the database
+    echo("we're good");
     require("DBConnect.php");
 	$conn = db_connect();
 
