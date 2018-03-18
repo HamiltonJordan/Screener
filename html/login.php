@@ -5,7 +5,7 @@
 
     // Connect to the database
     echo("we're good");
-    require("DBConnect.php");
+    //require("DBConnect.php");
 	$conn = db_connect();
 
     class ReturnObject {
