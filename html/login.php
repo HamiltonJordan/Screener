@@ -16,7 +16,7 @@
     $email = $_GET["email"];
     $pword = $_GET["password"];
 
-    echo ($email+","+$pword);
+    echo json_encode($email);
 
     $returnObj = new ReturnObject();
     if ($result = $conn->query("SELECT * FROM User WHERE Email = '$email' AND Password = '$pword'")) {
