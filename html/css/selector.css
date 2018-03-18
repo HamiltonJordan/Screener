@@ -11,6 +11,7 @@
 
 body {
 	background-color: #001f51;
+	min-width: 525px;
 }
 .navbar{
 	height: 56px;
@@ -19,9 +20,13 @@ body {
 	/*nav height = 56, margin-top=20, 56+20=76*/
 	height: calc(100vh - 76px);
 }
+#main h1{
+
+}
+
 #selector-table {
 	border-radius: 5px;
-	padding: 15px;
+	padding: 20px;
 	background-color: white;
 	margin-top: 20px;
 }
