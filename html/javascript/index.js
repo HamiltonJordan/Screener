@@ -1,4 +1,5 @@
 //index.js
+
 $("#submit").click(function() {
 	var user = $("#username").val();
 	var pass = $("#password").val();
@@ -14,3 +15,4 @@ $("#submit").click(function() {
 		}
 	});
 });
+
