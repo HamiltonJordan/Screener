@@ -4,8 +4,7 @@
   //  ini_set('display_errors',1);
 
     // Connect to the database
-    echo("we're good");
-    //require("DBConnect.php");
+    require("DBConnect.php");
 	$conn = db_connect();
 
     class ReturnObject {
@@ -15,8 +14,6 @@
     }
     $email = $_GET["email"];
     $pword = $_GET["password"];
-
-    echo ($email);
 
     $returnObj = new ReturnObject();
     if ($result = $conn->query("SELECT * FROM User WHERE Email = '$email' AND Password = '$pword'")) {
