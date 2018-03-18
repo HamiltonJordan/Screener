@@ -1,6 +1,7 @@
 <?php
-    error_reporting(E_ALL); 
-    ini_set('display_errors',1);
+//session_start();
+  //  error_reporting(E_ALL); 
+  //  ini_set('display_errors',1);
 
     // Connect to the database
     require("DBConnect.php");
@@ -11,7 +12,6 @@
         public $loginCheck = false;
         public $id = 0;
     }
-
     $email = $_GET["email"];
     $pword = $_GET["password"];
 
@@ -21,6 +21,8 @@
             $returnObj->loginCheck = true;
             $returnObj->success = true;
             $returnObj->id = $row["Id"];
+	//$_SESSION["id"]=$row["Id"];
+	   // $_SESSION['auth'] = true;
         }
     
         /* free result set */

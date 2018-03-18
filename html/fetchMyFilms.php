@@ -3,10 +3,13 @@
 	error_reporting(E_ALL); 
 	ini_set('display_errors',1);
 
+//working with sessions
+//session_start();
+//if ($_SESSION['auth'] == true) {
     // Connect to the database
     require("DBConnect.php");
-	$conn = db_connect();	
-
+	//session_start();	
+	//$userId=$_SESSION['id'];
 	$userId=$_GET["userId"];
 	$return_arr = array();
 
@@ -52,5 +55,5 @@
 
 	mysqli_close($conn);
 	echo json_encode($return_arr);
-
+//}
 ?>
