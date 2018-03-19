@@ -1,6 +1,5 @@
 $(document).ready(function () {
-	/*var myId = Cookies.get('loginId');*/
-	myId = 2;
+	var myId = Cookies.get('loginId');
 
 	//PHP - request the JSON list of film information available to user
 	$.get("http://screener.onthewifi.com/fetchMyFilms.php?userId="+myId, "", function (response){
@@ -12,9 +11,7 @@ $(document).ready(function () {
 		//For every film in the list returned, create a cell in the table
 		for (i = 0; i < myFilms.length; i++){
 			if(myFilms[i].ClassName != $last_class){
-				alert("a");
 				$("#entry-point").append('<tr class="table-primary"><th scope="row" colspan="4">'+myFilms[i].ClassName+'</th></tr>');
-				alert("b");
 				$last_class = myFilms[i].ClassName;
 			}
 			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+(i+1)+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>1:11</td><td>3/31/18</td></tr>');
