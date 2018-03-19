@@ -9,6 +9,7 @@
 //if ($_SESSION['auth'] == true) {
     // Connect to the database
     require("DBConnect.php");
+    $conn = db_connect();
 	//session_start();	
 	//$userId=$_SESSION['id'];
 	$userId=$_GET["userId"];
