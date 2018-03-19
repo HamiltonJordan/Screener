@@ -4,6 +4,7 @@ $(document).ready(function () {
 	myId = 2;
 	//PHP - request the JSON list of film information available to user
 	$.get("../fetchMyFilms.php?userId="+myId, "", function (response){
+		/*
 		alert("strt php");
 		myFilms=JSON.parse(response);
 		//myFilms = {}
@@ -11,13 +12,14 @@ $(document).ready(function () {
 		console.log("myFilms: " + myFilms);
 		//For every film in the list returned, create a cell in the table
 		for (i = 0; i < myFilms.length; i++){
-			/*$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+i+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>1:11</td><td>3/31/18</td></tr>');*/
+			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+i+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>1:11</td><td>3/31/18</td></tr>');
 			$("#a"+i).data("URL", myFilms[i].URL);
 		}
 		$("a").click(function(){
 			Cookies.remove('URL');
 			Cookies.set('URL', $("#"+this.id).data("URL"));
 		});
+		*/
 		alert("end php");
 	});		
 	/*
