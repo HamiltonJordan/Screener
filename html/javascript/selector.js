@@ -11,7 +11,7 @@ $(document).ready(function () {
 		console.log("myFilms: " + myFilms);
 		//For every film in the list returned, create a cell in the table
 		for (i = 0; i < myFilms.length; i++){
-			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+i+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>1:11</td><td>3/31/18</td></tr>');
+			/*$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+i+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>1:11</td><td>3/31/18</td></tr>');*/
 			$("#a"+i).data("URL", myFilms[i].URL);
 		}
 		$("a").click(function(){
