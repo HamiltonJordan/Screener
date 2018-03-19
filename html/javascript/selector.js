@@ -1,6 +1,7 @@
 $(document).ready(function () {
 	alert("yo");
 	var myId = Cookies.get('loginId');
+	myId = 2;
 	//PHP - request the JSON list of film information available to user
 	$.get("fetchMyFilms.php?userId="+myId, "", function (response){
 		alert("strt php");
