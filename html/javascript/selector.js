@@ -3,7 +3,7 @@ $(document).ready(function () {
 	var myId = Cookies.get('loginId');
 	myId = 2;
 	//PHP - request the JSON list of film information available to user
-	$.get("../fetchMyFilms.php?userId="+myId, "", function (response){
+	$.get("http://screener.onthewifi.com/fetchMyFilms.php?userId="+myId, "", function (response){
 		/*
 		alert("strt php");
 		myFilms=JSON.parse(response);
