@@ -16,19 +16,33 @@ body {
 .navbar{
 	height: 56px;
 }
-#main {
+
+.outer {
+    display: table;
+    position: absolute;
 	/*nav height = 56, margin-top=20, 56+20=76*/
 	height: calc(100vh - 76px);
+    width: 100%;
+
+}
+#main {
+	height: 100%;
+    display: table-cell;
+    vertical-align: middle;
 }
 #main h1{
 
 }
-
 #selector-table {
 	border-radius: 5px;
-	padding: 20px;
+	padding: 15px;
 	background-color: white;
-	margin-top: 20px;
+	width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+
 }
-
-
+.movie-cell:hover {
+	background-color: #eee;
+	cursor: pointer;
+}
