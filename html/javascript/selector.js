@@ -1,7 +1,9 @@
 $(document).ready(function () {
+	alert("yo");
 	var myId = Cookies.get('loginId');
 	//PHP - request the JSON list of film information available to user
 	$.get("fetchMyFilms.php?userId="+myId, "", function (response){
+		alert("strt php");
 		myFilms=JSON.parse(response);
 		//myFilms = {}
 		console.log("response: " + response);
@@ -17,6 +19,7 @@ $(document).ready(function () {
 			Cookies.remove('URL');
 			Cookies.set('URL', $("#"+this.id).data("URL"));
 		});
+		alert("end php");
 	});		
 	/*
 	var jsonOBJ = {
