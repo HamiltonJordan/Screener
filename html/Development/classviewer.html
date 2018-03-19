@@ -1,0 +1,40 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Class List</title>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</head>
+<body>
+    
+    <h1 id="ClassTitle"></h1>
+    
+
+
+    <script>
+        $(document).ready(function () {
+
+            var myId = 1;
+            var firstName = "";
+            var lastName = "";
+
+            $.get("GetClassInfo.php?userId="+myId, "", function (response){
+			    var returnObject=JSON.parse(response);
+                var classList = returnObject.classes;
+                for (i = 0; i < classList.length; i++){
+                    $("#selector_table").append('<tr><td class="Title"><a href="classviewer.html" id="a'+i+'">'+classList[i].Title+'</a></td><td>'+classList[i].Number+'</td></tr>');
+                    firstName = classList[i].FirstName;
+                    lastName = classList[i].LirstName;
+                }
+
+            $("userName").text(firstName + " " + lastName);
+                
+		    });		
+            
+
+		}); // End of Document.Ready function    
+    
+    </script>
+
+</body>
+</html>
