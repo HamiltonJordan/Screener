@@ -2,11 +2,10 @@ $(document).ready(function () {
 	alert("yo");
 	/*var myId = Cookies.get('loginId');*/
 	myId = 2;
-	$test = $("#selector-table").html();
-	alert($test);
+
 	//PHP - request the JSON list of film information available to user
 	$.get("http://screener.onthewifi.com/fetchMyFilms.php?userId="+myId, "", function (response){
-		/*
+		
 		alert("strt php");
 		myFilms=JSON.parse(response);
 		//myFilms = {}
@@ -21,7 +20,7 @@ $(document).ready(function () {
 			Cookies.remove('URL');
 			Cookies.set('URL', $("#"+this.id).data("URL"));
 		});
-		*/
+		
 		alert("end php");
 	});		
 	/*
