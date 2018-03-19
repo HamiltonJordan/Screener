@@ -11,8 +11,12 @@ $(document).ready(function () {
 		//myFilms = {}
 		console.log("response: " + response);
 		console.log("myFilms: " + myFilms);
+		$last_class="null";
 		//For every film in the list returned, create a cell in the table
 		for (i = 0; i < myFilms.length; i++){
+			if(myFilms[i].ClassName != $last_class){
+				alert(myFilms[i].ClassName);
+			}
 			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+(i+1)+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>1:11</td><td>3/31/18</td></tr>');
 			$("#a"+i).data("URL", myFilms[i].URL);
 		}
