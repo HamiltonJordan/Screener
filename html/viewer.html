@@ -1,28 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.o$
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <!--
+<!DOCTYPE html>
+	<!--
 		Modified from the Debian original for Ubuntu
 		Last updated: 2014-03-19
 		See: https://launchpad.net/bugs/1288690
-  -->
+	-->
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Video Portal</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Screener - Watch Movies</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/viewer.css">
-
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script
+			src="https://code.jquery.com/jquery-3.3.1.js"
+			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 </head>
 
 <body oncontextmenu="return false;">
-	<h2>Title Slot</h2>
-	<video id="portal" controls>
-		<source id="video_address" src="" type="video/mp4" poster="resources/newHope.jpg" width="640" height="400">
-		Your browser does not support the video tag..
-	</video> 
-	<script type="text/javascript" src="javascript/viewer.js"></script>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#"><h1><b><i>Screener</i></b></h1></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Selector</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About Us</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="viewer.html">Resume Viewing</a><span class="sr-only">(current)</span>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="outer">
+		<div class="container" id="main">
+		<div class="row" id="selector-table">
+			<video id="portal" controls>
+				<source id="video_address" src="" type="video/mp4" poster="resources/newHope.jpg" width="640" height="400">
+				Your browser does not support the video tag..
+			</video> 
+			<script type="text/javascript" src="javascript/viewer.js"></script>
+		</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript" src="javascript/selector.js"></script>
+	<!--<script type="text/javascript" src="javascript/newselector.js"></script>-->
 </body>
 </html>
-
-
