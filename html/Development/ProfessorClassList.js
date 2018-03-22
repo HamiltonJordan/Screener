@@ -14,7 +14,7 @@ $(document).ready(function() {
 				$("#entry-point").append('<tr class="table-primary"><th scope="row" colspan="4">'+myClasses[i].ClassName+'</th></tr>');
 				$last_class = myClasses[i].ClassName;
 			}
-			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+(i+1)+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myClasses[i].ClassName+'</a></td><td>'+myClasses.ClassNumber'</td></tr>');
+			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+(i+1)+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myClasses[i].ClassName+'</a></td><td>'+myClasses.ClassNumber+'</td></tr>');
 			$("#a"+i).data("URL", myClasses[i].ClassNumber);
 		}
 	});		
