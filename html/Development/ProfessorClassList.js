@@ -6,6 +6,7 @@ $(document).ready(function() {
 	//PHP - request the JSON list of film information available to user
 	$.get("fetchMyClasses.php?userId="+myId, "", function (response){
 		myClasses=JSON.parse(response);
+		console.log(response);
 		
 		$last_class="null";
 		//For every film in the list returned, create a cell in the table
