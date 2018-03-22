@@ -10,7 +10,7 @@ $(document).ready(function() {
 		$last_class="null";
 		//For every film in the list returned, create a cell in the table
 		for (i = 0; i < myClasses.length; i++){
-			if(myFilms[i].ClassName != $last_class){
+			if(myClasses[i].ClassName != $last_class){
 				$("#entry-point").append('<tr class="table-primary"><th scope="row" colspan="4">'+myClasses[i].ClassName+'</th></tr>');
 				$last_class = myClasses[i].ClassName;
 			}
