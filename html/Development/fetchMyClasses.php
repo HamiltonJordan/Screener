@@ -13,7 +13,8 @@
 		SELECT User.FirstName, User.LastName, Class.Id, Class.ClassName, Class.ClassNumber 
 		FROM Class
 		INNER JOIN Teaches on Class.Id = Teaches.ClassId
-		INNER JOIN User ON Teaches.UserId = User.Id")) 
+		INNER JOIN User ON Teaches.UserId = User.Id
+		WHERE User.Id = '$userId'")) 
 	{
 
 		while ($row = mysqli_fetch_assoc($result)) {
@@ -22,7 +23,7 @@
 			$row_data['ClassId']     = $row['Id'];
 			$row_data['ClassName'] 	 = $row['ClassName'];
 			$row_data['ClassNumber'] = $row['ClassNumber'];
-			
+
 			array_push($return_arr, $row_data);
 		}
 		/* free result set */
