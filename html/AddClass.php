@@ -24,7 +24,6 @@
 
     // Adding new class to Class table
     if($classData->classTitle != '' && $classData->classCode != '') {
-        $query1 = mysqli_real_escape_string($conn, $Id);
         $query ="INSERT INTO Class (ClassName, ClassNumber, Active) VALUES ( '". $classData->classTitle."','".$classData->classCode."','".$classData->Active."' )";
         mysqli_query($conn, $query);
     }
