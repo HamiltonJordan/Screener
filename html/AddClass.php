@@ -31,7 +31,7 @@
         $query2 = mysqli_real_escape_string($conn, $classCode);
         $query ="INSERT INTO 'Class' (ClassName, ClassNumber, Active) VALUES ( '". $classTitle."','".$classCode."','".$active."' )";
         mysqli_query($conn, $query);
-        echo $mysqli->error;
+        echo $query;
         $returnObj->rowCount = $classId; //Delete
         $returnObj->success = true;     // Delete
     }
