@@ -24,7 +24,11 @@
 
     // Adding new class to Class table {not working}
     if($classData->classTitle != '' && $classData->classCode != '') {
-        $query ="INSERT INTO Class (ClassName, ClassNumber, Active) VALUES ( '". $classData->classTitle."','".$classData->classCode."','".$classData->Active."' )";
+        $classTitle = $classData->classTitle;
+        $classCode  = $classData->classCode;
+        $query1 = mysqli_real_escape_string($conn, $classTitle);
+        $query2 = mysqli_real_escape_string($conn, $classCode);
+        $query ="INSERT INTO Class (ClassName, ClassNumber, Active) VALUES ( '". $classTitle."','".$classCode."','"1"' )";
         mysqli_query($conn, $query);
         $returnObj->rowCount = $classId; //Delete
         $returnObj->success = true;     // Delete
