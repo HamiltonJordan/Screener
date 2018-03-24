@@ -15,18 +15,22 @@ $(document).ready(function() {
 
                         */
                 for (i = 0; i < myClasses.length; i++){
-                    $(".button").append('<button type="button">'+myClasses[i].ClassName+'</button>');
+                    $(".checkbox").append('<input type="checkbox" name="classopt" value='+myClasses[i].ClassNumber+'>'+myClasses[i].ClassName+'</input>');
                     
           }
 })
+
 
 $("#add").click(function(){
  $(".form").append('<form action="#">\
 <input type="text" name="name" placeholder="Enter Film Name">\
 <input type="text" name="dueDate" placeholder="Due Date"><br>\
- <input type="text" name="runtime" placeholder="runtime">\
- <div class="button"></div>\
- <input type="file" id="image"  name="image" >\
+ <input type="text" name="runtime" placeholder="runtime">\);
+   for (i = 0; i < myClasses.length; i++){
+                    $(".form").append('<div class=checkbox><input type="checkbox" name="classopt" value='+myClasses[i].ClassNumber+'>'+myClasses[i].ClassName+'</input></div>');
+
+          }
+  $(".form").append(<input type="file" id="image"  name="image" >\
  <button class="btn btn-sm btn-info upload" type="submit">Upload</button>\
  <button type="button" class="btn btn-sm btn-danger cancel">Cancel</button>\
 <div class="progress progress-striped active">\
@@ -45,7 +49,16 @@ $("#add").click(function(){
     $(document).on('submit','form',function(e){
         e.preventDefault();
         $form = $(this);
-        uploadImage($form,"yes");
+ if($form.children("input").filter('[name=name]').val() ==""){
+        $form.children("input").filter('[name=name]').css('border-color', 'red');
+        run=false;
+                }
+        if( $form.children("input").filter('[name=dueDate]').val() ==""){
+                $form.children("input").filter('[name=dueDate]').css('border-color', 'red');
+        run=false;
+       }
+        if(run==true){ uploadImage($form,"yes");
+        }
     });
   $(document).on('submita','form',function(e){
         e.preventDefault();
