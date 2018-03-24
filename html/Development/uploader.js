@@ -23,7 +23,6 @@ for (i = 0; i < myClasses.length; i++){
  var addition='<input type="checkbox" name="classopt" value='+myClasses[i].ClassNumber+'>'+myClasses[i].ClassName+'</input>'
  total=total+additional
 }
-})
 
 $("#add").click(function(){
  $(".form").append('<form action="#">\
@@ -38,7 +37,7 @@ $("#add").click(function(){
 <div class="progress-bar" style="width:0%"></div>\
 </div>\
 </form>');});
-
+})
     $('.upload-all').click(function(){
         //submit all form
         $('form').trigger("submita");
