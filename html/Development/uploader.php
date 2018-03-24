@@ -13,15 +13,15 @@
 	$runtime=$_POST['runtime'];
 
  // Connect to the database
-    require("DBConnect.php");
-    $conn = db_connect();
+  //  require("DBConnect.php");
+  //  $conn = db_connect();
 
-	$sql = "INSERT INTO Video(Title,URL)
-	VALUES ('upload_folder/$filename', '$name')";
+//	$sql = "INSERT INTO Video(Title,URL,Active)
+//		VALUES ('$name', 'upload_folder/$filename',1);";
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+//if ($conn->query($sql) === TRUE) {
+//    echo "New record created successfully";
+//} else {
+//    echo "Error: " . $sql . "<br>" . $conn->error;
+//}
 ?>

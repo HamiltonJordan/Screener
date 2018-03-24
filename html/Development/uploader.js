@@ -1,4 +1,38 @@
 $(document).ready(function() {
+    var myId = 4;
+ $.get("fetchMyClasses.php?userId="+myId, "", function (response){
+                myClasses=JSON.parse(response);
+                        /*
+
+                        Returned Json from PHP
+                        {
+                            "FirstName": "Michael",
+                            "LastName": "Gousie",
+                            "ClassId": "1",
+                            "ClassName": "Senior Seminar",
+                            "ClassNumber": "Comp 401"
+                          }
+
+                        */
+                for (i = 0; i < myClasses.length; i++){
+                    $(".button").append('<button type="button">'+myClasses[i].ClassName+'</button>');
+                    
+          }
+})
+
+$("#add").click(function(){
+ $(".form").append('<form action="#">\
+<input type="text" name="name" placeholder="Enter Film Name">\
+<input type="text" name="dueDate" placeholder="Due Date"><br>\
+ <input type="text" name="runtime" placeholder="runtime">\
+ <div class="button"></div>\
+ <input type="file" id="image"  name="image" >\
+ <button class="btn btn-sm btn-info upload" type="submit">Upload</button>\
+ <button type="button" class="btn btn-sm btn-danger cancel">Cancel</button>\
+<div class="progress progress-striped active">\
+<div class="progress-bar" style="width:0%"></div>\
+</div>\
+</form>');});
 
     $('.upload-all').click(function(){
         //submit all form
