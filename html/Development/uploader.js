@@ -16,8 +16,19 @@ $(document).ready(function() {
   $(document).on('submita','form',function(e){
         e.preventDefault();
         $form = $(this);
-        uploadImage($form,"no");
-    });
+	var run=true;
+	if($form.children("input").filter('[name=name]').val() ==""){
+	$form.children("input").filter('[name=name]').css('border-color', 'red');
+	run=false;
+		}
+	if( $form.children("input").filter('[name=dueDate]').val() ==""){
+		$form.children("input").filter('[name=dueDate]').css('border-color', 'red');
+	run=false;
+       }
+	if(run==true){ uploadImage($form,"no");
+	}
+    })
+
     function uploadImage($form,check){
 if($form.children("input").filter('#image').val()!=""){
       $form.find('.progress-bar').removeClass('progress-bar-success')
