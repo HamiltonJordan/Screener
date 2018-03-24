@@ -41,7 +41,7 @@
     {
        while ($row = mysqli_fetch_assoc($result)) {
             $classId = $row['Id'];
-            $returnObj->rowCount = $classId //Delete
+            $returnObj->rowCount = $classId; //Delete
             $returnObj->success = true;     // Delete
        } 
     }
