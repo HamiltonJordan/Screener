@@ -22,7 +22,7 @@
 
     $returnObj = new ReturnObject();
 
-    // Adding new class to Class table
+    // Adding new class to Class table {not working}
     if($classData->classTitle != '' && $classData->classCode != '') {
         $query ="INSERT INTO Class (ClassName, ClassNumber, Active) VALUES ( '". $classData->classTitle."','".$classData->classCode."','".$classData->Active."' )";
         mysqli_query($conn, $query);
