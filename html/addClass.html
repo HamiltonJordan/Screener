@@ -3,11 +3,12 @@
 <head>
 	<title>Portal</title>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 </head>
 <body>
 
 	<form>
-		Class Title:<br>
+		Class Name:<br>
   		<input type="text" name="classTitle" id="classTitle"><br>
 		Class Code:<br>
 		<input type="text" name="classCode" id="classCode"><br>
@@ -16,8 +17,8 @@
 		<button type="button" id="button">here</button>
 	</form>
 
-	<script type="text/javascript">
-		// Creates a variable object that will be used to send data to php
+<script type="text/javascript">
+	// Creates a variable object that will be used to send data to php
 		var newClass = {
 			classTitle: "",
 			classCode: "",
@@ -26,11 +27,19 @@
 		
 		$(document).ready(function () {
 
+			console.log('file load');
+
+			// Gets logged in users id
+			var userId = Cookies.get('loginId');
+
 			$("#button").click(function(){
 				// Grabs student Ids.
 				var studentIds = $("#studentIds").val().split(',');
 				var length = studentIds.length;
 				
+				// Test ClassIds
+				// w00328546, w00328545, w00328544, w00328543, w00328542, w00328541, w00328540, w00328547, w00328548, w00328549
+
 				// Cleans the input of student IDs and adds to newClass list.
 				for (var i=0; i < length; i++) {
 					studentIds[i] = studentIds[i].replace(/\s/g, "");
@@ -40,29 +49,35 @@
 				// Updates last values in newClass object.
 				newClass.classTitle = $("#classTitle").val();
 				newClass.classCode  = $("#classCode").val();
+				newClass.UserId = userId;
+				newClass.Active = 1;
 
 				// Turns the object into JSON string
 				var json = JSON.stringify(newClass);
 
+				console.log(json);
+
 				// Sends the data to PHP to update the list.
-				$.get("AddClass.php?classObject="+json, function(response){
-					console.log(response);
-					var myObj = JSON.parse(response);
-					// If we are good
-					if (myObj.success) {
-						alert('we gucci, we updated ' + myObj.rowCount);
-					}
-					// Something went wrong
-					else {
-						alert('failed to post data.');
-					}
-				});
+				// $.get("AddClass.php?classObject="+json, function(response){
+				// 	console.log(response);
+				// 	var myObj = JSON.parse(response);
+				// 	// If we are good
+				// 	if (myObj.success) {
+				// 		alert('we gucci, we updated ' + myObj.rowCount);
+				// 	}
+				// 	// Something went wrong
+				// 	else {
+				// 		alert('failed to post data.');
+				// 	}
+				// });
 
 			}); // End of Button.Click Function
 	
 
 		}); // End of Document.Ready function
-	</script>
 
+
+
+</script>
 </body>
 </html>
