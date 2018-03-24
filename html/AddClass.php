@@ -29,7 +29,7 @@
         $active = 1;
         $query1 = mysqli_real_escape_string($conn, $classTitle);
         $query2 = mysqli_real_escape_string($conn, $classCode);
-        $query ="INSERT INTO Class (ClassName, ClassNumber, Active) VALUES ( '". $classTitle."','".$classCode."','"$active"' )";
+        $query ="INSERT INTO Class (ClassName, ClassNumber, Active) VALUES ( '". $classTitle."','".$classCode."','".$active."' )";
         mysqli_query($conn, $query);
         $returnObj->rowCount = $classId; //Delete
         $returnObj->success = true;     // Delete
