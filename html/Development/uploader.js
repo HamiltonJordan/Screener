@@ -1,5 +1,6 @@
 $(document).ready(function() {
     var myId = 4;
+var total='';
  $.get("fetchMyClasses.php?userId="+myId, "", function (response){
                 myClasses=JSON.parse(response);
                         /*
@@ -18,19 +19,19 @@ $(document).ready(function() {
                     $(".checkbox").append('<input type="checkbox" name="classopt" value='+myClasses[i].ClassNumber+'>'+myClasses[i].ClassName+'</input>');
                     
           }
+for (i = 0; i < myClasses.length; i++){
+ var addition='<input type="checkbox" name="classopt" value='+myClasses[i].ClassNumber+'>'+myClasses[i].ClassName+'</input>'
+ total=total+additional
+}
 })
-
 
 $("#add").click(function(){
  $(".form").append('<form action="#">\
 <input type="text" name="name" placeholder="Enter Film Name">\
 <input type="text" name="dueDate" placeholder="Due Date"><br>\
- <input type="text" name="runtime" placeholder="runtime">\);
-   for (i = 0; i < myClasses.length; i++){
-                    $(".form").append('<div class=checkbox><input type="checkbox" name="classopt" value='+myClasses[i].ClassNumber+'>'+myClasses[i].ClassName+'</input></div>');
-
-          }
-  $(".form").append(<input type="file" id="image"  name="image" >\
+ <input type="text" name="runtime" placeholder="runtime">\
+<div class=checkbox>'+total+'</div>\
+<input type="file" id="image"  name="image" >\
  <button class="btn btn-sm btn-info upload" type="submit">Upload</button>\
  <button type="button" class="btn btn-sm btn-danger cancel">Cancel</button>\
 <div class="progress progress-striped active">\
