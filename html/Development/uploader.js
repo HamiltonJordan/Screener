@@ -47,7 +47,7 @@ $("#add").click(function(){
     $(document).on('submit','form',function(e){
         e.preventDefault();
         $form = $(this);
-	var run=false;
+	var run=true;
  if($form.children("input").filter('[name=name]').val() ==""){
         $form.children("input").filter('[name=name]').css('border-color', 'red');
         run=false;
