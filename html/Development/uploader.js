@@ -16,13 +16,10 @@ var total='';
 
                         */
                 for (i = 0; i < myClasses.length; i++){
-                    $(".checkbox").append('<input type="checkbox" name="classopt" value='+myClasses[i].ClassNumber+'>'+myClasses[i].ClassName+'</input>');
-                    
-          }
-for (i = 0; i < myClasses.length; i++){
- var addition='<input type="checkbox" name="classopt" value='+myClasses[i].ClassNumber+'>'+myClasses[i].ClassName+'</input>';
- total=total+addition;
-}
+                    $(".checkbox").append('<input type="checkbox" name="classopt[]" value='+myClasses[i].ClassNumber+'>'+myClasses[i].ClassName+'</input>');
+ 			var addition='<input type="checkbox" name="classopt[]" value='+myClasses[i].ClassNumber+'>'+myClasses[i].ClassName+'</input>';
+			 total=total+addition;
+			}
 })
 
 $("#add").click(function(){

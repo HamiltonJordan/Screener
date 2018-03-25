@@ -13,15 +13,25 @@
 	$runtime=$_POST['runtime'];
 
  // Connect to the database
-  //  require("DBConnect.php");
-  //  $conn = db_connect();
+    require("DBConnect.php");
+   $conn = db_connect();
 
-//	$sql = "INSERT INTO Video(Title,URL,Active)
-//		VALUES ('$name', 'upload_folder/$filename',1);";
+	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', 'upload_folder/$filename',1);";
 
-//if ($conn->query($sql) === TRUE) {
-//    echo "New record created successfully";
-//} else {
-//    echo "Error: " . $sql . "<br>" . $conn->error;
-//}
-?>
+if ($conn->query($sql) === TRUE) {
+$sql = "SELECT id FROM Video WHERE Title=$name and URL= upload_folder/$filename";
+$result = $conn->query($sql);
+$value = mysql_fetch_object($result);
+$videoid =$value->id;
+foreach($_POST['checkopt'] as $selected){
+$sql = "SELECT id FROM Class  WHERE classnumber=$selected";
+$result = $conn->query($sql);
+$value = mysql_fetch_object($result);
+$classid =$value->id;
+$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES('$classid','videoid');";
+if($conn->query($sql)===TRUE){
+echo "completed";
+
+}
+
+}?>
