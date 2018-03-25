@@ -16,8 +16,8 @@ var total='';
 
                         */
                 for (i = 0; i < myClasses.length; i++){
-                    $(".checkbox").append('<input type="checkbox" name="classopt[]" value='+myClasses[i].ClassNumber+'>'+myClasses[i].ClassName+'</input>');
- 			var addition='<input type="checkbox" name="classopt[]" value='+myClasses[i].ClassNumber+'>'+myClasses[i].ClassName+'</input>';
+                    $(".checkbox").append('<input type="checkbox" name="classopt[]" value='+myClasses[i].ClassId+'>'+myClasses[i].ClassName+'</input>');
+ 			var addition='<input type="checkbox" name="classopt[]" value='+myClasses[i].ClassId+'>'+myClasses[i].ClassName+'</input>';
 			 total=total+addition;
 			}
 })
