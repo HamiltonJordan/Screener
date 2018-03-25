@@ -33,5 +33,6 @@ if($conn->query($sql)===TRUE){
 echo "completed";
 
 }
-
+}
 }?>
+
