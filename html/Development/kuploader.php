@@ -1,6 +1,5 @@
 <?php
 echo "hello";
-error_reporting(-1);
  error_log(  "NNNNNNNNNNNNNNNNNNNhello\n",3,"/home/screener/log/php.log");
 //       if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_FILES['image'])){
 	$tmp_file = $_FILES['image'][ 'tmp_name'];
@@ -13,7 +12,6 @@ $uploaddir = "/home/screener/Screener/html/Development/upload_folder/";
 error_log( "yesyes",3,"/home/screener/log/php.log");
  }else{
   error_log( $_FILES['image']['error']." After Move CommandT\n Tmp:".$tmp_file."Upload: \n".$uploadfile,3,"/home/screener/log/php.log");
-  error_log(print_r(error_get_last()) ,3,"/home/screener/log/php.log");
 }
 //	$tmp_file = '/Users/kathleenorechia/test.txt';
 //	$uploadfile= $uploaddir . 'test.txt';

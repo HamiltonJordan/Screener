@@ -22,8 +22,9 @@ var total='';
 			}
 })
 
+
 $("#add").click(function(){
- $(".form").append('<form action="#">\
+ $(".form").append('<form id="form" action="#">\
 <input type="text" name="name" placeholder="Enter Film Name">\
 <input type="text" name="dueDate" placeholder="Due Date"><br>\
  <input type="text" name="runtime" placeholder="runtime">\
@@ -35,6 +36,29 @@ $("#add").click(function(){
 <div class="progress-bar" style="width:0%"></div>\
 </div>\
 </form>');});
+ $("#form").validate({
+                rules: {
+                    image: {
+                        required: true,
+                        extension: "mp4|gif|png|ogg|flv|m4p"
+
+                    },
+			name: {
+                        required: true,
+                        minlength: 5
+			} 
+                },
+                messages: {
+                    image: {
+                        extension:"Please select only png, mp4, gif, ogg, and flv  files"
+                    },
+			name: {
+                        required: "Please enter Film name",
+                        minlength: "Please enter minimum 5 characters"
+                    }
+                }
+            });
+               
 
     $('.upload-all').click(function(){
         //submit all form
@@ -47,17 +71,8 @@ $("#add").click(function(){
     $(document).on('submit','form',function(e){
         e.preventDefault();
         $form = $(this);
-	var run=true;
- if($form.children("input").filter('[name=name]').val() ==""){
-        $form.children("input").filter('[name=name]').css('border-color', 'red');
-        run=false;
-                }
-        if( $form.children("input").filter('[name=dueDate]').val() ==""){
-                $form.children("input").filter('[name=dueDate]').css('border-color', 'red');
-        run=false;
-       }
-        if(run==true){ uploadImage($form,"yes");
-        }
+	 uploadImage($form,"yes");
+        
     });
   $(document).on('submita','form',function(e){
         e.preventDefault();
@@ -76,7 +91,10 @@ $("#add").click(function(){
     })
 
     function uploadImage($form,check){
-if($form.children("input").filter('#image').val()!=""){
+var $video=$form.children("input").filter('#image');
+var fsize = $video[0].files[0].size;
+  var ftype =$video[0].files[0].type;
+if($video.val()!="" && fsize<Math.pow(10,9)){
       $form.find('.progress-bar').removeClass('progress-bar-success')
                                     .removeClass('progress-bar-danger');
         var formdata = new FormData($form[0]); //formelement
@@ -96,7 +114,7 @@ if($form.children("input").filter('#image').val()!=""){
         request.send(formdata);
 }
 else if(check=="yes"){
-alert("no video selected to upload");}
+alert("no video selected to upload or File selected is too large");}
         $form.on('click','.cancel',function(){
             request.abort();
             $form.find('.progress-bar')
