@@ -36,10 +36,11 @@ myClass = [
 ];
 */
 function populateClass(response){
+	alert("inside");
 	for (var i = 0; i < $myClasses.ClassList.length; i++){
+		alert("in loop");
 		$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[0].ClassNumber+'</button>');
 	}
-	
 }
 function populateStuds(target_class){
 	//Delete what was previously in students table
