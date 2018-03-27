@@ -8,7 +8,7 @@
 
     class ReturnObject {
         public $success = false;
-        public $ClassList = 0;
+        public $ClassList = "";
     }
     class Classes {
     	public $classTitle = "";
@@ -59,7 +59,6 @@
                 	$newStudent->LastName = $row['LastName'];
                 	$newStudent->WheatonId = $row['WheatonId'];
                     $newClass->classNumber = $row['ClassNumber'];
-                    $returnObj->rowCount = $returnObj->rowCount + 1;
                     array_push($studentArray, $newStudent);  
                 }
                 
@@ -67,6 +66,7 @@
                 array_push($classArray, $newClass);
             }  
     	}
+    	$returnObj->ClassList = $classArray;
        $returnObj->success = true;
     }
     echo json_encode($returnObj);
