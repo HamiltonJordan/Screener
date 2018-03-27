@@ -1,5 +1,6 @@
 //Instructor.js
 var myClass = new Object();
+/*
 myClass = [
 	{
 		ClassName:"ENG310",
@@ -33,6 +34,7 @@ myClass = [
 		]
 	}
 ];
+*/
 function populate(target_class){
 	//alert(myClass.length);
 	$("#id-entry-point").children("tr").remove();
@@ -53,8 +55,9 @@ $(document).ready(function () {
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
 		.done(function (response){
 			alert("success");
-			returnObj = JSON.parse(response);
-			myClass = returnObj.ClassList;
+			$returnObj = JSON.parse(response);
+			alert("a");
+			myClass = $returnObj.ClassList;
 			alert(myClass[i].ClassNumber);
 		})
 		.fail(function (){
