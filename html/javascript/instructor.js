@@ -39,23 +39,58 @@ function populate(target_class){
 	for (var i = 0; i < myClass.length; i++) {
 		if (myClass[i].ClassName == target_class) {
 			for (var j=0; j < myClass[i].student.length; j++) {
-				$("#id-entry-point").append('<tr><td>' + myClass[i].student[j].FirstName + '</td><td>' + myClass[i].student[j].LastName + '</td><td>' + myClass[i].student[j].WID + '</td></tr>');
+				$("#id-entry-point").append('<tr><td>' + myClass[i].student[j].FirstName + '</td><td>' + myClass[i].student[j].LastName + '</td><td>' + myClass[i].student[j].WID + '</td><td class="delete"><svg width="30" height="11" class="minus-frame"><rect x="2" y="1" rx="5" ry="5" width="26" height="8" class="minus-symbol" /></svg></td></tr>');
 			}
 		}
 	}
+	$('.delete').click(function() {
+		alert('hello world');
+	});
 }
 //alert(myClass[0].student[3].FirstName);
-$class_selected = null;
-$("#id-table").hide();
-$(".classButton").click(function(){
-	$newClass = $("#"+this.id).html();
-	if ($newClass == $class_selected){
-		$("#id-table").hide(500);
-		$class_selected = null;
-	}
-	else{
-		$class_selected = $newClass;
-		populate($class_selected);
-		$("#id-table").show(500);
-	}
+$(document).ready(function () {
+	var myId = 4; //Gousie
+	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId, "", function (response){
+		alert("here");
+		myClass=JSON.parse(response);
+		//myFilms = {}
+		console.log("response: " + response);
+		console.log("myFilms: " + myFilms);
+		alert(myClass[0]);
+		/*
+		$last_class="null";
+		//For every film in the list returned, create a cell in the table
+		for (i = 0; i < myFilms.length; i++){
+			if(myFilms[i].ClassName != $last_class){
+				$("#entry-point").append('<tr class="table-primary"><th scope="row" colspan="4">'+myFilms[i].ClassName+'</th></tr>');
+				$last_class = myFilms[i].ClassName;
+			}
+			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+(i+1)+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>1:11</td><td>3/31/18</td></tr>');
+			$("#a"+i).data("URL", myFilms[i].URL);
+		}
+		$("a").click(function(){
+			Cookies.remove('URL');
+			Cookies.set('URL', $("#"+this.id).data("URL"));
+		});
+		*/
+	});	
+	$class_selected = null;
+	$("#id-table").hide();
+	$(".classButton").click(function(){
+		$newClass = $("#"+this.id).html();
+		if ($newClass == $class_selected){
+			$("#id-table").hide(500);
+			$class_selected = null;
+		}
+		else{
+			$class_selected = $newClass;
+			populate($class_selected);
+			$("#id-table").show(500);
+		}
+	});
+
+
+
+	alert("finished");
+
 });

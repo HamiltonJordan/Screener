@@ -5,3 +5,21 @@
 #id-table {
 	
 }
+.delete{
+	fill: red;
+}
+.delete:hover {
+	cursor: pointer;
+	background-color: #ff9993;
+	fill: red;
+}
+.minus-frame {
+	fill: inherit;
+}
+.minus-symbol {
+	fill: inherit;
+	stroke:black;
+	stroke-width:2;
+	opacity:1
+
+}
