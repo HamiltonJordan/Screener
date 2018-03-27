@@ -48,7 +48,7 @@
 				FROM EnrolledIn
 				INNER JOIN User on User.Id = EnrolledIn.UserId
 				INNER JOIN Class on Class.Id = EnrolledIn.ClassId
-				WHERE Class.Id = $classId;
+				WHERE Class.Id = '$classId';
                 ")) 
             {
             	$newClass = new Classes();
