@@ -35,13 +35,7 @@ myClass = [
 	}
 ];
 */
-function populateClass(response){
-	alert("inside");
-	for (var i = 0; i < $myClasses.ClassList.length; i++){
-		alert("in loop");
-		$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[0].ClassNumber+'</button>');
-	}
-}
+
 function populateStuds(target_class){
 	//Delete what was previously in students table
 	$("#id-entry-point").children("tr").remove();
@@ -61,6 +55,13 @@ function populateStuds(target_class){
 }
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
+	function populateClass(response){
+		alert("inside");
+		for (var i = 0; i < $myClasses.ClassList.length; i++){
+			alert("in loop");
+			$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[0].ClassNumber+'</button>');
+		}
+	}
 	var myId = 4; //Gousie
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
 		.done(function (response){
