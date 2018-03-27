@@ -30,27 +30,26 @@
         $query2 = mysqli_real_escape_string($conn, $classCode);
         $query ="INSERT INTO Class (ClassName, ClassNumber) VALUES ( '". $classTitle."','".$classCode."' )";
         mysqli_query($conn, $query);
-        echo $query;
-        $returnObj->rowCount = $classId; //Delete
-        $returnObj->success = true;     // Delete
     }
 
 
     // Getting newly created classe's Id
-    // if ($result = $conn->query("
-    //             SELECT Id
-    //             From Class
-    //             WHERE Class.ClassName = '$classData->classTitle'
-    //             AND Class.ClassNumber = '$classData->classCode'
-    //             AND Class.Active = '$classData->Active'
-    //             Limit 1;
-    //             ")) 
-    // {
-    //    while ($row = mysqli_fetch_assoc($result)) {
-    //         $classId = $row['Id'];
+    if ($result = $conn->query("
+                SELECT Id
+                From Class
+                WHERE Class.ClassName = '$classData->classTitle'
+                AND Class.ClassNumber = '$classData->classCode'
+                Limit 1;
+                ")) 
+    {
+       while ($row = mysqli_fetch_assoc($result)) {
+            $classId = $row['Id'];
+            echo $classId;
+            $returnObj->rowCount = $classId; //Delete
+            $returnObj->success = true;     // Delete
             
-    //    } 
-    // }
+       } 
+    }
 
     // // Adds Students to class under EnrolledIn table
     //if(is_array($studentIds)) {
