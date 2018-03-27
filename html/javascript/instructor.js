@@ -53,7 +53,7 @@ function populateStuds(target_class){
 		}
 	}
 	$('.delete').click(function() {
-		alert('hello world');
+		$c = confirm("Are you sure you want to delete this student?");
 	});
 }
 //alert(myClass[0].student[3].FirstName);
