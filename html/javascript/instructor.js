@@ -1,4 +1,7 @@
 //Instructor.js
+$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId, "", function (response){
+	alert("here");
+}
 var myClass = new Object();
 myClass = [
 	{
@@ -50,6 +53,7 @@ function populate(target_class){
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
 	var myId = 4; //Gousie
+	/*
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId, "", function (response){
 		alert("here");
 		myClass=JSON.parse(response);
@@ -57,7 +61,7 @@ $(document).ready(function () {
 		console.log("response: " + response);
 		console.log("myFilms: " + myFilms);
 		alert(myClass[0]);
-		/*
+		
 		$last_class="null";
 		//For every film in the list returned, create a cell in the table
 		for (i = 0; i < myFilms.length; i++){
