@@ -51,6 +51,7 @@ $(".classButton").click(function(){
 	$newClass = $("#"+this.id).html();
 	if ($newClass == $class_selected){
 		$("#id-table").hide(500);
+		$class_selected = null;
 	}
 	else{
 		$class_selected = $newClass;
