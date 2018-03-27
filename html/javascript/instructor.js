@@ -57,8 +57,11 @@ $(document).ready(function () {
 			alert("success");
 			$returnObj = JSON.parse(response);
 			alert("a");
-			myClass = $returnObj.ClassList;
+			$myClass = $returnObj.ClassList;
+			alert("b");
+			alert(myClass);
 			alert(myClass[i].ClassNumber);
+
 		})
 		.fail(function (){
 			alert("failed to connect to database");
