@@ -49,7 +49,7 @@ function populateStuds(target_class){
 	for (var i = 0; i < $myClasses.ClassList.length; i++) {
 		if ($myClasses.ClassList[i].ClassNumber == target_class) {
 			for (var j=0; j < $myClasses.ClassList[i].studentList.length; j++) {
-				$("#id-entry-point").append('<tr><td>' + $myClasses.ClassList[i].studentList[j].FirstName + '</td><td>' + $myClasses.ClassList[i].studentList[j].LastName + '</td><td>' + $myClasses.ClassList[i].studentList[j].WheatonId + '</td><td class="delete"><svg width="30" height="11" class="minus-frame" data-count='+j+'><rect x="2" y="1" rx="5" ry="5" width="26" height="8" class="minus-symbol" /></svg></td></tr>');
+				$("#id-entry-point").append('<tr><td>' + $myClasses.ClassList[i].studentList[j].FirstName + '</td><td>' + $myClasses.ClassList[i].studentList[j].LastName + '</td><td>' + $myClasses.ClassList[i].studentList[j].WheatonId + '</td><td class="delete"><svg width="30" height="11" class="minus-frame" data-count="'+j+'"><rect x="2" y="1" rx="5" ry="5" width="26" height="8" class="minus-symbol" /></svg></td></tr>');
 			}
 		}
 	}
