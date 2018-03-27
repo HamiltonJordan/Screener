@@ -20,7 +20,7 @@
         $query ="DELETE FROM User WHERE User.Id = '$userId'";
         mysqli_query($conn, $query);
 
-      	if (mysqli_query($con, $query))
+      	if (mysqli_query($conn, $query))
   		{	
   			$returnObj->rowCount = 1;
   			$returnObj->success = true;
