@@ -68,7 +68,7 @@ $(document).ready(function () {
 		.fail(function (){
 			alert("failed to connect to the database");
 		});
-
+	alert("here");
 	$class_selected = null;
 	$("#id-table").hide();
 	$(".classButton").click(function(){
