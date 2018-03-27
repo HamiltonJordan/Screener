@@ -1,4 +1,27 @@
 <?php
+
+	/*
+	EXAMPLE JSON RETURNED OBJECT	
+
+	"success": true,
+	"ClassList": [{
+		"ClassNumber": "Comp 401",
+		"studentList": [{
+			"FirstName": "Daniel",
+			"LastName": "Barber",
+			"WheatonId": "w00328546"
+		}, {
+			"FirstName": "Jordan",
+			"LastName": "Hamilton",
+			"WheatonId": "w00320000"
+		}, {
+			"FirstName": "Kathleen",
+			"LastName": "Orechia",
+			"WheatonId": "w00320000"
+		}]
+	}]
+	*/
+
     error_reporting(E_ALL); 
     ini_set('display_errors',1);
 
@@ -20,12 +43,14 @@
     	public $WheatonId = "";
     }
 
-    $instructorId = 4;
+    $instructorId = 4; // Temp Please Delete Me
+
+    // Arrays to be used in the return JSON object
     $classIdArray = [];
     $studentArray = [];
     $classArray = [];
 
-    // Getting all the classes the professor teaches
+    // Getting all the classes the professor teaches (by ClassIds)
     if ($result = $conn->query("
                 SELECT Id 
                 FROM Class
@@ -37,12 +62,14 @@
        } 
     }
 
+    // If the Professor actually has classes
     if(is_array($classIdArray)) {
 
     	$returnObj = new ReturnObject();
 
         foreach($classIdArray as $classId) {
 
+        	// Querying all students for each class in instructors list
             if ($result = $conn->query("
             	SELECT User.FirstName, User.LastName, User.WheatonId, Class.ClassNumber
 				FROM EnrolledIn
@@ -53,12 +80,15 @@
             {
             	$newClass = new Classes();
 
+            	// Getting each students info for the current class
                 while ($row = mysqli_fetch_assoc($result)) {
+
                 	$newStudent = new Student();
                 	$newStudent->FirstName = $row['FirstName'];
-                	$newStudent->LastName = $row['LastName'];
+                	$newStudent->LastName  = $row['LastName'];
                 	$newStudent->WheatonId = $row['WheatonId'];
                     $newClass->ClassNumber = $row['ClassNumber'];
+
                     array_push($studentArray, $newStudent);  
                 }
                 
@@ -66,8 +96,10 @@
                 array_push($classArray, $newClass);
             }  
     	}
-    	$returnObj->ClassList = $classArray;
+
+       $returnObj->ClassList = $classArray;
        $returnObj->success = true;
     }
+
     echo json_encode($returnObj);
 ?>
