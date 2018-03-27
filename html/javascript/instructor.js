@@ -69,7 +69,7 @@ $(document).ready(function () {
 		.fail(function (){
 			alert("failed to connect to the database");
 		});
-	populateClass();
+	//populateClass();
 	alert("test");
 	$class_selected = null;
 	$("#id-table").hide();
