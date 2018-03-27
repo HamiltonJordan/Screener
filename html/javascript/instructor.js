@@ -56,9 +56,7 @@ function populateStuds(target_class){
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
 	function populateClass(response){
-		alert("inside");
 		for (var i = 0; i < $myClasses.ClassList.length; i++){
-			alert("in loop");
 			$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[0].ClassNumber+'</button>');
 		}
 	}
