@@ -12,7 +12,7 @@
     }
 
 
-    $userId = $_GET["UserId"];
+    $userId = 7;//$_GET["UserId"];
     $returnObj = new ReturnObject();
 
     if($userId != '') {
@@ -21,7 +21,8 @@
         mysqli_query($conn, $query);
 
       	if (mysqli_query($con, $query))
-  		{
+  		{	
+  			$returnObj->rowCount = 1;
   			$returnObj->success = true;
   		}
   	}
