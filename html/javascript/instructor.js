@@ -55,9 +55,9 @@ $(document).ready(function () {
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
 		.done(function (response){
 			alert("success");
-			$returnObj = JSON.parse(response);
+			$myClass = JSON.parse(response);
 			alert("a");
-			$myClass = $returnObj.ClassList;
+			alert($myClass.ClassList[0].ClassNumber);
 			alert("b");
 			alert(myClass[0].ClassNumber);
 			alert("c");
