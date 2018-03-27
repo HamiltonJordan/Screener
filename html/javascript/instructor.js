@@ -52,6 +52,7 @@ $(document).ready(function () {
 	var myId = 4; //Gousie
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
 		.done(function (response){
+			alert("success");
 			returnObj = JSON.parse(response);
 			myClass = returnObj.ClassList;
 			alert(myClass[i].ClassNumber);
