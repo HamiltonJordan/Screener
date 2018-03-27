@@ -59,10 +59,8 @@ $(document).ready(function () {
 			alert("a");
 			$myClass = $returnObj.ClassList;
 			alert("b");
-			alert(myClass.ClassNumber);
-			alert("c");
 			alert(myClass[0].ClassNumber);
-
+			alert("c");
 		})
 		.fail(function (){
 			alert("failed to connect to database");
