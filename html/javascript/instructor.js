@@ -64,23 +64,22 @@ $(document).ready(function () {
 		.done(function (response){
 			$myClasses = JSON.parse(response);
 			populateClass();
+			$class_selected = null;
+			$("#id-table").hide();
+			$(".classButton").click(function(){
+				$newClass = $("#"+this.id).html();
+				if ($newClass == $class_selected){
+					$("#id-table").hide(500);
+					$class_selected = null;
+				}
+				else{
+					$class_selected = $newClass;
+					populateStuds($class_selected);
+					$("#id-table").show(500);
+				}
+			});
 		})
 		.fail(function (){
 			alert("failed to connect to the database");
 		});
-	alert("here");
-	$class_selected = null;
-	$("#id-table").hide();
-	$(".classButton").click(function(){
-		$newClass = $("#"+this.id).html();
-		if ($newClass == $class_selected){
-			$("#id-table").hide(500);
-			$class_selected = null;
-		}
-		else{
-			$class_selected = $newClass;
-			populateStuds($class_selected);
-			$("#id-table").show(500);
-		}
-	});
 });
