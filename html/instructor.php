@@ -11,7 +11,7 @@
         public $ClassList = "";
     }
     class Classes {
-    	public $classTitle = "";
+    	public $ClassNumber = "";
     	public $studentList = "";
     }
     class Student {
@@ -58,7 +58,7 @@
                 	$newStudent->FirstName = $row['FirstName'];
                 	$newStudent->LastName = $row['LastName'];
                 	$newStudent->WheatonId = $row['WheatonId'];
-                    $newClass->classNumber = $row['ClassNumber'];
+                    $newClass->ClassNumber = $row['ClassNumber'];
                     array_push($studentArray, $newStudent);  
                 }
                 
