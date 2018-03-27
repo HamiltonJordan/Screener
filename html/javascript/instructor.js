@@ -37,7 +37,8 @@ myClass = [
 */
 function populateClass(){
 	for (var i = 0; i < $myClasses.ClassList.length; i++){
-		$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[0].ClassNumber+'</button>');
+		alert("hey");
+		//$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[0].ClassNumber+'</button>');
 	}
 }
 function populateStuds(target_class){
@@ -69,7 +70,7 @@ $(document).ready(function () {
 		.fail(function (){
 			alert("failed to connect to the database");
 		});
-	//populateClass();
+	populateClass();
 	alert("test");
 	$class_selected = null;
 	$("#id-table").hide();
