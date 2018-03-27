@@ -1,7 +1,4 @@
 //Instructor.js
-$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId, "", function (response){
-	alert("here");
-}
 var myClass = new Object();
 myClass = [
 	{
@@ -53,15 +50,20 @@ function populate(target_class){
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
 	var myId = 4; //Gousie
-	/*
-	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId, "", function (response){
-		alert("here");
-		myClass=JSON.parse(response);
+	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
+		.done(function (){
+			alert("success");
+		})
+		.fail(function (){
+			alert("fail");
+		});
+		//alert("here");
+		//myClass=JSON.parse(response);
 		//myFilms = {}
-		console.log("response: " + response);
-		console.log("myFilms: " + myFilms);
-		alert(myClass[0]);
-		
+		//console.log("response: " + response);
+		//console.log("myFilms: " + myFilms);
+		//alert(myClass[0]);
+		/*
 		$last_class="null";
 		//For every film in the list returned, create a cell in the table
 		for (i = 0; i < myFilms.length; i++){
@@ -77,7 +79,6 @@ $(document).ready(function () {
 			Cookies.set('URL', $("#"+this.id).data("URL"));
 		});
 		*/
-	});	
 	$class_selected = null;
 	$("#id-table").hide();
 	$(".classButton").click(function(){
