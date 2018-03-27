@@ -51,11 +51,13 @@ function populate(target_class){
 $(document).ready(function () {
 	var myId = 4; //Gousie
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
-		.done(function (){
-			alert("success");
+		.done(function (response){
+			returnObj = JSON.parse(response);
+			myClass = returnObj.ClassList;
+			alert(myClass[i].ClassNumber);
 		})
 		.fail(function (){
-			alert("fail");
+			alert("failed to connect to database");
 		});
 		//alert("here");
 		//myClass=JSON.parse(response);
