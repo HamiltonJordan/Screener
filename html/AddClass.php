@@ -44,37 +44,33 @@
     {
        while ($row = mysqli_fetch_assoc($result)) {
             $classId = $row['Id'];
-            echo $classId;
-            $returnObj->rowCount = $classId; //Delete
-            $returnObj->success = true;     // Delete
-            
        } 
     }
 
     // // Adds Students to class under EnrolledIn table
-    //if(is_array($studentIds)) {
-    //     foreach($studentIds as $wheatonId) {
+    if(is_array($studentIds)) {
+        foreach($studentIds as $wheatonId) {
 
-    //         if ($result = $conn->query("
-    //             SELECT Id
-    //             From User
-    //             WHERE User.WheatonId = '$wheatonId'
-    //             Limit 1;
-    //             ")) 
-    //         {
-    //             while ($row = mysqli_fetch_assoc($result)) {
-    //                 $Id = $row['Id'];
-    //                 $query1 = mysqli_real_escape_string($conn, $Id);
-    //                 $query ="INSERT INTO EnrolledIn (UserId, ClassId) VALUES ( '". $Id."','".$classId."' )";
-    //                 mysqli_query($conn, $query);
-    //                 $returnObj->rowCount = $returnObj->rowCount + 1;
+            if ($result = $conn->query("
+                SELECT Id
+                From User
+                WHERE User.WheatonId = '$wheatonId'
+                Limit 1;
+                ")) 
+            {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $Id = $row['Id'];
+                    $query1 = mysqli_real_escape_string($conn, $Id);
+                    $query ="INSERT INTO EnrolledIn (UserId, ClassId) VALUES ( '". $Id."','".$classId."' )";
+                    mysqli_query($conn, $query);
+                    $returnObj->rowCount = $returnObj->rowCount + 1;
                             
-    //             }
-    //         }
+                }
+            }
             
-    //     }
-      //  $returnObj->success = true;
-    //}
+        }
+       $returnObj->success = true;
+    }
 
     echo json_encode($returnObj);
 
