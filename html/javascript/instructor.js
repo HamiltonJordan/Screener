@@ -60,7 +60,7 @@ $(document).ready(function () {
 			$myClass = $returnObj.ClassList;
 			alert("b");
 			alert(myClass);
-			alert(myClass[0].ClassNumber);
+			alert(myClass[0].studentList[0].FirstName);
 
 		})
 		.fail(function (){
