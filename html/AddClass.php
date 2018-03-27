@@ -51,6 +51,7 @@
     if(is_array($studentIds)) {
         foreach($studentIds as $wheatonId) {
 
+            // Finding user's Id based off of inputted wheaton id
             if ($result = $conn->query("
                 SELECT Id
                 From User
@@ -58,6 +59,7 @@
                 Limit 1;
                 ")) 
             {
+                // Adding userId to enrolled in table.
                 while ($row = mysqli_fetch_assoc($result)) {
                     $Id = $row['Id'];
                     $query1 = mysqli_real_escape_string($conn, $Id);
