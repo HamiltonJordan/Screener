@@ -35,7 +35,12 @@ myClass = [
 	}
 ];
 */
-function populate(target_class){
+function populateClass(){
+	for (var i = 0; i < $myClasses.ClassList.length; i++){
+		$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[0].ClassNumber+'</button>');
+	}
+}
+function populateStuds(target_class){
 	//Delete what was previously in students table
 	$("#id-entry-point").children("tr").remove();
 
@@ -64,6 +69,8 @@ $(document).ready(function () {
 		.fail(function (){
 			alert("failed to connect to the database");
 		});
+	populateClass();
+	alert("test");
 	$class_selected = null;
 	$("#id-table").hide();
 	$(".classButton").click(function(){
@@ -74,7 +81,7 @@ $(document).ready(function () {
 		}
 		else{
 			$class_selected = $newClass;
-			populate($class_selected);
+			populateStuds($class_selected);
 			$("#id-table").show(500);
 		}
 	});
