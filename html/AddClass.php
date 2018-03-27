@@ -12,14 +12,10 @@
     }
 
     $classObject = $_GET["classObject"];
-
     $classData = json_decode($classObject);
-
     $studentIds = $classData->studentList;
-
     $counter = 0;
     $classId = 0;
-
     $returnObj = new ReturnObject();
 
     // Adding new class to Class table {not working}
@@ -73,7 +69,5 @@
         }
        $returnObj->success = true;
     }
-
     echo json_encode($returnObj);
-
 ?>
