@@ -59,8 +59,9 @@ $(document).ready(function () {
 			alert("a");
 			$myClass = $returnObj.ClassList;
 			alert("b");
-			alert(myClass);
-			alert(myClass[0].studentList[0].FirstName);
+			alert(myClass.ClassNumber);
+			alert("c");
+			alert(myClass[0].ClassNumber);
 
 		})
 		.fail(function (){
