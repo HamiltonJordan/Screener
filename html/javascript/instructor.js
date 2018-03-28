@@ -63,10 +63,11 @@ function populateStuds(target_class){
 			for (var i = 0; i < $myClasses.ClassList.length; i++) {
 				if ($myClasses.ClassList[i].ClassNumber == target_class) {
 					$target.c_index = i;
-					alert("found c index at "+i);
 				}
 			}
-			//$target.FirstName = 
+			$target.FirstName = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].FirstName;
+			$target.LastName = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].FirstName;
+			alert($target.FirstName +", " + $target.LastName);
 		}
 	});
 }
