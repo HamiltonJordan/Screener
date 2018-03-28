@@ -79,7 +79,7 @@
                 ")) 
             {
             	$newClass = new Classes();
-                echo isset($newClass->ClassNumber);
+                //echo isset($newClass->ClassNumber);
             	// Getting each students info for the current class
                 while ($row = mysqli_fetch_assoc($result)) {
 
@@ -87,7 +87,11 @@
                 	$newStudent->FirstName = $row['FirstName'];
                 	$newStudent->LastName  = $row['LastName'];
                 	$newStudent->WheatonId = $row['WheatonId'];
-                    $newClass->ClassNumber = $row['ClassNumber'];
+                    if (!isset($newClass->ClassNumber)) {
+                        $newClass->ClassNumber = $row['ClassNumber'];
+                        echo($row['ClassNumber']);
+                    }
+                    //$newClass->ClassNumber = $row['ClassNumber'];
 
                     array_push($studentArray, $newStudent);  
                 }
