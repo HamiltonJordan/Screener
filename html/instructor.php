@@ -78,6 +78,7 @@
                 ")) 
             {
             	$newClass = new Classes();
+                $studentArray = [];
                 //echo isset($newClass->ClassNumber);
             	// Getting each students info for the current class
                 while ($row = mysqli_fetch_assoc($result)) {
