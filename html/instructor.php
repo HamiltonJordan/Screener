@@ -59,6 +59,7 @@
     {
        while ($row = mysqli_fetch_assoc($result)) {
             array_push($classIdArray, $row['Id']);
+            echo $row['Id'];
        } 
     }
 
