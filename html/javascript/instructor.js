@@ -55,7 +55,7 @@ function populateStuds(target_class){
 	}
 	$('.delete').click(function() {
 		$c = confirm("Are you sure you want to delete this student?");
-		//alert($(this).attr("data-count"));
+		alert($(this).data-count);
 	});
 }
 //alert(myClass[0].student[3].FirstName);
