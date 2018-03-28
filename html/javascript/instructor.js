@@ -33,6 +33,7 @@ function populateStuds(target_class){
 			$target.FirstName = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].FirstName;
 			$target.LastName = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].LastName;
 			$target.WheatonId = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].WheatonId;
+			alert(JSON.stringify($target));
 		}
 	});
 }
