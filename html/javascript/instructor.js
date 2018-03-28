@@ -73,12 +73,14 @@ $(document).ready(function () {
 				$newClass = $("#"+this.id).html();
 				if ($newClass == $class_selected){
 					$("#id-table").hide(500);
+					$("#add-field").hide(500);
 					$class_selected = null;
 				}
 				else{
 					$class_selected = $newClass;
 					populateStuds($class_selected);
 					$("#id-table").show(500);
+					$("#add-field").show(500);
 				}
 			});
 		})
