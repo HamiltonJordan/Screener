@@ -68,6 +68,7 @@ $(document).ready(function () {
 			populateClass();
 			$class_selected = null;
 			$("#id-table").hide();
+			$("#add-field").hide();
 			$(".classButton").click(function(){
 				$newClass = $("#"+this.id).html();
 				if ($newClass == $class_selected){
