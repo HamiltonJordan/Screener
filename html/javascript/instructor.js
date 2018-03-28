@@ -1,40 +1,5 @@
 //Instructor.js
-var myClass = new Object();
-/*
-myClass = [
-	{
-		ClassName:"ENG310",
-		student:[
-			{"FirstName":"Jordan", "LastName":"Hamilton", "WID":"w00305623"},
-			{"FirstName":"Jack", "LastName":"Hohnson", "WID":"w1234"},
-			{"FirstName":"Jules", "LastName":"Harworth", "WID":"w6789"},
-			{"FirstName":"Jill", "LastName":"Hemper", "WID":"w38293"}
-		]
-	},
-	{
-		ClassName:"PHIL101",
-		student:[
-			{"FirstName":"Tim", "LastName":"Scolder", "WID":"w94837"},
-			{"FirstName":"Towely", "LastName":"Scooter", "WID":"w0000420"}
-		]
-	},
-	{
-		ClassName:"FNMS255",
-		student:[
-			{"FirstName":"Harvey", "LastName":"Lobstop", "WID":"w58333373"},
-			{"FirstName":"Harriet", "LastName":"Lilywrat", "WID":"w238288882"}
-		]
-	},
-	{
-		ClassName:"COMP111",
-		student:[
-			{"FirstName":"Borey", "LastName":"Fidleman", "WID":"w12122"},
-			{"FirstName":"Belhop", "LastName":"Fortnight", "WID":"w9473"},
-			{"FirstName":"Bernstein", "LastName":"Franderbick", "WID":"w098977"}
-		]
-	}
-];
-*/
+
 function populateClass(response){
 	for (var i = 0; i < $myClasses.ClassList.length; i++){
 		$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[i].ClassNumber+'</button>');
@@ -66,8 +31,8 @@ function populateStuds(target_class){
 				}
 			}
 			$target.FirstName = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].FirstName;
-			$target.LastName = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].FirstName;
-			alert($target.FirstName +", " + $target.LastName);
+			$target.LastName = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].LastName;
+			$target.WheatonId = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].WheatonId;
 		}
 	});
 }
