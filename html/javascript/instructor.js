@@ -56,11 +56,17 @@ function populateStuds(target_class){
 	$('.delete').click(function() {
 		$c = confirm("Are you sure you want to delete this student?");
 		$target = new Object();
-		if ($c) {
-			//Delete record
-			$target.index = $(this).attr("data-count");
-			alert($target.index);
-
+		if ($c) {	//Delete record
+			//$target stores info for record to delete
+			$target.s_index = $(this).attr("data-count");
+			$target.ClassName = target_class;	
+			for (var i = 0; i < $myClasses.ClassList.length; i++) {
+				if ($myClasses.ClassList[i].ClassNumber == target_class) {
+					$target.c_index = i;
+					alert("found c index at "+i);
+				}
+			}
+			//$target.FirstName = 
 		}
 	});
 }
