@@ -20,5 +20,19 @@
 	opacity:1
 
 }
+.padding-5-right{
+    padding-right:5px;
+}
+.padding-5-left{
+    padding-left:5px;
+}
 #submit-student {
+}
+#add-field {
+	padding: 10px;
+	background-color: #eaeaea;
+}
+#submit-student {
+	display: inline-block;
+	float: right;
 }
