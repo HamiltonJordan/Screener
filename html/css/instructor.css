@@ -2,9 +2,6 @@
 .top-space-20{
 	margin-top: 20px;
 }
-#id-table {
-	
-}
 .delete{
 	fill: red;
 }
@@ -22,4 +19,7 @@
 	stroke-width:2;
 	opacity:1
 
+}
+#submit-student {
+	background-color: red;
 }
