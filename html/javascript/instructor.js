@@ -71,13 +71,13 @@ $(document).ready(function () {
 			$(".classButton").click(function(){
 				$newClass = $("#"+this.id).html();
 				if ($newClass == $class_selected){
-					$("#id-table").hide(500);
+					$("#portal1").hide(500);
 					$class_selected = null;
 				}
 				else{
 					$class_selected = $newClass;
 					populateStuds($class_selected);
-					$("#id-table").show(500);
+					$("#portal1").show(500);
 				}
 			});
 		})
