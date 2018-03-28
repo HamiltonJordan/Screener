@@ -12,16 +12,18 @@
     }
 
 
-    $userId = $_GET["UserId"];
+    $userId = 1;//$_GET["UserId"];
+    $classId = 9;
     $returnObj = new ReturnObject();
 
     if($userId != '') {
         $query1 = mysqli_real_escape_string($conn, $userId);
-        $query ="DELETE FROM User WHERE User.Id = '$userId'";
+        $query ="DELETE FROM EnrolledIn WHERE EnrolledIn.UserId = '$userId' AND EnrolledIn.ClassId = '$classId'";
         mysqli_query($conn, $query);
 
-      	if (mysqli_query($con, $query))
-  		{
+      	if (mysqli_query($conn, $query))
+  		{	
+  			$returnObj->rowCount = 1;
   			$returnObj->success = true;
   		}
   	}
