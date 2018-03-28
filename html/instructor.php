@@ -34,7 +34,7 @@
         public $ClassList = "";
     }
     class Classes {
-    	public $ClassNumber = "";
+    	public $ClassNumber;
     	public $studentList = "";
     }
     class Student {
