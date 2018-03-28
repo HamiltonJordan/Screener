@@ -68,7 +68,6 @@
     	$returnObj = new ReturnObject();
 
         foreach($classIdArray as $classId) {
-            echo ($classId);
         	// Querying all students for each class in instructors list
             if ($result = $conn->query("
             	SELECT User.FirstName, User.LastName, User.WheatonId, Class.ClassNumber
