@@ -58,7 +58,7 @@ function populateStuds(target_class){
 		$target = new Object();
 		if ($c) {
 			//Delete record
-			$target->index = $(this).attr("data-count");
+			$target.index = $(this).attr("data-count");
 			alert($target.index);
 
 		}
