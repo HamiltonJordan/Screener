@@ -34,16 +34,18 @@
         public $ClassList = "";
     }
     class Classes {
+        public $ClassId;
     	public $ClassNumber;
-    	public $studentList = "";
+    	public $studentList =" ";
     }
     class Student {
+        public $StudentId;
     	public $FirstName = "";
     	public $LastName = "";
     	public $WheatonId = "";
     }
 
-    $instructorId = $_GET["instructorId"];
+    $instructorId = 4;//$_GET["instructorId"];
 
     // Arrays to be used in the return JSON object
     $classIdArray = [];
@@ -70,7 +72,7 @@
         foreach($classIdArray as $classId) {
         	// Querying all students for each class in instructors list
             if ($result = $conn->query("
-            	SELECT User.FirstName, User.LastName, User.WheatonId, Class.ClassNumber
+            	SELECT User.Id as StudentId, User.FirstName, User.LastName, User.WheatonId, Class.Id as ClassId Class.ClassNumber
 				FROM EnrolledIn
 				INNER JOIN User on User.Id = EnrolledIn.UserId
 				INNER JOIN Class on Class.Id = EnrolledIn.ClassId
@@ -84,11 +86,13 @@
                 while ($row = mysqli_fetch_assoc($result)) {
 
                 	$newStudent = new Student();
+                    $newStudent->StudentId = $row['StudentId']
                 	$newStudent->FirstName = $row['FirstName'];
                 	$newStudent->LastName  = $row['LastName'];
                 	$newStudent->WheatonId = $row['WheatonId'];
                     if (!isset($newClass->ClassNumber)) {
                         $newClass->ClassNumber = $row['ClassNumber'];
+                        $newClass->ClassId = $row['ClassId']
                     }
 
                     array_push($studentArray, $newStudent);  
