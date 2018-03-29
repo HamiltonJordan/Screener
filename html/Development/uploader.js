@@ -104,7 +104,7 @@ $("#add").click(function(){
 var $video=$form.children("input").filter('#image');
 var fsize = $video[0].files[0].size;
   var ftype =$video[0].files[0].type;
-//if($video.val()!="" && fsize<Math.pow(10,7)){
+if($video.val()!="" && fsize<Math.pow(10,24)){
       $form.find('.progress-bar').removeClass('progress-bar-success')
                                     .removeClass('progress-bar-danger');
         var formdata = new FormData($form[0]); //formelement
@@ -122,8 +122,8 @@ var fsize = $video[0].files[0].size;
         request.open('post', 'uploader.php');
         console.log('here');
         request.send(formdata);
-//}
-/*else if(check=="yes"){
+}
+else if(check=="yes"){
 alert("no video selected to upload or File selected is too large");}
         $form.on('click','.cancel',function(){
             request.abort();
@@ -133,5 +133,5 @@ alert("no video selected to upload or File selected is too large");}
                 .html('upload aborted...');
 
         });
-    }*/
+    }
 }); // End of Document Ready
