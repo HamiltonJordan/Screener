@@ -92,7 +92,7 @@
                 	$newStudent->WheatonId = $row['WheatonId'];
                     if (!isset($newClass->ClassNumber)) {
                         $newClass->ClassNumber = $row['ClassNumber'];
-                        $newClass->ClassId = $row['ClassId']
+                        $newClass->ClassId = $row['ClassId'];
                     }
 
                     array_push($studentArray, $newStudent);  
