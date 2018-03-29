@@ -10,8 +10,8 @@
         public $success = false;
         public $rowCount = 0;
     }
-    $wheatonId = "w00328546"; //$_GET["wheatonId"];
-    $classId   = 12;//$_GET["classId"];
+    $wheatonId = $_GET["wheatonId"];
+    $classId   = $_GET["classId"];
    
     $returnObj = new ReturnObject();
     
