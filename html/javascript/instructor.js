@@ -35,7 +35,14 @@ function populateStuds(target_class){
 			$target.WheatonId = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].WheatonId;
 			$target.ClassId = $myClasses.ClassList[$target.c_index].ClassId;
 			$target.StudentId = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].StudentId;
-			alert("First Name: "+$target.FirstName+"\nLast Name: "+$target.LastName+"\nWheaton Id: "+$target.WheatonId+"\nClass: "+$target.ClassName+"\nClassId: "+$target.ClassId+"\nStudentId: "+$target.StudentId);
+			//alert("First Name: "+$target.FirstName+"\nLast Name: "+$target.LastName+"\nWheaton Id: "+$target.WheatonId+"\nClass: "+$target.ClassName+"\nClassId: "+$target.ClassId+"\nStudentId: "+$target.StudentId);
+			$.get("http://screener.onthewifi.com/DeleteUser.php?userId="+$target.StudentId+"&classId="+$target.ClassId)
+				.done(function (response){
+					alert(response);
+				})
+				.fail(function (){
+					alert("failed to connect to the database");
+				});
 		}
 	});
 }
