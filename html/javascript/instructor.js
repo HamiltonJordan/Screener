@@ -71,7 +71,9 @@ $(document).ready(function () {
 		});
 
 	$('#submit-student').click(function() {
+		alert("a");
 		$wid = $("#WheatonId-field").val();
+		alert($wid);
 		if ($wid !== '') {
 			//Find Class ID for classSelected
 			for (var i = 0; i < $myClasses.ClassList.length; i++) {
