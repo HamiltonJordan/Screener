@@ -38,7 +38,8 @@ function populateStuds(target_class){
 			//alert("First Name: "+$target.FirstName+"\nLast Name: "+$target.LastName+"\nWheaton Id: "+$target.WheatonId+"\nClass: "+$target.ClassName+"\nClassId: "+$target.ClassId+"\nStudentId: "+$target.StudentId);
 			$.get("http://screener.onthewifi.com/DeleteUser.php?userId="+$target.StudentId+"&classId="+$target.ClassId)
 				.done(function (response){
-					alert(response);
+					alert("User: "+$target.FirstName+" "+$target.LastName+" removed from "+$class_selected);
+					populateStuds();
 				})
 				.fail(function (){
 					alert("failed to connect to the database");
