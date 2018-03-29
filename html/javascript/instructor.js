@@ -83,8 +83,9 @@ $(document).ready(function () {
 				.done(function (response) {
 					$response = JSON.parse(response);
 					if ($response.success == true) {
-						populateStuds();
+						//populateStuds();
 						alert("Student added successfully");
+						location.reload();
 					}
 					if ($response.success == "true") {
 						alert("Student not added to database");
