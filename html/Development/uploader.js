@@ -16,8 +16,8 @@ var total='';
 
                         */
                 for (i = 0; i < myClasses.length; i++){
-                    $(".checkbox").append('<input type="checkbox" name="classopt[]" value='+myClasses[i].ClassId+'>'+myClasses[i].ClassName+'</input>');
- 			var addition='<input type="checkbox" name="classopt[]" value='+myClasses[i].ClassId+'>'+myClasses[i].ClassName+'</input>';
+                    $(".checkbox").append('<input type="checkbox" name="classopt[]" value='+myClasses[i].ClassId+'>'+myClasses[i].ClassName+'</input><br>');
+ 			var addition='<input type="checkbox" name="classopt[]" value='+myClasses[i].ClassId+'>'+myClasses[i].ClassName+'</input><br>';
 			 total=total+addition;
 			}
 })
@@ -25,7 +25,7 @@ var total='';
 
 $("#add").click(function(){
  $(".form").append('<form id="form" action="#">\
-<input type="text" name="name" placeholder="Enter Film Name">\
+<input type="text" name="name" placeholder="Enter Film Name"><br>\
 <input type="text" name="dueDate" placeholder="Due Date"><br>\
  <input type="text" name="runtime" placeholder="runtime">\
 <div class=checkbox>'+total+'</div>\
@@ -38,19 +38,29 @@ $("#add").click(function(){
 </form>');});
  $("#form").validate({
                 rules: {
+			 dueDate: {
+                           required: true,
+                           date: true
+                                 },
                     image: {
                         required: true,
-                        extension: "mp4|gif|png|ogg|flv|m4p"
+                        extension: "mp4|gif|ogg|flv|m4p"
 
                     },
 			name: {
                         required: true,
                         minlength: 5
-			} 
+			} ,
+	"classopt[]": { required: true }
                 },
                 messages: {
+			"classopt[]":{required:"You must check a box"},
+ 			dueDate: {
+                           xrequired: "Please enter a date",
+                           date: "Please enter a vaild date"
+                                 },
                     image: {
-                        extension:"Please select only png, mp4, gif, ogg, and flv  files"
+                        extension:"Please select only  mp4, gif, ogg, and flv  files"
                     },
 			name: {
                         required: "Please enter Film name",
