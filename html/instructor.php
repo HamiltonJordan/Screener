@@ -72,7 +72,7 @@
         foreach($classIdArray as $classId) {
         	// Querying all students for each class in instructors list
             if ($result = $conn->query("
-            	SELECT User.Id as StudentId, User.FirstName, User.LastName, User.WheatonId, Class.Id as ClassId Class.ClassNumber
+            	SELECT User.Id AS StudentId, User.FirstName, User.LastName, User.WheatonId, Class.Id AS ClassId, Class.ClassNumber
 				FROM EnrolledIn
 				INNER JOIN User on User.Id = EnrolledIn.UserId
 				INNER JOIN Class on Class.Id = EnrolledIn.ClassId
