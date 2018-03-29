@@ -39,7 +39,7 @@ function populateStuds(target_class){
 			$.get("http://screener.onthewifi.com/DeleteUser.php?userId="+$target.StudentId+"&classId="+$target.ClassId)
 				.done(function (response){
 					alert("User: "+$target.FirstName+" "+$target.LastName+" removed from "+$class_selected);
-					populateStuds();
+					location.reload();
 				})
 				.fail(function (){
 					alert("failed to connect to the database");
