@@ -86,7 +86,7 @@
                 while ($row = mysqli_fetch_assoc($result)) {
 
                 	$newStudent = new Student();
-                    $newStudent->StudentId = $row['StudentId']
+                    $newStudent->StudentId = $row['StudentId'];
                 	$newStudent->FirstName = $row['FirstName'];
                 	$newStudent->LastName  = $row['LastName'];
                 	$newStudent->WheatonId = $row['WheatonId'];
