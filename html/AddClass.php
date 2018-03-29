@@ -18,7 +18,7 @@
     $classId = 0;
     $returnObj = new ReturnObject();
 
-    // Adding new class to Class table {not working}
+    // Adding new class to Class table
     if($classData->classTitle != '' && $classData->classCode != '') {
         $classTitle = $classData->classTitle;
         $classCode  = $classData->classCode;

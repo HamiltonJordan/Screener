@@ -37,6 +37,7 @@ function populateStuds(target_class){
 		}
 	});
 }
+
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
 
@@ -66,4 +67,19 @@ $(document).ready(function () {
 		.fail(function (){
 			alert("failed to connect to the database");
 		});
-});
+
+	$('#submit-student').click(function() {
+		var wheatonId = $('#WheatonId').val();
+		// Need classid to finish this up.
+		// var classId   = $('').val();
+
+		// if (wheatonId != '') {
+		// 	$.get("AddUser.php?userId="+wheatonId+"&classId="+classId)
+		// 		.done(function (response) {
+		// 			$response = JSON.parse(response);
+		// 		});
+		// }
+	});
+
+}); // End of Document.Ready
+
