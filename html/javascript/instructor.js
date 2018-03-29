@@ -71,15 +71,25 @@ $(document).ready(function () {
 		});
 
 	$('#submit-student').click(function() {
-		//WID: $target.WheatonId
-		//CID: $target.ClassId
-
-		// if (wheatonId != '') {
-		// 	$.get("AddUser.php?userId="+wheatonId+"&classId="+classId)
-		// 		.done(function (response) {
-		// 			$response = JSON.parse(response);
-		// 		});
-		// }
+		$wid = $("#WheatonId-field").val();
+		if ($wid !== '') {
+			//Find Class ID for classSelected
+			for (var i = 0; i < $myClasses.ClassList.length; i++) {
+				if ($myClasses.ClassList[i].ClassNumber == $class_selected) {
+					$cid = $myClasses.ClassList[i].ClassId;
+				}
+			}
+			$.get("AddUser.php?wheatonId="+$wid+"&classId="+$cid)
+				.done(function (response) {
+					$response = JSON.parse(response);
+				})
+				.fail(function (){
+					alert("failed to connect to the database");
+				});
+		}
+		else {
+			alert("No Student Information");
+		}
 	});
 
 }); // End of Document.Ready

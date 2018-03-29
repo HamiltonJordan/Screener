@@ -27,46 +27,37 @@
 		</div>
 		<div class="row top-space-20">
 			<div class="col-lg-1 col-md-0"></div>
+			
 			<div class="col-lg-10">
-			<table class="table table-bordered" id="id-table">
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">First</th>
-						<th scope="col">Last</th>
-						<th scope="col">Wheaton ID</th>
-						<th scope="col" style="width: 50px;">Del</th>
-					</tr>
-				</thead>
+				<table class="table table-bordered" id="id-table">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">First</th>
+							<th scope="col">Last</th>
+							<th scope="col">Wheaton ID</th>
+							<th scope="col" style="width: 50px;">Del</th>
+						</tr>
+					</thead>
 
-				<tbody id="id-entry-point">
-				</tbody>
-			</table>
-			<div id="add-field">
-				<form id="add-student-form" onsubmit="return false;">
-					<button type="submit" class="btn btn-default btn-success" id="submit-student">Add</button>
-					<h2>Add Student</h2>
-					<div class="row">
-						<div class="col-6 padding-5-right">
-							<input type="text" class="form-control" id="FirstName" placeholder="First Name">
-						</div>
-						<div class="col-6 padding-5-left">
-							<input type="text" class="form-control" id="LastName" placeholder="Last name">
-						</div>
+					<tbody id="id-entry-point">
+					</tbody>
+				</table>
+				<div class="row">
+					<div class="col-lg-3"></div>
+					<div id="add-field" class="col-lg-6">
+						<form id="add-student-form" onsubmit="return false;">
+							<h2>Add Student</h2>
+							<button type="submit" class="btn btn-default btn-success" id="submit-student">Add</button>
+							<div class="row padding-5-right">
+								<input type="text" class="form-control" id="WheatonId-field" placeholder="Wheaton ID">
+							</div>
+						</form>
 					</div>
-					<br>
-					<div class="row">
-						<div class="col-8 padding-5-right">
-							<input type="text" class="form-control" id="WheatonId" placeholder="Wheaton ID">
-						</div>
-						<div class="col-4 padding-5-left">
-							<input type="text" class="form-control" id="tempPass" placeholder="Temporary Password">
-						</div>
-					</div>
-				</form>
+					<div class="col-lg-3"></div>
+				</div>
 			</div>
-			</div>
+			
 			<div class="col-lg-1 col-md-0"></div>
-		</div>
 		<br>
 		<h2>Upload Video</h2>
 		<script type="text/javascript" src="javascript/instructor.js"></script>
