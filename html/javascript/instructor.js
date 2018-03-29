@@ -83,10 +83,11 @@ $(document).ready(function () {
 				.done(function (response) {
 					$response = JSON.parse(response);
 					if ($response.success == true) {
-						alert("heehaw");
+						populateStuds();
+						alert("Student added successfully");
 					}
 					if ($response.success == "true") {
-						alert("yoyo");
+						alert("Student not added to database");
 					}
 				})
 				.fail(function (){
