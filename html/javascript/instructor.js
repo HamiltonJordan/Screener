@@ -71,9 +71,8 @@ $(document).ready(function () {
 		});
 
 	$('#submit-student').click(function() {
-		var wheatonId = $('#WheatonId').val();
-		// Need classid to finish this up.
-		// var classId   = $('').val();
+		//WID: $target.WheatonId
+		//CID: $target.ClassId
 
 		// if (wheatonId != '') {
 		// 	$.get("AddUser.php?userId="+wheatonId+"&classId="+classId)
