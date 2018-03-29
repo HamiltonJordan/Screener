@@ -71,9 +71,7 @@ $(document).ready(function () {
 		});
 
 	$('#submit-student').click(function() {
-		alert("a");
 		$wid = $("#WheatonId-field").val();
-		alert($wid);
 		if ($wid !== '') {
 			//Find Class ID for classSelected
 			for (var i = 0; i < $myClasses.ClassList.length; i++) {
@@ -84,6 +82,12 @@ $(document).ready(function () {
 			$.get("AddUser.php?wheatonId="+$wid+"&classId="+$cid)
 				.done(function (response) {
 					$response = JSON.parse(response);
+					if ($response.success == true) {
+						alert("heehaw");
+					}
+					if ($response.success == "true") {
+						alert("yoyo");
+					}
 				})
 				.fail(function (){
 					alert("failed to connect to the database");
