@@ -43,7 +43,7 @@
     	public $WheatonId = "";
     }
 
-    $instructorId = 4//$_GET["instructorId"];
+    $instructorId = 4;//$_GET["instructorId"];
 
     // Arrays to be used in the return JSON object
     $classIdArray = [];
