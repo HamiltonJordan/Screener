@@ -43,7 +43,7 @@
     	public $WheatonId = "";
     }
 
-    $instructorId = $_GET["instructorId"];
+    $instructorId = 4//$_GET["instructorId"];
 
     // Arrays to be used in the return JSON object
     $classIdArray = [];
@@ -78,8 +78,8 @@
                 ")) 
             {
             	$newClass = new Classes();
-                $studentArray = [];
-                //echo isset($newClass->ClassNumber);
+                $studentArray = []; 
+
             	// Getting each students info for the current class
                 while ($row = mysqli_fetch_assoc($result)) {
 
@@ -90,7 +90,6 @@
                     if (!isset($newClass->ClassNumber)) {
                         $newClass->ClassNumber = $row['ClassNumber'];
                     }
-                    //$newClass->ClassNumber = $row['ClassNumber'];
 
                     array_push($studentArray, $newStudent);  
                 }
