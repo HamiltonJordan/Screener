@@ -34,7 +34,8 @@ function populateStuds(target_class){
 			$target.LastName = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].LastName;
 			$target.WheatonId = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].WheatonId;
 			$target.ClassId = $myClasses.ClassList[$target.c_index].ClassId;
-			alert("First Name: "+$target.FirstName+"\nLast Name: "+$target.LastName+"\nWheaton Id: "+$target.WheatonId+"\nClass: "+$target.ClassName+"\nClassId: "+$target.ClassId);
+			$target.StudentId = $myClasses.ClassList[$target.c_index].studentList[$target.s_index].StudentId;
+			alert("First Name: "+$target.FirstName+"\nLast Name: "+$target.LastName+"\nWheaton Id: "+$target.WheatonId+"\nClass: "+$target.ClassName+"\nClassId: "+$target.ClassId+"\nStudentId: "+$target.StudentId);
 		}
 	});
 }
