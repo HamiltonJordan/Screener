@@ -76,11 +76,10 @@ function AJAX_refreshClasses(argument){
 		});
 }
 
-
+$myClasses="j";
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
 	alert("stop");
-	$myClasses="j";
 	AJAX_refreshClasses();
 	alert($myClasses);
 	$('#submit-student').click(function() {
