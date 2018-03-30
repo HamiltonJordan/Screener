@@ -9,7 +9,6 @@ function populateClass(response){
 function populateStuds(target_class){
 	//Delete what was previously in students table
 	$("#id-entry-point").children("tr").remove();
-	alert("a");
 	//Populate table with students
 	for (var i = 0; i < $myClasses.ClassList.length; i++) {
 		if ($myClasses.ClassList[i].ClassNumber == target_class) {
@@ -18,7 +17,6 @@ function populateStuds(target_class){
 			}
 		}
 	}
-	alert("B");
 	$('.delete').click(function() {
 		$c = confirm("Are you sure you want to delete this student?");
 		$target = new Object();
@@ -42,7 +40,7 @@ function populateStuds(target_class){
 					alert("User: "+$target.FirstName+" "+$target.LastName+" removed from "+$class_selected);
 					//location.reload();
 					AJAX_refreshClasses();
-					populateStuds();
+					populateStuds($class_selected);
 				})
 				.fail(function (){
 					alert("failed to connect to the database");
