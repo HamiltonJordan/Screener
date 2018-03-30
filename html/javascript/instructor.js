@@ -40,9 +40,9 @@ function populateStuds(target_class){
 					alert("User: "+$target.FirstName+" "+$target.LastName+" removed from "+$class_selected);
 					//location.reload();
 					AJAX_refreshClasses();
-					//alert("got");
+					setTimeout(populateStuds(), 5000);
+					setTimeout(populateStuds(), 5000);
 					//populateStuds($class_selected);
-					//alert("here");
 				})
 				.fail(function (){
 					alert("failed to connect to the database");
@@ -86,7 +86,6 @@ function AJAX_refreshClasses(argument){
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
 		.done(function (response){
 			$myClasses = JSON.parse(response);
-			$populateStuds($class_selected);
 		})
 		.fail(function (){
 			alert("failed to connect to the database");
