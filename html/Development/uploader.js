@@ -56,7 +56,7 @@ $("#add").click(function(){
                 messages: {
 			"classopt[]":{required:"You must check a box"},
  			dueDate: {
-                           xrequired: "Please enter a date",
+                           required: "Please enter a date",
                            date: "Please enter a vaild date"
                                  },
                     image: {
@@ -104,7 +104,7 @@ $("#add").click(function(){
 var $video=$form.children("input").filter('#image');
 var fsize = $video[0].files[0].size;
   var ftype =$video[0].files[0].type;
-if($video.val()!="" && fsize<Math.pow(10,9)){
+if($video.val()!="" && fsize<Math.pow(10,24)){
       $form.find('.progress-bar').removeClass('progress-bar-success')
                                     .removeClass('progress-bar-danger');
         var formdata = new FormData($form[0]); //formelement
