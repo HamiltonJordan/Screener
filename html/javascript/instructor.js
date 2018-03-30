@@ -75,13 +75,17 @@ function AJAX_refreshClasses(argument){
 			alert("failed to connect to the database");
 		});
 }
+function wait(arg){
+	setTimeout(wait, 5000);
+}
 
 $myClasses="j";
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
 	alert("stop");
 	AJAX_refreshClasses();
-	alert($myClasses);
+	wait();
+	alert("done waiting");
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
 		if ($wid !== '') {
