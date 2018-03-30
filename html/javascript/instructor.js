@@ -50,6 +50,8 @@ function populateStuds(target_class){
 function AJAX_refreshClasses(argument){
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
 		.done(function (response){
+			alert("ey");
+			/*
 			$myClasses = JSON.parse(response);
 			populateClass();
 			$class_selected = null;
@@ -69,6 +71,7 @@ function AJAX_refreshClasses(argument){
 					$("#add-field").show(500);
 				}
 			});
+			*/
 		})
 		.fail(function (){
 			alert("failed to connect to the database");
@@ -80,6 +83,7 @@ function AJAX_refreshClasses(argument){
 $(document).ready(function () {
 
 	var myId = 4; //Gousie
+	alert("stop");
 	AJAX_refreshClasses();
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
