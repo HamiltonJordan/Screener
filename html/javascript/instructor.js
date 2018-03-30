@@ -41,6 +41,7 @@ function populateStuds(target_class){
 					alert("User: "+$target.FirstName+" "+$target.LastName+" removed from "+$class_selected);
 					//location.reload();
 					AJAX_refreshClasses();
+					populateStuds();
 				})
 				.fail(function (){
 					alert("failed to connect to the database");
