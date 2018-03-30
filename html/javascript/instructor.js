@@ -47,11 +47,7 @@ function populateStuds(target_class){
 		}
 	});
 }
-
-//alert(myClass[0].student[3].FirstName);
-$(document).ready(function () {
-
-	var myId = 4; //Gousie
+function AJAX_refreshClasses(argument){
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
 		.done(function (response){
 			$myClasses = JSON.parse(response);
@@ -77,7 +73,14 @@ $(document).ready(function () {
 		.fail(function (){
 			alert("failed to connect to the database");
 		});
+}
 
+
+//alert(myClass[0].student[3].FirstName);
+$(document).ready(function () {
+
+	var myId = 4; //Gousie
+	AJAX_refreshClasses();
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
 		if ($wid !== '') {
