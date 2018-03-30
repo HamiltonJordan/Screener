@@ -85,6 +85,7 @@ $(document).ready(function () {
 	alert("stop");
 	AJAX_refreshClasses();
 	wait();
+	wait();
 	alert("done waiting");
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
