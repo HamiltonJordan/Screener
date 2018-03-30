@@ -1,5 +1,12 @@
 //Instructor.js
-
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
 function populateClass(response){
 	for (var i = 0; i < $myClasses.ClassList.length; i++){
 		$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[i].ClassNumber+'</button>');
@@ -52,24 +59,6 @@ function AJAX_refreshClasses(argument){
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
 		.done(function (response){
 			$myClasses = JSON.parse(response);
-			populateClass();
-			$class_selected = null;
-			$("#id-table").hide();
-			$("#add-field").hide();
-			$(".classButton").click(function(){
-				$newClass = $("#"+this.id).html();
-				if ($newClass == $class_selected){
-					$("#id-table").hide(500);
-					$("#add-field").hide(500);
-					$class_selected = null;
-				}
-				else{
-					$class_selected = $newClass;
-					populateStuds($class_selected);
-					$("#id-table").show(500);
-					$("#add-field").show(500);
-				}
-			});
 		})
 		.fail(function (){
 			alert("failed to connect to the database");
@@ -81,6 +70,24 @@ function AJAX_refreshClasses(argument){
 $(document).ready(function () {
 	alert("stop");
 	AJAX_refreshClasses();
+	populateClass();
+	$class_selected = null;
+	$("#id-table").hide();
+	$("#add-field").hide();
+	$(".classButton").click(function(){
+		$newClass = $("#"+this.id).html();
+		if ($newClass == $class_selected){
+			$("#id-table").hide(500);
+			$("#add-field").hide(500);
+			$class_selected = null;
+		}
+		else{
+			$class_selected = $newClass;
+			populateStuds($class_selected);
+			$("#id-table").show(500);
+			$("#add-field").show(500);
+		}
+	});
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
 		if ($wid !== '') {
