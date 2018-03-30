@@ -80,8 +80,9 @@ function AJAX_refreshClasses(argument){
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
 	alert("stop");
-	$myClasses="";
+	$myClasses="j";
 	AJAX_refreshClasses();
+	alert($myClasses);
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
 		if ($wid !== '') {
