@@ -40,6 +40,7 @@ function populateStuds(target_class){
 					alert("User: "+$target.FirstName+" "+$target.LastName+" removed from "+$class_selected);
 					//location.reload();
 					AJAX_refreshClasses();
+					prepTable($class_selected);
 					//populateStuds();
 					//populateStuds($class_selected);
 				})
@@ -49,8 +50,8 @@ function populateStuds(target_class){
 		}
 	});
 }
-function prepTable(argument){
-	$class_selected = null;
+function prepTable($class_selected){
+	//$class_selected = null;
 	$("#id-table").hide();
 	$("#add-field").hide();
 	$(".classButton").click(function(){
@@ -74,7 +75,7 @@ function AJAX_loadClasses(argument){
 		.done(function (response){
 			$myClasses = JSON.parse(response);
 			populateClass();
-			prepTable();
+			prepTable(null);
 		})
 		.fail(function (){
 			alert("failed to connect to the database");
