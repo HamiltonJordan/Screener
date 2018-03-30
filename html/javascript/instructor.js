@@ -47,36 +47,36 @@ function populateStuds(target_class){
 		}
 	});
 }
+function prepTable(argument){
+	$class_selected = null;
+	$("#id-table").hide();
+	$("#add-field").hide();
+	$(".classButton").click(function(){
+		$newClass = $("#"+this.id).html();
+		if ($newClass == $class_selected){
+			$("#id-table").hide(500);
+			$("#add-field").hide(500);
+			$class_selected = null;
+		}
+		else{
+			$class_selected = $newClass;
+			populateStuds($class_selected);
+			$("#id-table").show(500);
+			$("#add-field").show(500);
+		}
+	});
+}
 function AJAX_refreshClasses(argument){
 	var myId = 4; //Gousie
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
 		.done(function (response){
 			$myClasses = JSON.parse(response);
 			populateClass();
-			$class_selected = null;
-			$("#id-table").hide();
-			$("#add-field").hide();
-			$(".classButton").click(function(){
-				$newClass = $("#"+this.id).html();
-				if ($newClass == $class_selected){
-					$("#id-table").hide(500);
-					$("#add-field").hide(500);
-					$class_selected = null;
-				}
-				else{
-					$class_selected = $newClass;
-					populateStuds($class_selected);
-					$("#id-table").show(500);
-					$("#add-field").show(500);
-				}
-			});
+			prepTable();
 		})
 		.fail(function (){
 			alert("failed to connect to the database");
 		});
-}
-function wait(arg){
-	setTimeout(wait, 50000);
 }
 
 $myClasses="j";
@@ -84,9 +84,6 @@ $myClasses="j";
 $(document).ready(function () {
 	alert("stop");
 	AJAX_refreshClasses();
-	wait();
-	wait();
-	alert("done waiting");
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
 		if ($wid !== '') {
