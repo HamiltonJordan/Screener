@@ -41,7 +41,6 @@ function populateStuds(target_class){
 					alert("User: "+$target.FirstName+" "+$target.LastName+" removed from "+$class_selected);
 					//location.reload();
 					AJAX_refreshClasses();
-					populateStuds();
 				})
 				.fail(function (){
 					alert("failed to connect to the database");
@@ -83,7 +82,6 @@ function AJAX_refreshClasses(argument){
 
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
-	alert("stop");
 	AJAX_refreshClasses();
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
