@@ -67,7 +67,7 @@ function prepTable(argument){
 		}
 	});
 }
-function AJAX_refreshClasses(argument){
+function AJAX_loadClasses(argument){
 	var myId = 4; //Gousie
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
 		.done(function (response){
@@ -79,10 +79,19 @@ function AJAX_refreshClasses(argument){
 			alert("failed to connect to the database");
 		});
 }
-
+function AJAX_refreshClasses(argument){
+	var myId = 4; //Gousie
+	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
+		.done(function (response){
+			$myClasses = JSON.parse(response);
+		})
+		.fail(function (){
+			alert("failed to connect to the database");
+		});
+}
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
-	AJAX_refreshClasses();
+	AJAX_loadClasses();
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
 		if ($wid !== '') {
