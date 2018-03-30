@@ -76,7 +76,7 @@ function AJAX_refreshClasses(argument){
 		});
 }
 function wait(arg){
-	setTimeout(wait, 5000);
+	setTimeout(wait, 50000);
 }
 
 $myClasses="j";
