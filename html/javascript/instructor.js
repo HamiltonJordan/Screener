@@ -40,7 +40,7 @@ function populateStuds(target_class){
 					alert("User: "+$target.FirstName+" "+$target.LastName+" removed from "+$class_selected);
 					//location.reload();
 					AJAX_refreshClasses();
-					populateStuds();
+					//populateStuds();
 					//populateStuds($class_selected);
 				})
 				.fail(function (){
