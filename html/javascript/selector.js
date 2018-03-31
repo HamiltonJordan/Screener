@@ -1,8 +1,8 @@
 $(document).ready(function () {
-	var myId = Cookies.get('loginId');
+	//var myId = Cookies.get('loginId');
 
 	//PHP - request the JSON list of film information available to user
-	$.get("http://screener.onthewifi.com/fetchMyFilms.php?userId="+myId, "", function (response){
+	$.get("http://screener.onthewifi.com/fetchMyFilms.php, "", function (response){
 		myFilms=JSON.parse(response);
 		//myFilms = {}
 		console.log("response: " + response);
@@ -17,10 +17,12 @@ $(document).ready(function () {
 			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+(i+1)+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>1:11</td><td>3/31/18</td></tr>');
 			$("#a"+i).data("URL", myFilms[i].URL);
 		}
-		$("a").click(function(){
-			Cookies.remove('URL');
-			Cookies.set('URL', $("#"+this.id).data("URL"));
-		});
+        $("#a"+i).click({p1:myFilms[i].URL,p2:myFilms[i].Title},function(event){
+                url=event.data.p1;
+                title=event.data.p2;
+                 $.get("getvideo.php?video="+url+"&titlev="+title, "", function$
+                json=JSON.parse(response);
+                 })})}}
 	});		
 	/*
 	var jsonOBJ = {

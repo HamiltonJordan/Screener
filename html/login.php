@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
   //  error_reporting(E_ALL); 
   //  ini_set('display_errors',1);
 
@@ -21,8 +21,8 @@
             $returnObj->loginCheck = true;
             $returnObj->success = true;
             $returnObj->id = $row["Id"];
-	//$_SESSION["id"]=$row["Id"];
-	   // $_SESSION['auth'] = true;
+	$_SESSION["id"]=$row["Id"];
+	   $_SESSION['auth'] = true;
         }
     
         /* free result set */

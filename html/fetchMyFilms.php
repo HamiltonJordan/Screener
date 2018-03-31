@@ -4,14 +4,13 @@
 	ini_set('display_errors',1);
 
 //working with sessions
-//session_start();
-//if ($_SESSION['auth'] == true) {
+session_start();
+if ($_SESSION['auth'] == true) {
     // Connect to the database
     require("DBConnect.php");
-    $conn = db_connect();
-	//session_start();	
-	//$userId=$_SESSION['id'];
-	$userId=$_GET["userId"];
+    $conn = db_connect();	
+	$userId=$_SESSION['id'];
+	//$userId=$_GET["userId"];
 	$return_arr = array();
 
 	if ($result = $conn->query("
@@ -41,5 +40,5 @@
 
 	mysqli_close($conn);
 	echo json_encode($return_arr);
-//}
+}
 ?>
