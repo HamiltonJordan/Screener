@@ -9,7 +9,6 @@ function populateClass(response){
 function populateStuds(target_class){
 	//Delete what was previously in students table
 	$("#id-entry-point").children("tr").remove();
-
 	//Populate table with students
 	for (var i = 0; i < $myClasses.ClassList.length; i++) {
 		if ($myClasses.ClassList[i].ClassNumber == target_class) {
@@ -39,7 +38,10 @@ function populateStuds(target_class){
 			$.get("http://screener.onthewifi.com/DeleteUser.php?userId="+$target.StudentId+"&classId="+$target.ClassId)
 				.done(function (response){
 					alert("User: "+$target.FirstName+" "+$target.LastName+" removed from "+$class_selected);
-					location.reload();
+					//location.reload();
+					AJAX_refreshClasses();
+					prepTable();
+					//populateStuds($class_selected);
 				})
 				.fail(function (){
 					alert("failed to connect to the database");
@@ -47,37 +49,50 @@ function populateStuds(target_class){
 		}
 	});
 }
-
-//alert(myClass[0].student[3].FirstName);
-$(document).ready(function () {
-
+function prepTable(argument){
+	$class_selected = null;
+	$("#id-table").hide();
+	$("#add-field").hide();
+	$(".classButton").click(function(){
+		$newClass = $("#"+this.id).html();
+		if ($newClass == $class_selected){
+			$("#id-table").hide(500);
+			$("#add-field").hide(500);
+			$class_selected = null;
+		}
+		else{
+			$class_selected = $newClass;
+			populateStuds($class_selected);
+			$("#id-table").show(500);
+			$("#add-field").show(500);
+		}
+	});
+}
+function AJAX_loadClasses(argument){
 	var myId = 4; //Gousie
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
 		.done(function (response){
 			$myClasses = JSON.parse(response);
 			populateClass();
-			$class_selected = null;
-			$("#id-table").hide();
-			$("#add-field").hide();
-			$(".classButton").click(function(){
-				$newClass = $("#"+this.id).html();
-				if ($newClass == $class_selected){
-					$("#id-table").hide(500);
-					$("#add-field").hide(500);
-					$class_selected = null;
-				}
-				else{
-					$class_selected = $newClass;
-					populateStuds($class_selected);
-					$("#id-table").show(500);
-					$("#add-field").show(500);
-				}
-			});
+			prepTable();
 		})
 		.fail(function (){
 			alert("failed to connect to the database");
 		});
-
+}
+function AJAX_refreshClasses(argument){
+	var myId = 4; //Gousie
+	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
+		.done(function (response){
+			$myClasses = JSON.parse(response);
+		})
+		.fail(function (){
+			alert("failed to connect to the database");
+		});
+}
+//alert(myClass[0].student[3].FirstName);
+$(document).ready(function () {
+	AJAX_loadClasses();
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
 		if ($wid !== '') {
