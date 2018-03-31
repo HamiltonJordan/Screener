@@ -86,6 +86,7 @@ $("#add").click(function(){
   $(document).on('submita','form',function(e){
         e.preventDefault();
         $form = $(this);
+	$form.valid();
 	 uploadImage($form,"no");
 	
     })
