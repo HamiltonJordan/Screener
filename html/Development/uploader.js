@@ -86,17 +86,8 @@ $("#add").click(function(){
   $(document).on('submita','form',function(e){
         e.preventDefault();
         $form = $(this);
-	var run=true;
-	if($form.children("input").filter('[name=name]').val() ==""){
-	$form.children("input").filter('[name=name]').css('border-color', 'red');
-	run=false;
-		}
-	if( $form.children("input").filter('[name=dueDate]').val() ==""){
-		$form.children("input").filter('[name=dueDate]').css('border-color', 'red');
-	run=false;
-       }
-	if(run==true){ uploadImage($form,"no");
-	}
+	 uploadImage($form,"no");
+	
     })
 
     function uploadImage($form,check){
