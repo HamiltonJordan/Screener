@@ -6,14 +6,12 @@
 	// Directory for uploads should be as follows:
 	//		-UploadFolder/TeacherUserName/ClassCode/$filename
 	// This will ensure that we keep all files organized on server while uploading.
-if( move_uploaded_file($tmp_file,'upload_folder/'.$filename)){
-error_log( "yesyes",3,"/home/screener/log/php.log");
-  error_log( $_FILES['image']['error']." After Move CommandT\n Tmp:".$tmp_file."Upload: \n".'upload_folder/'.$filename,3,"/home/screener/log/php.log");
-}
+$t=time();
+move_uploaded_file($tmp_file,'upload_folder/'.$filename.$t)
 
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
-	$runtime=$_POST['runtime'];
+	$runtime=$_POST['runtime'];ø
 
  // Connect to the database
   /*  require("DBConnect.php");
@@ -22,7 +20,7 @@ error_log( "yesyes",3,"/home/screener/log/php.log");
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', 'upload_folder/$filename',1);";
 
 if ($conn->query($sql) === TRUE) {
-$sql = "SELECT id FROM Video WHERE Title='$name' and URL= 'upload_folder/$filename'";
+$sql = "SELECT id FROM Video WHERE Title='$name' and URL= 'upload_folder/$filename$t'";
 $result = $conn->query($sql);
 $videoid=0;
 $classid=0;

@@ -54,7 +54,6 @@ $("#add").click(function(){
 	"classopt[]": { required: true }
                 },
                 messages: {
-			"classopt[]":{required:"You must check a box"},
  			dueDate: {
                            required: "Please enter a date",
                            date: "Please enter a vaild date"
