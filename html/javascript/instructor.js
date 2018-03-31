@@ -3,7 +3,7 @@
 function populateClass(response){
 	for (var i = 0; i < $myClasses.ClassList.length; i++){
 		$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[i].ClassNumber+'</button>');
-		$("#checkbox-entry-point").append('<input class="form-check-input" type="checkbox" id="inlineCheckbox'+i+' name="classopt[]" value='+$myClasses.ClassList[i].ClassId+'>'+$myClasses.ClassList[i].ClassNumber+'</input>');
+		$("#checkbox-entry-point").append('<input class="form-check-input" type="checkbox" id="inlineCheckbox'+i+' name="classopt[]" value='+$myClasses.ClassList[i].ClassId+'><label class="form-check-label" for="inlineCheckbox'+i+'">'+$myClasses.ClassList[i].ClassNumber+'</label>');
 
 	}
 	$("#class-entry-point").append('<button type="button" class="btn btn-secondary" id="addClass"><b>+</b></button>');
