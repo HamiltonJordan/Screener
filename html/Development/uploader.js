@@ -77,7 +77,7 @@ $("#add").click(function(){
         //submit all form
         $('form .cancel').click();
     });
-    $(document).on('submit','form',function(e){
+    $(document).on('submit','upload-form',function(e){
         e.preventDefault();
         $form = $(this);
 	 uploadImage($form,"yes");
