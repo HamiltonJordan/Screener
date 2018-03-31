@@ -36,4 +36,11 @@
 	display: inline-block;
 	float: right;
 }
-
+.fright {
+	margin-left: 10px;
+	float: right;
+}
+#upload-field {
+	padding: 20px;
+	background-color: #eaeaea;
+}

@@ -3,6 +3,8 @@
 function populateClass(response){
 	for (var i = 0; i < $myClasses.ClassList.length; i++){
 		$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[i].ClassNumber+'</button>');
+		$("#checkbox-entry-point").append('<input class="form-check-input" type="checkbox" id="inlineCheckbox'+(i+1)+' name="classopt[]" value='+myClasses[i].ClassId+'><label class="form-check-label" for="inlineCheckbox1">'+myClasses[i].ClassName+'</label>');
+
 	}
 	$("#class-entry-point").append('<button type="button" class="btn btn-secondary" id="addClass"><b>+</b></button>');
 }
@@ -74,6 +76,7 @@ function AJAX_loadClasses(argument){
 			$myClasses = JSON.parse(response);
 			populateClass();
 			prepTable();
+
 		})
 		.fail(function (){
 			alert("failed to connect to the database");
