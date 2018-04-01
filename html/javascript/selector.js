@@ -2,7 +2,7 @@ $(document).ready(function () {
 	//var myId = Cookies.get('loginId');
 
 	//PHP - request the JSON list of film information available to user
-	$.get("http://screener.onthewifi.com/fetchMyFilms.php, "", function (response){
+	$.get("http://screener.onthewifi.com/fetchMyFilms.php", "", function (response){
 		myFilms=JSON.parse(response);
 		//myFilms = {}
 		console.log("response: " + response);
