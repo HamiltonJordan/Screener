@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var myId = 4;
 var total='';
- $.get("fetchMyClasses.php?userId="+myId, "", function (response){
+ $.get("fetchMyClasses.php", "", function (response){
                 myClasses=JSON.parse(response);
                         /*
 

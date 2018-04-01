@@ -1,12 +1,15 @@
 <?php
+ session_start();
 	//This code does not work yet!
+error_log( "sessiomn?".$_SESSION['id'],3,"/home/screener/log/php.log");
+
 	error_reporting(E_ALL); 
 	ini_set('display_errors',1);
-
     require("DBConnect.php");
     $conn = db_connect();
-
-	$userId=$_GET["userId"];
+// 
+	$userId=$_SESSION['id'];
+	//$userId=$_GET["userId"];
 	$return_arr = array();
 
 	if ($result = $conn->query("
@@ -33,4 +36,5 @@
 	mysqli_close($conn);
 	echo json_encode($return_arr);
 //}
+
 ?>

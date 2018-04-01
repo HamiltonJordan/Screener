@@ -22,7 +22,7 @@ session_start();
             $returnObj->success = true;
             $returnObj->id = $row["Id"];
 	$_SESSION["id"]=$row["Id"];
-	   $_SESSION['auth'] = true;
+	   $_SESSION["auth"] = true;
         }
     
         /* free result set */
