@@ -17,13 +17,14 @@ $(document).ready(function () {
 			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+(i+1)+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>1:11</td><td>3/31/18</td></tr>');
 			$("#a"+i).data("URL", myFilms[i].URL);
 		}
-        $("#a"+i).click({p1:myFilms[i].URL,p2:myFilms[i].Title},function(event){
-                url=event.data.p1;
-                title=event.data.p2;
-                 $.get("getvideo.php?video="+url+"&titlev="+title, "", function$
-                json=JSON.parse(response);
-                 })})}}
-	});		
+		$("#a"+i).click({p1:myFilms[i].URL,p2:myFilms[i].Title},function(event){
+			url=event.data.p1;
+			title=event.data.p2;
+			$.get("getvideo.php?video="+url+"&titlev="+title, "", function (response){
+				json=JSON.parse(response);
+			})
+		})
+	});
 	/*
 	var jsonOBJ = {
 		"class": [
