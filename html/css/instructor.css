@@ -1,4 +1,6 @@
 /*Instructor CSS*/
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 .top-space-20{
 	margin-top: 20px;
 }
@@ -46,4 +48,31 @@
 #upload-field {
 	padding: 20px;
 	background-color: #eaeaea;
+}
+
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+.navbar{
+	height: 56px;
+}
+.navbar-brand h1
+{
+    font-family: 'Roboto Condensed', sans-serif;
+	color: #eee;
+	font-size: 50px;
+	margin: 0px;
+	padding: 0px;
+	line-height: 0px;
 }
