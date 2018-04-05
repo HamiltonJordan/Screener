@@ -155,9 +155,9 @@ $(document).ready(function () {
 		newClass.classTitle = $("#classTitle").val();
 		alert($("#classCode").val());
 		newClass.classCode  = $("#classCode").val();
-		alert("myID= "+myId);
-		newClass.UserId = myId;
-		newClass.Active = 1;
+		//alert("myID= "+myId);
+		//newClass.UserId = myId;
+		//newClass.Active = 1;
 		alert("here");
 
 		// Turns the object into JSON string
