@@ -137,7 +137,9 @@ $(document).ready(function () {
 		var newClass = {
 			classTitle: "",
 			classCode: "",
-			studentList: []
+			studentList: [],
+			UserId: 0,
+			Active: 0
 		};
 		// Grabs student Ids.
 		var studentIds = $("#studentIds").val().split(',');
@@ -153,6 +155,7 @@ $(document).ready(function () {
 		newClass.classTitle = $("#classTitle").val();
 		alert(newClass.classTitle);
 		newClass.classCode  = $("#classCode").val();
+		alert("myID= "+myId);
 		newClass.UserId = myId;
 		newClass.Active = 1;
 		alert("here");
