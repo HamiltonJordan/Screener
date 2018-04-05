@@ -186,6 +186,7 @@ $(document).ready(function () {
 			if (myObj.success) {
 				alert('we gucci, we added ' + newClass.classTitle + ' to the database.' 
 					+ 'We also enrolled '+ myObj.rowCount + ' students to the class.');
+				location.reload();
 			}
 			else {
 				alert('failed to post data.');
