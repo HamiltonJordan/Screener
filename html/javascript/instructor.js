@@ -97,10 +97,9 @@ function AJAX_refreshClasses(argument){
 $(document).ready(function () {
 	AJAX_loadClasses();
 	$("#new-class-field").hide();
-	$("#new-class-field").show(500);
 	$("#addClass").click(function(){
 		alert("eeee");
-		$("new-class-field").show(500);
+		$("#new-class-field").toggle(500);
 	});
 
 	$('#submit-student').click(function() {
