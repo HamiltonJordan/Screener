@@ -55,13 +55,13 @@ function prepTable(argument){
 	$("#id-table").hide();
 	$("#add-field").hide();
 	$(".classButton").click(function(){
-		//$(this).css("background-color", "#353535")
-		$("this").addClass("active");
+		$(this).addClass("current_button");
 		$("#new-class-field").hide(100);
 		$newClass = $("#"+this.id).html();
 		if ($newClass == $class_selected){
 			$("#id-table").hide(500);
 			$("#add-field").hide(500);
+
 			$class_selected = null;
 		}
 		else{
