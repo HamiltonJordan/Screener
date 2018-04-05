@@ -43,6 +43,15 @@
        } 
     }
 
+    // Inserts record into Teaches table
+    if($classData->InstructorId != '' && $classId != '') {
+        $InstructorId  = $classData->InstructorId;
+        $query1 = mysqli_real_escape_string($conn, $InstructorId);
+        $query2 = mysqli_real_escape_string($conn, $classId);
+        $query ="INSERT INTO Teaches (UserId, ClassId) VALUES ( '". $InstructorId."','".$classId."' )";
+        mysqli_query($conn, $query);
+    }
+
     // // Adds Students to class under EnrolledIn table
     if(is_array($studentIds)) {
         foreach($studentIds as $wheatonId) {
