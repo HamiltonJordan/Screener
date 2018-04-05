@@ -168,13 +168,9 @@ $(document).ready(function () {
 
 		// Updates last values in newClass object.
 		newClass.classTitle = $("#classTitle").val();
-		alert($("#classCode").val());
 		newClass.classCode  = $("#classCode").val();
-		alert("myID= "+$userID);
 		newClass.UserId = $userID;
 		newClass.Active = 1;
-		alert("here");
-
 		// Turns the object into JSON string
 		var json = JSON.stringify(newClass);
 		alert(json);
