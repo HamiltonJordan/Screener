@@ -133,6 +133,7 @@ $(document).ready(function () {
 		}
 	});
 	$("#submit-class").click(function(){
+		alert("here");
 		var newClass = {
 			classTitle: "",
 			classCode: "",
@@ -156,7 +157,8 @@ $(document).ready(function () {
 
 		// Turns the object into JSON string
 		var json = JSON.stringify(newClass);
-
+		alert(json);
+/*
 		//Sends the data to PHP to update the list.
 		$.get("AddClass.php?classObject="+json, function(response){
 			console.log(response);
@@ -168,8 +170,9 @@ $(document).ready(function () {
 			else {
 				alert('failed to post data.');
 			}
-		});
 
+		});
+*/
 	}); // End of Button.Click Function
 
 }); // End of Document.Ready
