@@ -98,7 +98,6 @@ $(document).ready(function () {
 	AJAX_loadClasses();
 	$("#new-class-field").hide();
 	$("#addClass").click(function(){
-		alert("eeee");
 		$("#new-class-field").toggle(500);
 	});
 
