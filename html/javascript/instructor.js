@@ -98,6 +98,8 @@ $(document).ready(function () {
 	AJAX_loadClasses();
 	$("#new-class-field").hide();
 	$("#addClass").click(function(){
+		$("#id-table").hide(500);
+		$("#add-field").hide(500);
 		$("#new-class-field").toggle(500);
 	});
 
