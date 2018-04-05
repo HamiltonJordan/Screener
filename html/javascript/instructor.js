@@ -69,6 +69,7 @@ function prepTable(argument){
 			$("#add-field").show(500);
 		}
 	});
+	alert("hee");
 	$("#addClass").click(function(){
 		alert("yo");
 		$("new-class-field").show(500);
