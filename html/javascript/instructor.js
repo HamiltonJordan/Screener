@@ -133,7 +133,6 @@ $(document).ready(function () {
 		}
 	});
 	$("#submit-class").click(function(){
-		alert("here");
 		var newClass = {
 			classTitle: "",
 			classCode: "",
@@ -142,18 +141,21 @@ $(document).ready(function () {
 		// Grabs student Ids.
 		var studentIds = $("#studentIds").val().split(',');
 		var length = studentIds.length;
-		
+				alert("here");
+
 		// Cleans the input of student IDs and adds to newClass list.
 		for (var i=0; i < length; i++) {
 			studentIds[i] = studentIds[i].replace(/\s/g, "");
 			newClass.studentList.push(studentIds[i]);
 		}
+		alert("here");
 
 		// Updates last values in newClass object.
 		newClass.classTitle = $("#classTitle").val();
 		newClass.classCode  = $("#classCode").val();
 		newClass.UserId = userId;
 		newClass.Active = 1;
+		alert("here");
 
 		// Turns the object into JSON string
 		var json = JSON.stringify(newClass);
