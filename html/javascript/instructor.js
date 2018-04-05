@@ -152,7 +152,7 @@ $(document).ready(function () {
 		var newClass = {
 			classTitle: "",
 			classCode: "",
-			InstructorId = 0,
+			InstructorId: 0,
 			studentList: [],
 			UserId: 0,
 			Active: 0
