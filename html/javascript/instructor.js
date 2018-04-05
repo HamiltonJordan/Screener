@@ -153,7 +153,7 @@ $(document).ready(function () {
 
 		// Updates last values in newClass object.
 		newClass.classTitle = $("#classTitle").val();
-		alert(newClass.classTitle);
+		alert($("#classCode").val());
 		newClass.classCode  = $("#classCode").val();
 		alert("myID= "+myId);
 		newClass.UserId = myId;
