@@ -96,6 +96,7 @@ function AJAX_refreshClasses(argument){
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
 	//var myId = 4; //Gousie
+	$userID = 4;
 	AJAX_loadClasses();
 	$("#new-class-field").hide();
 	$("#addClass").click(function(){
@@ -155,15 +156,15 @@ $(document).ready(function () {
 		newClass.classTitle = $("#classTitle").val();
 		alert($("#classCode").val());
 		newClass.classCode  = $("#classCode").val();
-		//alert("myID= "+myId);
-		//newClass.UserId = myId;
-		//newClass.Active = 1;
+		alert("myID= "+$userID);
+		newClass.UserId = $userID;
+		newClass.Active = 1;
 		alert("here");
 
 		// Turns the object into JSON string
 		var json = JSON.stringify(newClass);
 		alert(json);
-/*
+
 		//Sends the data to PHP to update the list.
 		$.get("AddClass.php?classObject="+json, function(response){
 			console.log(response);
@@ -177,7 +178,7 @@ $(document).ready(function () {
 			}
 
 		});
-*/
+
 	}); // End of Button.Click Function
 
 }); // End of Document.Ready
