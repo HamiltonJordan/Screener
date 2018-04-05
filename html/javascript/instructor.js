@@ -56,6 +56,7 @@ function prepTable(argument){
 	$("#id-table").hide();
 	$("#add-field").hide();
 	$(".classButton").click(function(){
+		$("#addClass").removeClass("current_button");
 		$(this).addClass("current_button");
 		$("#new-class-field").hide(100);
 		$newClass = $("#"+this.id).html();
@@ -78,6 +79,10 @@ function prepTable(argument){
 		}
 	});
 	$("#addClass").click(function(){
+		if ($class_selectedEl != null) {
+			$($class_selectedEl).removeClass("current_button");
+		}
+		$(this).addClass("current_button");
 		$("#id-table").hide(500);
 		$("#add-field").hide(500);
 		$("#new-class-field").toggle(500);
