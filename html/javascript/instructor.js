@@ -71,7 +71,7 @@ function prepTable(argument){
 	});
 }
 function AJAX_loadClasses(argument){
-	//var myId = 4; //Gousie
+	var myId = 4; //Gousie
 	$.get("http://screener.onthewifi.com/instructor.php?instructorId="+myId)
 		.done(function (response){
 			$myClasses = JSON.parse(response);
@@ -95,7 +95,7 @@ function AJAX_refreshClasses(argument){
 }
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
-	var myId = 4; //Gousie
+	//var myId = 4; //Gousie
 	AJAX_loadClasses();
 	$("#new-class-field").hide();
 	$("#addClass").click(function(){
