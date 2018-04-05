@@ -139,7 +139,12 @@
 							<br>
 							<div class="row">
 								<div class="col-5 padding-5-right">
-									<input class="form-control" type="text" name="dueDate" placeholder="Due Date">
+									<div class='input-group date' id='datetimepicker1'>
+										<input type='text' class="form-control" name="dueDate" placeholder="Due Date" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
 								</div>
 								<div class="col-7 padding-5-left">
 									<input type="file" id="image"  name="image" >
@@ -166,23 +171,6 @@
 								</div>
 							</div>
 						</form>
-
-						<!--
-						<form action="#" id="form">
-							 <input type="text" name="name" placeholder="Enter Film Name"><br>
-							<input type="text" name="dueDate" placeholder="Due Date"><br>
-							<input type="text" name="runtime" placeholder="runtime">
-				 			<div class="checkbox"></div>
-							<input type="file" id="image"  name="image" >
-
-							 
-						</form>
-						 <div class="form"></div>
-						<hr>
-						<button type="button" id="add">+</button>
-						<button class="btn btn-sm btn-primary upload-all">Upload All</button>
-						<button class="btn btn-sm btn-danger cancel-all">Cancel All</button>
-						-->
 					</div>
 					<div class="col-lg-1 col-md-0"></div>
 				</div>
