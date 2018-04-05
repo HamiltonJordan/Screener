@@ -77,6 +77,11 @@ function prepTable(argument){
 			$(this).addClass("current_button");
 		}
 	});
+	$("#addClass").click(function(){
+		$("#id-table").hide(500);
+		$("#add-field").hide(500);
+		$("#new-class-field").toggle(500);
+	});
 }
 function AJAX_loadClasses(argument){
 	var myId = 4; //Gousie
@@ -107,12 +112,6 @@ $(document).ready(function () {
 	$userID = 4;
 	AJAX_loadClasses();
 	$("#new-class-field").hide();
-	$("#addClass").click(function(){
-		$("#id-table").hide(500);
-		$("#add-field").hide(500);
-		$("#new-class-field").toggle(500);
-	});
-
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
 		if ($wid !== '') {
