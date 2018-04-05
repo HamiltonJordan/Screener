@@ -152,8 +152,8 @@ $(document).ready(function () {
 		var newClass = {
 			classTitle: "",
 			classCode: "",
+			InstructorId: 0,
 			studentList: [],
-			UserId: 0,
 			Active: 0
 		};
 		// Grabs student Ids.
@@ -169,7 +169,7 @@ $(document).ready(function () {
 		// Updates last values in newClass object.
 		newClass.classTitle = $("#classTitle").val();
 		newClass.classCode  = $("#classCode").val();
-		newClass.UserId = $userID;
+		newClass.InstructorId = $userID;
 		newClass.Active = 1;
 		// Turns the object into JSON string
 		var json = JSON.stringify(newClass);
