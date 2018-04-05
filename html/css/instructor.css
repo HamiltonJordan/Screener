@@ -81,3 +81,6 @@
 .current_button {
 	background-color: #353535;
 }
+.current_button:hover {
+	background-color: #353535;
+}
