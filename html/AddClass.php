@@ -19,14 +19,14 @@
     $returnObj = new ReturnObject();
 
     // Adding new class to Class table
-    if($classData->classTitle != '' && $classData->classCode != '') {
-        $classTitle = $classData->classTitle;
-        $classCode  = $classData->classCode;
-        $query1 = mysqli_real_escape_string($conn, $classTitle);
-        $query2 = mysqli_real_escape_string($conn, $classCode);
-        $query ="INSERT INTO Class (ClassName, ClassNumber) VALUES ( '". $classTitle."','".$classCode."' )";
-        mysqli_query($conn, $query);
-    }
+    // if($classData->classTitle != '' && $classData->classCode != '') {
+    //     $classTitle = $classData->classTitle;
+    //     $classCode  = $classData->classCode;
+    //     $query1 = mysqli_real_escape_string($conn, $classTitle);
+    //     $query2 = mysqli_real_escape_string($conn, $classCode);
+    //     $query ="INSERT INTO Class (ClassName, ClassNumber) VALUES ( '". $classTitle."','".$classCode."' )";
+    //     mysqli_query($conn, $query);
+    // }
 
 
     // Getting newly created classe's Id
@@ -44,38 +44,40 @@
     }
 
     // Inserts record into Teaches table
-    if($classData->InstructorId != '' && $classId != '') {
-        $InstructorId  = $classData->InstructorId;
-        $query1 = mysqli_real_escape_string($conn, $InstructorId);
-        $query2 = mysqli_real_escape_string($conn, $classId);
-        $query ="INSERT INTO Teaches (UserId, ClassId) VALUES ( '". $InstructorId."','".$classId."' )";
-        mysqli_query($conn, $query);
-    }
+    echo $classData->InstructorId;
+    echo $classId;
+    // if($classData->InstructorId != '' && $classId != '') {
+    //     $InstructorId  = $classData->InstructorId;
+    //     $query1 = mysqli_real_escape_string($conn, $InstructorId);
+    //     $query2 = mysqli_real_escape_string($conn, $classId);
+    //     $query ="INSERT INTO Teaches (UserId, ClassId) VALUES ( '". $InstructorId."','".$classId."' )";
+    //     mysqli_query($conn, $query);
+    // }
 
-    // // Adds Students to class under EnrolledIn table
+    // Adds Students to class under EnrolledIn table
     if(is_array($studentIds)) {
-        foreach($studentIds as $wheatonId) {
+        // foreach($studentIds as $wheatonId) {
 
-            // Finding user's Id based off of inputted wheaton id
-            if ($result = $conn->query("
-                SELECT Id
-                From User
-                WHERE User.WheatonId = '$wheatonId'
-                Limit 1;
-                ")) 
-            {
-                // Adding userId to enrolled in table.
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $Id = $row['Id'];
-                    $query1 = mysqli_real_escape_string($conn, $Id);
-                    $query ="INSERT INTO EnrolledIn (UserId, ClassId) VALUES ( '". $Id."','".$classId."' )";
-                    mysqli_query($conn, $query);
-                    $returnObj->rowCount = $returnObj->rowCount + 1;
+        //     // Finding user's Id based off of inputted wheaton id
+        //     if ($result = $conn->query("
+        //         SELECT Id
+        //         From User
+        //         WHERE User.WheatonId = '$wheatonId'
+        //         Limit 1;
+        //         ")) 
+        //     {
+        //         // Adding userId to enrolled in table.
+        //         while ($row = mysqli_fetch_assoc($result)) {
+        //             $Id = $row['Id'];
+        //             $query1 = mysqli_real_escape_string($conn, $Id);
+        //             $query ="INSERT INTO EnrolledIn (UserId, ClassId) VALUES ( '". $Id."','".$classId."' )";
+        //             mysqli_query($conn, $query);
+        //             $returnObj->rowCount = $returnObj->rowCount + 1;
                             
-                }
-            }
+        //         }
+        //     }
             
-        }
+        // }
        $returnObj->success = true;
     }
     echo json_encode($returnObj);
