@@ -152,6 +152,7 @@ $(document).ready(function () {
 		var newClass = {
 			classTitle: "",
 			classCode: "",
+			InstructorId = 0,
 			studentList: [],
 			UserId: 0,
 			Active: 0
@@ -171,7 +172,7 @@ $(document).ready(function () {
 		alert($("#classCode").val());
 		newClass.classCode  = $("#classCode").val();
 		alert("myID= "+$userID);
-		newClass.UserId = $userID;
+		newClass.InstructorId = $userID;
 		newClass.Active = 1;
 		alert("here");
 
