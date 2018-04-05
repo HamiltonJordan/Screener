@@ -111,24 +111,14 @@ function AJAX_refreshClasses(argument){
 			alert("failed to connect to the database");
 		});
 }
-function prepDate(argument){
-	var date_input=$('input[name="date"]'); //our date input has the name "date"
-	var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-	var options={
-		format: 'mm/dd/yyyy',
-		container: container,
-		todayHighlight: true,
-		autoclose: true,
-	};
-	date_input.datepicker(options);
-}
+
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
 	//var myId = 4; //Gousie
 	$userID = 4;
 	AJAX_loadClasses();
+	$("#dueDate").datepicker();
 	$("#new-class-field").hide();
-	prepDate();
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
 		if ($wid !== '') {
