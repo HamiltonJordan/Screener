@@ -55,6 +55,7 @@ function prepTable(argument){
 	$("#id-table").hide();
 	$("#add-field").hide();
 	$(".classButton").click(function(){
+		$(this).css("background-color", "black")
 		$("#new-class-field").hide(100);
 		$newClass = $("#"+this.id).html();
 		if ($newClass == $class_selected){
