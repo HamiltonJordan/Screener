@@ -69,11 +69,6 @@ function prepTable(argument){
 			$("#add-field").show(500);
 		}
 	});
-	alert("hee");
-	$("#addClass").click(function(){
-		alert("yo");
-		$("new-class-field").show(500);
-	});
 }
 function AJAX_loadClasses(argument){
 	var myId = 4; //Gousie
@@ -102,6 +97,10 @@ function AJAX_refreshClasses(argument){
 $(document).ready(function () {
 	AJAX_loadClasses();
 	$("#new-class-field").hide();
+	$("#addClass").click(function(){
+		alert("eeee");
+		$("new-class-field").show(500);
+	});
 
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
