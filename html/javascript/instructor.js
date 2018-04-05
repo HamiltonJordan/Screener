@@ -52,20 +52,25 @@ function populateStuds(target_class){
 }
 function prepTable(argument){
 	$class_selected = null;
+	$class_selectedEl = null;
 	$("#id-table").hide();
 	$("#add-field").hide();
 	$(".classButton").click(function(){
 		$(this).addClass("current_button");
 		$("#new-class-field").hide(100);
 		$newClass = $("#"+this.id).html();
+		$newClassEl = $(this);
 		if ($newClass == $class_selected){
 			$("#id-table").hide(500);
 			$("#add-field").hide(500);
 			$(this).removeClass("current_button");
 			$class_selected = null;
+			$class_selectedEl = null;
 		}
 		else{
 			$class_selected = $newClass;
+			$($class_selectedEl).removeClass("current_button");
+			$class_selectedEl = $newClassEl;
 			populateStuds($class_selected);
 			$("#id-table").show(500);
 			$("#add-field").show(500);
