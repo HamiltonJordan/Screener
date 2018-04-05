@@ -96,9 +96,8 @@ function AJAX_refreshClasses(argument){
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
 	AJAX_loadClasses();
-	//$("#new-class-field").hide();
+	$("#new-class-field").hide();
 	$("#addClass").click(function(){
-		alert("eeee");
 		$("new-class-field").show(500);
 	});
 
