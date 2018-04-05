@@ -132,6 +132,45 @@ $(document).ready(function () {
 			alert("No Student Information");
 		}
 	});
+	$("#submit-class").click(function(){
+		var newClass = {
+			classTitle: "",
+			classCode: "",
+			studentList: []
+		};
+		// Grabs student Ids.
+		var studentIds = $("#studentIds").val().split(',');
+		var length = studentIds.length;
+		
+		// Cleans the input of student IDs and adds to newClass list.
+		for (var i=0; i < length; i++) {
+			studentIds[i] = studentIds[i].replace(/\s/g, "");
+			newClass.studentList.push(studentIds[i]);
+		}
+
+		// Updates last values in newClass object.
+		newClass.classTitle = $("#classTitle").val();
+		newClass.classCode  = $("#classCode").val();
+		newClass.UserId = userId;
+		newClass.Active = 1;
+
+		// Turns the object into JSON string
+		var json = JSON.stringify(newClass);
+
+		//Sends the data to PHP to update the list.
+		$.get("AddClass.php?classObject="+json, function(response){
+			console.log(response);
+			var myObj = JSON.parse(response);
+			if (myObj.success) {
+				alert('we gucci, we added ' + newClass.classTitle + ' to the database.' 
+					+ 'We also enrolled '+ myObj.rowCount + ' students to the class.');
+			}
+			else {
+				alert('failed to post data.');
+			}
+		});
+
+	}); // End of Button.Click Function
 
 }); // End of Document.Ready
 
