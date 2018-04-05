@@ -70,6 +70,7 @@ function prepTable(argument){
 		}
 	});
 	$("#addClass").click(function(){
+		alert("yo");
 		$("new-class-field").show(500);
 	});
 }
