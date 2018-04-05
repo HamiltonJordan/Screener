@@ -6,7 +6,7 @@ function populateClass(response){
 		$("#checkbox-entry-point").append('<input class="form-check-input" type="checkbox" id="inlineCheckbox'+i+' name="classopt[]" value='+$myClasses.ClassList[i].ClassId+'><label class="form-check-label margin-10-right" for="inlineCheckbox'+i+'">'+$myClasses.ClassList[i].ClassNumber+'</label>');
 
 	}
-	$("#class-entry-point").append('<button type="button" class="btn btn-secondary" id="addClass"><b>+</b></button>');
+	//$("#class-entry-point").append('<button type="button" class="btn btn-secondary" id="addClass"><b>+</b></button>');
 }
 function populateStuds(target_class){
 	//Delete what was previously in students table
@@ -55,6 +55,7 @@ function prepTable(argument){
 	$("#id-table").hide();
 	$("#add-field").hide();
 	$(".classButton").click(function(){
+		$("#new-class-field").hide(500);
 		$newClass = $("#"+this.id).html();
 		if ($newClass == $class_selected){
 			$("#id-table").hide(500);
@@ -95,6 +96,10 @@ function AJAX_refreshClasses(argument){
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
 	AJAX_loadClasses();
+	$("#new-class-field").hide();
+	$("#addClass").click(function(){
+		$("new-class-field").show(500);
+	})
 	$('#submit-student').click(function() {
 		$wid = $("#WheatonId-field").val();
 		if ($wid !== '') {

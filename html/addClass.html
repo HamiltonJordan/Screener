@@ -14,7 +14,7 @@
 		<input type="text" name="classCode" id="classCode"><br>
 		Student Wheaton Ids<br>
 		<textarea type="text" name="lastname" id="studentIds"></textarea> <br>
-		<button type="button" id="button">here</button>
+		<button type="button" id="submit-class">here</button>
 	</form>
 
 <script type="text/javascript">
@@ -31,7 +31,7 @@
 			// Gets logged in users id
 			var userId = Cookies.get('loginId');
 
-			$("#button").click(function(){
+			$("#submit-class").click(function(){
 				// Grabs student Ids.
 				var studentIds = $("#studentIds").val().split(',');
 				var length = studentIds.length;
