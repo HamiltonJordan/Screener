@@ -106,7 +106,7 @@ function AJAX_loadClasses(argument){
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
 	//var myId = 4; //Gousie
-	$userID = 4;
+	//$userID = 4;
 	AJAX_loadClasses();
 	$("#dueDate").datepicker();
 	$("#new-class-field").hide();
