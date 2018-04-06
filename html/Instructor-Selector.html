@@ -1,0 +1,77 @@
+<!--Instructor-Selector-->
+<!DOCTYPE html>
+	<!--
+		Modified from the Debian original for Ubuntu
+		Last updated: 2014-03-19
+		See: https://launchpad.net/bugs/1288690
+	-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Screener - My Films</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/instructor-selector.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script
+			src="https://code.jquery.com/jquery-3.3.1.js"
+			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+</head>
+
+<body oncontextmenu="return false;">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#"><h1><b><i>Screener</i></b></h1></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Selector <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="instructor.html">Instructor</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="viewer.html">Resume Viewing</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="outer">
+		<div class="container" id="main">
+		<div class="row" id="selector-table">
+		<h1>My Films</h1>
+		<table class="table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Film</th>
+					<th scope="col">Runtime</th>
+					<th scope="col">Due Date</th>
+				</tr>
+			</thead>
+
+			<tbody id="entry-point">
+
+			</tbody>
+		</table>
+		</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript" src="javascript/instructor-selector.js"></script>
+	<!--<script type="text/javascript" src="javascript/newselector.js"></script>-->
+</body>
+</html>
+
+
