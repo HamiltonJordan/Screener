@@ -8,7 +8,9 @@ if ($_SESSION['auth'] == true) {
     // Connect to the database
     require("DBConnect.php");
     $conn = db_connect();	
-	$teacherId=$_SESSION['id'];
+	//$teacherId=$_SESSION['id'];
+	//DELETE ME
+	$teacherId=4;
 	//$userId=$_GET["userId"];
 	$return_arr = array();
 
