@@ -1,5 +1,6 @@
 <?php
-
+	session_start();
+	
 	/*
 	EXAMPLE JSON RETURNED OBJECT	
 
@@ -45,7 +46,8 @@
     	public $WheatonId = "";
     }
 
-    $instructorId = $_GET["instructorId"];
+    $instructorId =$_SESSION['id'];
+	// $_GET["instructorId"];
 
     // Arrays to be used in the return JSON object
     $classIdArray = [];
