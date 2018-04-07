@@ -36,7 +36,7 @@
 			foreach($_POST['classopt'] as $selected){
 				error_log($selected." ", 3, "/home/screener/log/php.log");
 				$classid=(int)$selected;
-				$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid);";
+				$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
 				if($conn->query($sql){
 					error_log(" We ARE crazy ", 3, "/home/screener/log/php.log");
 				}
