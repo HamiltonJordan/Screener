@@ -7,7 +7,7 @@
 	//		-UploadFolder/TeacherUserName/ClassCode/$filename
 	// This will ensure that we keep all files organized on server while uploading.
 	$t=time();
-	if(move_uploaded_file($tmp_file,'video/'.$filename.$t)){
+	if(move_uploaded_file($tmp_file,'video/$filename')){
 		error_log("it worked", 3, "/home/screener/log/php.log");
 	}
 	else {
