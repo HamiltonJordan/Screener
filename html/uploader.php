@@ -30,9 +30,14 @@
 	if ($result = $conn->query($sql)) {
 		if ($row = mysqli_fetch_assoc($result)) {
 			echo $row['id'];
-			error_log("inside if2, ", 3, "/home/screener/log/php.log");
+			//error_log("inside if2, ", 3, "/home/screener/log/php.log");
 			$videoid= $row['id'];
-			$classid=0;
+			$classid = 1;
+			$sql="INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
+			if($conn->query($sql)){
+				echo "Just added it";
+			}
+			//$classid=0;
 			error_log(" ".$videoid." ", 3, "/home/screener/log/php.log");
 			//echo $videoid;
 			/*
