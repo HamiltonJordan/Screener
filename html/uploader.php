@@ -8,14 +8,14 @@
 	// This will ensure that we keep all files organized on server while uploading.
 	$t=time();
 	$target_address = 'video/'.$t.$filename;
-/*
+
 	if(move_uploaded_file($tmp_file,$target_address)){
 		error_log("it worked", 3, "/home/screener/log/php.log");
 	}
 	else {
 		error_log($target_address, 3, "/home/screener/log/php.log");
 	}
-*/
+
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
 	$runtime=$_POST['runtime'];
