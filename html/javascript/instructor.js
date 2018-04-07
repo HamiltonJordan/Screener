@@ -129,6 +129,7 @@ function setupUpload(argument){
 			});
 		
 			alert("start post");
+			/*
 			$name_entered = $("#title").val();
 			$duedate_entered = $("#dueDate").val();
 			$runtime_entered = $("#runtime").val();
@@ -143,11 +144,11 @@ function setupUpload(argument){
 				});
 			//End Post
 			alert("end post");
-			
+			*/
 			//open pipe to php
-			//request.open('post', 'uploader.php');
+			request.open('post', 'uploader.php');
 			//send data to php
-			//request.send(formdata);
+			request.send(formdata);
 		}
 		else if($fize > $system_max_fsize){
 			alert("no video selected to upload or File selected is too large");
