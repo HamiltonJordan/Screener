@@ -44,6 +44,7 @@
 			foreach(array(1,2,3,4)  as $selected){
 				error_log($selected." ", 3, "/home/screener/log/php.log");
 				$classid=(int)$selected;
+				echo classid;
 				$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
 				if($conn->query($sql)){
 					error_log(" We ARE crazy ", 3, "/home/screener/log/php.log");
