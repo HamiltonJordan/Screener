@@ -40,8 +40,8 @@
 			//$classid=0;
 			error_log(" ".$videoid." ", 3, "/home/screener/log/php.log");
 			//echo $videoid;
-			/*
-			foreach(classopt=>array{1,2,3,4} as $selected){
+		
+			foreach(classopt=>array{1,2,3,4}  as $selected){
 				error_log($selected." ", 3, "/home/screener/log/php.log");
 				$classid=(int)$selected;
 				$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
@@ -49,7 +49,6 @@
 					error_log(" We ARE crazy ", 3, "/home/screener/log/php.log");
 				}
 			}
-			*/
 		}
 	}
 	/*
@@ -65,7 +64,7 @@
 				error_log(" ".$videoid." ", 3, "/home/screener/log/php.log");
 				//echo $videoid;
 						
-				foreach(classopt=>array(1,2,3,4) as $selected){
+				foreach($_POST["classopt"] as $selected){
 					error_log($selected." ", 3, "/home/screener/log/php.log");
 					$classid=(int)$selected;
 					$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid);";
