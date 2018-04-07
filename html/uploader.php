@@ -26,7 +26,7 @@
 
 	if ($conn->query($sql) === TRUE) {
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address'";
-		if ($result = $conn->query($sql) === TRUE) {
+		if ($result = $conn->query($sql)) {
 			while ($row = mysqli_fetch_assoc($result)) {
 				$videoid= $row['id'];
 				echo $videoid;
