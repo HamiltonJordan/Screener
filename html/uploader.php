@@ -21,7 +21,7 @@
 
  // Connect to the database
 	require("DBConnect.php");
-	$conn = /*mysql_connect('127.0.0.1', 'root', 'jthklo123', 'websitedb');//*/db_connect();
+	$conn = db_connect();
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
 
 	if ($conn->query($sql) === TRUE) {
