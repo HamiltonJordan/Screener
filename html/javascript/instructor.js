@@ -126,11 +126,12 @@ function setupUpload(argument){
 			request.addEventListener('load',function(e){
 				$form.find('#progress-bar').addClass('progress-bar-success').html('upload completed....');
 			});
-			/*
+		
 			alert("start post");
 			$name_entered = $("#name").val();
 			$duedate_entered = $("#dueDate").val();
 			$runtime_entered = $("#runtime").val();
+			alert($name_entered);
 			$.post("uploader.php", {name: $name_entered, duedate: $duedate_entered, runtime:$runtime_entered})
 				.done(function(result){
 					$("span").html(result);
@@ -141,11 +142,11 @@ function setupUpload(argument){
 				}
 			});
 			alert("end post");
-			*/
+			
 			//open pipe to php
-			request.open('post', 'uploader.php');
+			//request.open('post', 'uploader.php');
 			//send data to php
-			request.send(formdata);
+			//request.send(formdata);
 		}
 		else if($fize > $system_max_fsize){
 			alert("no video selected to upload or File selected is too large");
