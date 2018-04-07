@@ -31,7 +31,7 @@
 			$videoid= $row['id'];
 			echo $videoid;
 			foreach($_POST['classopt'] as $selected){
-				error_log($selected, 3, "/home/screener/log/Newphp.log");
+				error_log($selected, 3, "/home/screener/log/php.log");
 				$classid=(int)$selected;
 				$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid);";
 				//if($conn->query($sql)){
