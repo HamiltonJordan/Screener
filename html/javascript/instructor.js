@@ -184,6 +184,6 @@ $(document).ready(function () {
 
 	}); // End of Button.Click Function
 
-
+	alert("finished JS");
 }); // End of Document.Ready
 
