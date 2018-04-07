@@ -109,7 +109,7 @@ function AJAX_loadClasses(argument){
 function setupUpload(argument){
 	alert("entered setupUpload");
 	function uploadVideo($form){
-		var $video=$form.children("input").filter('#image');
+		var $video= $("#image");//$form.children("input").filter('#image');
 		var fsize = $video[0].files[0].size;
 		var ftype =$video[0].files[0].type;
 		if($video.val()!="" && fsize<$system_max_fsize){
