@@ -38,7 +38,7 @@
 				$classid=(int)$selected;
 				$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
 				if($conn->query($sql){
-					error_log(" We ARE crazy ", 3, "/home/screener/log/php.log");
+					error_log(" We ARE crazy ", 3, "/home/screener/log/php.log")
 				}
 			}
 		}
