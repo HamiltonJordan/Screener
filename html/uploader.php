@@ -29,7 +29,7 @@
 	echo $sql;
 	if ($result = $conn->query($sql)) {
 		if ($row = mysqli_fetch_assoc($result)) {
-			echo $row;
+			echo $row['id'];
 			error_log("inside if2, ", 3, "/home/screener/log/php.log");
 			$videoid= $row['id'];
 			$classid=0;
