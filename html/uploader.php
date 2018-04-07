@@ -27,7 +27,7 @@
 	if ($conn->query($sql) === TRUE) {
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address'";
 		if ($result = $conn->query($sql)) {
-			while ($row = mysqli_fetch_assoc($result)) {
+			if ($row = mysqli_fetch_assoc($result)) {
 				$videoid= $row['id'];
 				echo $videoid;
 				foreach($_POST['classopt'] as $selected){
@@ -35,6 +35,9 @@
 					$classid=(int)$selected;
 					$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid);";
 				}
+			}
+			else {
+				error_log("query 3 failed", 3, "/home/screener/log/php.log");
 			}
 		}
 		else{
