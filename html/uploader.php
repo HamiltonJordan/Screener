@@ -26,19 +26,21 @@
 
 	if ($conn->query($sql) === TRUE) {
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address'";
+		//if ($conn->query($sql) === TRUE) {
+		$result = $conn->query($sql);
+		$videoid=0;
 		$classid=0;
-		if ($row = $conn->query($sql)->fetch_assoc()){
+		if ($row = $result->fetch_assoc()){
 			$videoid= $row['id'];
 			echo $videoid;
 			foreach($_POST['classopt'] as $selected){
-				error_log($selected, 3, "/home/screener/log/php.log");
 				$classid=(int)$selected;
 				$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid);";
-				//if($conn->query($sql)){
-				//	echo "success";
-				//}
 			}
 		}
+	}
+	else{
+		error_log("query 1 failed", 3, "/home/screener/log/php.log");
 	}
 
 ?>
