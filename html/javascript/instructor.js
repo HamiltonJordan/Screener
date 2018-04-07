@@ -3,6 +3,7 @@
 function populateClass(response){
 	for (var i = 0; i < $myClasses.ClassList.length; i++){
 		if ($myClasses.ClassList[i].studentList.length == 0){
+			alert($myClasses.ClassList[i].studentList.length);
 			return true;
 		}
 		$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[i].ClassNumber+'</button>');
