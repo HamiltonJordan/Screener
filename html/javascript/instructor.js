@@ -136,11 +136,11 @@ function setupUpload(argument){
 				.done(function(result){
 					$("span").html(result);
 					alert("success!");
-				}
+				})
 				.fail(function(){
 					alert("post failed");
-				}
-			});
+				});
+			//End Post
 			alert("end post");
 			
 			//open pipe to php
