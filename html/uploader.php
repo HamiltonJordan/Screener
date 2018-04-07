@@ -30,7 +30,9 @@
 			if ($row = mysqli_fetch_assoc($result)) {
 				error_log("inside if2, ", 3, "/home/screener/log/php.log");
 				$videoid= $row['id'];
-				echo $videoid;
+				$classid=0;
+				error_log(" ".$videoid." ", 3, "/home/screener/log/php.log");
+				//echo $videoid;
 				foreach($_POST['classopt'] as $selected){
 					error_log($selected." ", 3, "/home/screener/log/php.log");
 					$classid=(int)$selected;
