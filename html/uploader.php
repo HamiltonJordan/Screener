@@ -24,6 +24,7 @@
  // Connect to the database
 	require("DBConnect.php");
 	$conn = db_connect();
+	$target_address = "hello";
 	$sql = "SELECT id FROM Video WHERE URL= '$target_address'";
 	echo $sql;
 	if ($result = $conn->query($sql)) {
