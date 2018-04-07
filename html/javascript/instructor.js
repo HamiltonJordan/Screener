@@ -131,12 +131,12 @@ function setupUpload(argument){
 			//progress event...
 			request.upload.addEventListener('progress',function(e){
 				var percent = Math.round(e.loaded/e.total * 100);
-				$form.find('.progress-bar').width(percent+'%').html(percent+'%');
+				$form.find('#progress-bar').width(percent+'%').html(percent+'%');
 
 			});
 			//progress completed load event
 			request.addEventListener('load',function(e){
-				$form.find('.progress-bar').addClass('progress-bar-success').html('upload completed....');
+				$form.find('#progress-bar').addClass('progress-bar-success').html('upload completed....');
 			});
 
 			//open pipe to php
