@@ -98,6 +98,7 @@ function AJAX_loadClasses(argument){
 			$myClasses = JSON.parse(response);
 			populateClass();	//Populate class button row with buttons
 			prepTable();
+			setupUpload();
 
 		})
 		.fail(function (){
@@ -279,7 +280,7 @@ $(document).ready(function () {
 		}
 	});
 	*/
-	setupUpload();
+	//setupUpload();
 	alert("finished JS");
 }); // End of Document.Ready
 
