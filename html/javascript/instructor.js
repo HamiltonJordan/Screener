@@ -107,49 +107,7 @@ function AJAX_loadClasses(argument){
 
 function setupUpload(argument){
 	alert("entered setupUpload");
-	$("#form").validate(
-	{
-		rules:
-		{
-			dueDate: 
-			{
-				required: true,
-				date: true
-			},
-			image: 
-			{
-				required: true,
-				extension: "mp4"
-			},
-			name: 
-			{
-				required: true,
-				minlength: 5
-			},
-			"classopt[]": 
-			{ 
-				required: true 
-			},
-		},
-		messages: 
-		{
-			dueDate: 
-			{
-				required: "Please enter a date",
-				date: "Please enter a vaild date"
-			},
-			image: 
-			{
-				extension:"Please select only  mp4, gif, ogg, and flv  files"
-			},
-			name: 
-			{
-				required: "Please enter Film name",
-				minlength: "Please enter minimum 5 characters"
-			}
-		}
-	});
-			   
+
 
 	//$('.cancel-all').click(function(){
 		//submit all form
@@ -277,6 +235,49 @@ $(document).ready(function () {
 		});
 
 	}); // End of Button.Click Function
+	
+	$("#form").validate(
+	{
+		rules:
+		{
+			dueDate: 
+			{
+				required: true,
+				date: true
+			},
+			image: 
+			{
+				required: true,
+				extension: "mp4"
+			},
+			name: 
+			{
+				required: true,
+				minlength: 5
+			},
+			"classopt[]": 
+			{ 
+				required: true 
+			},
+		},
+		messages: 
+		{
+			dueDate: 
+			{
+				required: "Please enter a date",
+				date: "Please enter a vaild date"
+			},
+			image: 
+			{
+				extension:"Please select only  mp4, gif, ogg, and flv  files"
+			},
+			name: 
+			{
+				required: "Please enter Film name",
+				minlength: "Please enter minimum 5 characters"
+			}
+		}
+	});
 	setupUpload();
 	alert("finished JS");
 }); // End of Document.Ready
