@@ -41,7 +41,7 @@
 			error_log(" ".$videoid." ", 3, "/home/screener/log/php.log");
 			//echo $videoid;
 		
-			foreach(array{1,2,3,4}  as $selected){
+			foreach(array(1,2,3,4)  as $selected){
 				error_log($selected." ", 3, "/home/screener/log/php.log");
 				$classid=(int)$selected;
 				$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
