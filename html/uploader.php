@@ -7,6 +7,7 @@
 	//		-UploadFolder/TeacherUserName/ClassCode/$filename
 	// This will ensure that we keep all files organized on server while uploading.
 	$t=time();
+	echo($t);
 	move_uploaded_file($tmp_file,'video/'.$filename.$t);
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
