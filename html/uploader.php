@@ -7,11 +7,13 @@
 	//		-UploadFolder/TeacherUserName/ClassCode/$filename
 	// This will ensure that we keep all files organized on server while uploading.
 	$t=time();
-	if(move_uploaded_file($tmp_file,'video/$filename')){
+	$target_address = 'video/'.$filename;
+
+	if(move_uploaded_file($tmp_file,$target_address)){
 		error_log("it worked", 3, "/home/screener/log/php.log");
 	}
 	else {
-		error_log("video/'.$filename.$t"." "."$tmp_file", 3, "/home/screener/log/php.log");
+		error_log($target_address, 3, "/home/screener/log/php.log");
 	}
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
