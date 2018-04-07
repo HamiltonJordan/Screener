@@ -25,7 +25,7 @@
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
 
 	if ($conn->query($sql) === TRUE) {
-		$sql = "SELECT id FROM Video WHERE Title='$name' and URL= 'video/$filename$t'";
+		$sql = "SELECT id FROM Video WHERE Title='$name' and URL= '$target_address'";
 		$result = $conn->query($sql);
 		$videoid=0;
 		$classid=0;
