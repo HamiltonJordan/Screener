@@ -13,8 +13,6 @@
 	else {
 		error_log("video/'.$filename.$t"." "."$tmp_file", 3, "/home/screener/log/php.log");
 	}
-		;
-	}
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
 	$runtime=$_POST['runtime'];
