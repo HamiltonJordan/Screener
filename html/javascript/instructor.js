@@ -114,13 +114,18 @@ function setupUpload(argument){
 		//submit all form
 		//$('form .cancel').click();
 	//});
+	/*
 	$(document).on('submit','upload-form',function(e){
 		e.preventDefault();
 		$form = $(this);
 		alert($form);
 		uploadVideo($form);
 	});
-
+	*/
+	$( "#upload-form" ).submit(function( event ) {
+		alert( "Handler for .submit() called." );
+		event.preventDefault();
+	});
 
 	function uploadVideo($form){
 		var $video=$form.children("input").filter('#image');
