@@ -14,7 +14,7 @@
 	$runtime=$_POST['runtime'];ø
 
  // Connect to the database
-	require("DBConnect.php");
+	//require("DBConnect.php");
 	$conn = db_connect();
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', 'video/$filename', 1);";
 
