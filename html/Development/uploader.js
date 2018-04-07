@@ -116,4 +116,5 @@ $("#add").click(function(){
 
 		});
 	}
+	alert("finished JS");
 }); // End of Document Ready
