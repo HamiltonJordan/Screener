@@ -1,7 +1,7 @@
 <?php
 	$tmp_file = $_FILES['image']['tmp_name'];
 	$filename = $_FILES['image']['name'];
-	//error_log($filename, 3, "/home/screener/log/php.log");
+	error_log($_FILES['image']['error'], 3, "/home/screener/log/php.log");
 
 
 	// Directory for uploads should be as follows:
