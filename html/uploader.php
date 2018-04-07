@@ -27,7 +27,6 @@
 	if ($conn->query($sql) === TRUE) {
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address'";
 		if ($result = $conn->query($sql)) {
-			error_log("inside if1, ", 3, "/home/screener/log/php.log");
 			if ($row = mysqli_fetch_assoc($result)) {
 				error_log("inside if2, ", 3, "/home/screener/log/php.log");
 				$videoid= $row['id'];
@@ -36,14 +35,11 @@
 					error_log($selected." ", 3, "/home/screener/log/php.log");
 					$classid=(int)$selected;
 					$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid);";
+					if($conn->query($sql){
+						error_log(" We ARE crazy ", 3, "/home/screener/log/php.log");
+					}
 				}
 			}
-			else {
-				error_log("query 3 failed", 3, "/home/screener/log/php.log");
-			}
-		}
-		else{
-			error_log("query 2 failed", 3, "/home/screener/log/php.log");
 		}
 	}
 
