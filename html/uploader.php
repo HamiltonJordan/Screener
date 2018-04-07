@@ -11,7 +11,7 @@
 	move_uploaded_file($tmp_file,'video/'.$filename.$t);
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
-	$runtime=$_POST['runtime'];ø
+	$runtime=$_POST['runtime'];
 
  // Connect to the database
 	//require("DBConnect.php");
