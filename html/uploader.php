@@ -20,7 +20,7 @@
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
 	$runtime=$_POST['runtime'];
-/*
+
  // Connect to the database
 	require("DBConnect.php");
 	$conn = db_connect();
@@ -52,7 +52,7 @@
 			}
 		}
 	}
-	*/
+	
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
 
 	if ($conn->query($sql) === TRUE) {
@@ -67,9 +67,9 @@
 				foreach($_POST["classopt"] as $selected){
 					error_log($selected." ", 3, "/home/screener/log/php.log");
 					$classid=(int)$selected;
-					$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid);";
-					if($conn->query($sql)
-					{
+					$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
+					if($conn->query($sql)){
+					
 						error_log(" We ARE crazy ", 3, "/home/screener/log/php.log");
 					}
 				}
