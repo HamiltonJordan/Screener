@@ -1,4 +1,5 @@
 <?php
+/*
 	$tmp_file = $_FILES['image']['tmp_name'];
 	$filename = $_FILES['image']['name'];
 
@@ -19,10 +20,11 @@
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
 	$runtime=$_POST['runtime'];
-
+*/
  // Connect to the database
 	require("DBConnect.php");
 	$conn = db_connect();
+	/*
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
 
 	if ($conn->query($sql) === TRUE) {
@@ -45,7 +47,8 @@
 			}
 		}
 	}
-
+	*/
+	echo "Hello";
 
 ?>
 
