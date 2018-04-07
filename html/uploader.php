@@ -14,27 +14,26 @@ move_uploaded_file($tmp_file,'upload_folder/'.$filename.$t)
 	$runtime=$_POST['runtime'];ø
 
  // Connect to the database
-  /*  require("DBConnect.php");
-   $conn = db_connect();
+	require("DBConnect.php");
+	$conn = db_connect();
+	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', 'upload_folder/$filename', 1);";
 
-	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', 'upload_folder/$filename',1);";
+	if ($conn->query($sql) === TRUE) {
+	$sql = "SELECT id FROM Video WHERE Title='$name' and URL= 'upload_folder/$filename$t'";
+	$result = $conn->query($sql);
+	$videoid=0;
+	$classid=0;
+	 if ($row = $result->fetch_assoc()){
+	$videoid= $row['id'];
+	echo $videoid;
+	foreach($_POST['classopt'] as $selected){
+	$classid=(int)$selected;
+	$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid);";
+	if($conn->query($sql)){
+	echo "success";
+	}
+	}
+	}}
 
-if ($conn->query($sql) === TRUE) {
-$sql = "SELECT id FROM Video WHERE Title='$name' and URL= 'upload_folder/$filename$t'";
-$result = $conn->query($sql);
-$videoid=0;
-$classid=0;
- if ($row = $result->fetch_assoc()){
-$videoid= $row['id'];
-echo $videoid;
-foreach($_POST['classopt'] as $selected){
-$classid=(int)$selected;
-$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid);";
-if($conn->query($sql)){
-echo "success";
-}
-}
-}}
-*/
 ?>
 
