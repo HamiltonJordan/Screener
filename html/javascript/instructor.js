@@ -125,6 +125,9 @@ function setupUpload(argument){
 	$( "#upload-form" ).submit(function( event ) {
 		alert( "Handler for .submit() called." );
 		event.preventDefault();
+		$form = $(this);
+		alert($form);
+		//uploadVideo($form);
 	});
 
 	function uploadVideo($form){
