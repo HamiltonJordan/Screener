@@ -140,10 +140,10 @@ function setupUpload(argument){
 			});
 			   
 
-	$('.cancel-all').click(function(){
+	//$('.cancel-all').click(function(){
 		//submit all form
-		$('form .cancel').click();
-	});
+		//$('form .cancel').click();
+	//});
 	$(document).on('submit','upload-form',function(response){
 		response.preventDefault();
 		$form = $(this);
@@ -178,7 +178,7 @@ function setupUpload(argument){
 		else if($fize > $system_max_fsize){
 			alert("no video selected to upload or File selected is too large");
 		}
-		$form.on('click','.cancel',function(){
+		$form.on('click','#cancel_icon',function(){
 			request.abort();
 			$form.find('.progress-bar')
 				.addClass('progress-bar-danger')
