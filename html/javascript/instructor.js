@@ -105,6 +105,89 @@ function AJAX_loadClasses(argument){
 		});
 }
 
+function setupUpload(argument){
+	alert("entered setupUpload");
+	$("#form").validate({
+				rules: {
+			 dueDate: {
+						   required: true,
+						   date: true
+								 },
+					image: {
+						required: true,
+						extension: "mp4"
+
+					},
+			name: {
+						required: true,
+						minlength: 5
+			} ,
+	"classopt[]": { required: true }
+				},
+				messages: {
+			dueDate: {
+						   required: "Please enter a date",
+						   date: "Please enter a vaild date"
+								 },
+					image: {
+						extension:"Please select only  mp4, gif, ogg, and flv  files"
+					},
+			name: {
+						required: "Please enter Film name",
+						minlength: "Please enter minimum 5 characters"
+					}
+				}
+			});
+			   
+
+	$('.cancel-all').click(function(){
+		//submit all form
+		$('form .cancel').click();
+	});
+	$(document).on('submit','upload-form',function(response){
+		response.preventDefault();
+		$form = $(this);
+		uploadVideo($form);
+	});
+
+
+	function uploadVideo($form){
+		var $video=$form.children("input").filter('#image');
+		var fsize = $video[0].files[0].size;
+		var ftype =$video[0].files[0].type;
+		if($video.val()!="" && fsize<$system_max_fsize){
+			$form.find('.progress-bar').removeClass('progress-bar-success').removeClass('progress-bar-danger');
+			var formdata = new FormData($form[0]); //formelement
+			var request = new XMLHttpRequest();
+			//progress event...
+			request.upload.addEventListener('progress',function(e){
+				var percent = Math.round(e.loaded/e.total * 100);
+				$form.find('.progress-bar').width(percent+'%').html(percent+'%');
+
+			});
+			//progress completed load event
+			request.addEventListener('load',function(e){
+				$form.find('.progress-bar').addClass('progress-bar-success').html('upload completed....');
+			});
+
+			//open pipe to php
+			request.open('post', 'uploader.php');
+			//send data to php
+			request.send(formdata);
+		}
+		else if($fize > $system_max_fsize){
+			alert("no video selected to upload or File selected is too large");
+		}
+		$form.on('click','.cancel',function(){
+			request.abort();
+			$form.find('.progress-bar')
+				.addClass('progress-bar-danger')
+				.removeClass('progress-bar-success')
+				.html('upload aborted...');
+
+		});
+	}
+}
 
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
@@ -183,7 +266,7 @@ $(document).ready(function () {
 		});
 
 	}); // End of Button.Click Function
-
+	setupUpload();
 	alert("finished JS");
 }); // End of Document.Ready
 
