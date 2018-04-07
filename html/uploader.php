@@ -35,6 +35,7 @@
 			$classid=0;
 			error_log(" ".$videoid." ", 3, "/home/screener/log/php.log");
 			//echo $videoid;
+			/*
 			foreach($_POST['classopt'] as $selected){
 				error_log($selected." ", 3, "/home/screener/log/php.log");
 				$classid=(int)$selected;
@@ -43,6 +44,7 @@
 					error_log(" We ARE crazy ", 3, "/home/screener/log/php.log");
 				}
 			}
+			*/
 		}
 	}
 	/*
