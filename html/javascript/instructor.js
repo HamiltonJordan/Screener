@@ -122,14 +122,6 @@ function setupUpload(argument){
 		uploadVideo($form);
 	});
 	*/
-	$( "#upload-form" ).submit(function( event ) {
-		alert( "Handler for .submit() called." );
-		event.preventDefault();
-		$form = $(this);
-		alert($form);
-		//uploadVideo($form);
-	});
-
 	function uploadVideo($form){
 		var $video=$form.children("input").filter('#image');
 		var fsize = $video[0].files[0].size;
@@ -166,6 +158,12 @@ function setupUpload(argument){
 
 		});
 	}
+	$( "#upload-form" ).submit(function( event ) {
+		alert( "Handler for .submit() called." );
+		event.preventDefault();
+		$form = $(this);
+		uploadVideo($form);
+	});
 }
 
 //alert(myClass[0].student[3].FirstName);
