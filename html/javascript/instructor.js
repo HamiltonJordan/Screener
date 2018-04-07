@@ -114,9 +114,10 @@ function setupUpload(argument){
 		//submit all form
 		//$('form .cancel').click();
 	//});
-	$(document).on('submit','upload-form',function(response){
-		response.preventDefault();
+	$(document).on('submit','upload-form',function(e){
+		e.preventDefault();
 		$form = $(this);
+		alert($form);
 		uploadVideo($form);
 	});
 
