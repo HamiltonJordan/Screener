@@ -24,11 +24,12 @@
  // Connect to the database
 	require("DBConnect.php");
 	$conn = db_connect();
-	$target_address = "hello";
+	$target_address = "video/1523136945nold.mp4";
 	$sql = "SELECT id FROM Video WHERE URL= '$target_address'";
 	echo $sql;
 	if ($result = $conn->query($sql)) {
 		if ($row = mysqli_fetch_assoc($result)) {
+			echo $row;
 			error_log("inside if2, ", 3, "/home/screener/log/php.log");
 			$videoid= $row['id'];
 			$classid=0;
