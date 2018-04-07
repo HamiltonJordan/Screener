@@ -128,7 +128,7 @@ function setupUpload(argument){
 			});
 		
 			alert("start post");
-			$name_entered = $("#name").val();
+			$name_entered = $("#title").val();
 			$duedate_entered = $("#dueDate").val();
 			$runtime_entered = $("#runtime").val();
 			alert($name_entered);
