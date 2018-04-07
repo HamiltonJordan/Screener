@@ -1,6 +1,5 @@
 <?php
-    error_reporting(E_ALL); 
-    ini_set('display_errors',1);
+    session_start();
 
     // Connect to the database
     require("DBConnect.php");
@@ -14,6 +13,7 @@
     $classObject = $_GET["classObject"];
     $classData = json_decode($classObject);
     $studentIds = $classData->studentList;
+    $InstructorId = $_SESSION["id"];
     $counter = 0;
     $classId = 0;
     $returnObj = new ReturnObject();
@@ -44,8 +44,7 @@
     }
 
     // Inserts record into Teaches table
-    if($classData->InstructorId != '' && $classId != '') {
-        $InstructorId  = $classData->InstructorId;
+    if($InstructorId != '' && $classId != '') {
         $query1 = mysqli_real_escape_string($conn, $InstructorId);
         $query2 = mysqli_real_escape_string($conn, $classId);
         $query ="INSERT INTO Teaches (UserId, ClassId) VALUES ( '". $InstructorId."','".$classId."' )";

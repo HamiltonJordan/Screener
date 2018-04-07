@@ -143,7 +143,6 @@ $(document).ready(function () {
 		var newClass = {
 			classTitle: "",
 			classCode: "",
-			InstructorId: 0,
 			studentList: [],
 			Active: 0
 		};
@@ -160,7 +159,6 @@ $(document).ready(function () {
 		// Updates last values in newClass object.
 		newClass.classTitle = $("#classTitle").val();
 		newClass.classCode  = $("#classCode").val();
-		newClass.InstructorId = $userID;
 		newClass.Active = 1;
 		// Turns the object into JSON string
 		var json = JSON.stringify(newClass);
