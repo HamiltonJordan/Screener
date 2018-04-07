@@ -1,5 +1,5 @@
 //Instructor.js
-
+$system_max_fsize = Math.pow(10,24);
 function populateClass(response){
 	for (var i = 0; i < $myClasses.ClassList.length; i++){
 		if ($myClasses.ClassList[i].studentList.length == 0){
@@ -183,6 +183,7 @@ $(document).ready(function () {
 		});
 
 	}); // End of Button.Click Function
+
 
 }); // End of Document.Ready
 
