@@ -235,7 +235,7 @@ $(document).ready(function () {
 		});
 
 	}); // End of Button.Click Function
-	
+	/*
 	$("#form").validate(
 	{
 		rules:
@@ -278,6 +278,7 @@ $(document).ready(function () {
 			}
 		}
 	});
+	*/
 	setupUpload();
 	alert("finished JS");
 }); // End of Document.Ready
