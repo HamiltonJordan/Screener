@@ -6,9 +6,9 @@
 	// Directory for uploads should be as follows:
 	//		-UploadFolder/TeacherUserName/ClassCode/$filename
 	// This will ensure that we keep all files organized on server while uploading.
-$t=time();
-move_uploaded_file($tmp_file,'video/'.$filename.$t)
-
+	$t=time();
+	move_uploaded_file($tmp_file,'video/'.$filename.$t)
+	print "This is a TESTSTTT";
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
 	$runtime=$_POST['runtime'];ø
