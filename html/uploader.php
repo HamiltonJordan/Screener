@@ -24,6 +24,8 @@
  // Connect to the database
 	require("DBConnect.php");
 	$conn = db_connect();
+
+	/*
 	$target_address = "video/1523136945nold.mp4";
 	$sql = "SELECT id FROM Video WHERE URL= '$target_address'";
 	echo $sql;
@@ -52,6 +54,7 @@
 			}
 		}
 	}
+	*/
 	
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
 
