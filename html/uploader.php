@@ -7,7 +7,7 @@
 	//		-UploadFolder/TeacherUserName/ClassCode/$filename
 	// This will ensure that we keep all files organized on server while uploading.
 	$t=time();
-	$target_address = 'video/'.$filename;
+	$target_address = 'video/'.$t.$filename;
 
 	if(move_uploaded_file($tmp_file,$target_address)){
 		error_log("it worked", 3, "/home/screener/log/php.log");
@@ -22,7 +22,7 @@
  // Connect to the database
 	require("DBConnect.php");
 	$conn = /*mysql_connect('127.0.0.1', 'root', 'jthklo123', 'websitedb');//*/db_connect();
-	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', 'video/$filename', 1);";
+	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
 
 	if ($conn->query($sql) === TRUE) {
 		$sql = "SELECT id FROM Video WHERE Title='$name' and URL= 'video/$filename$t'";
