@@ -1,4 +1,5 @@
 <?php
+ error_log("\nfirst\n", 3, "/home/screener/log/php.log");
 
 	$tmp_file = $_FILES['image']['tmp_name'];
 	$filename = $_FILES['image']['name'];
