@@ -54,6 +54,7 @@
 			}
 		}
 	}
+	/////
 	*/
 	
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
