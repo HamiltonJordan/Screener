@@ -1,9 +1,8 @@
 $(document).ready(function () {
 	//var myId = Cookies.get('loginId');
-     alert("here");
+    
  $.get("http://screener.onthewifi.com/check.php", "", function (response){
                login=JSON.parse(response);
-		alert(login);
 if (!login){window.location = "http://screener.onthewifi.com";}
 else{
 	//PHP - request the JSON list of film information available to user
