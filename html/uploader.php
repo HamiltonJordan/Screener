@@ -10,14 +10,14 @@
 	// This will ensure that we keep all files organized on server while uploading.
 	$t=time();
 	$target_address = 'video/'.$t.$filename;
-
+/*
 	if(move_uploaded_file($tmp_file,$target_address)){
 		error_log("it worked", 3, "/home/screener/log/php.log");
 	}
 	else {
 		error_log($target_address, 3, "/home/screener/log/php.log");
 	}
-
+*/
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
 	$runtime=$_POST['runtime'];
@@ -59,9 +59,11 @@
 	*/
 	
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
-
+         error_log("here1 ", 3, "/home/screener/log/php.log");
 	if ($conn->query($sql) === TRUE) {
+		 error_log("here2 ", 3, "/home/screener/log/php.log");
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address';";
+ 		error_log("here3 ", 3, "/home/screener/log/php.log");
 		$result = $conn->query($sql);
 			if ($row = $result->fetch_assoc()) {
 				$videoid= $row['id'];
