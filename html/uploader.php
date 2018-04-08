@@ -62,7 +62,7 @@
 	if ($conn->query($sql) === TRUE) {
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address';";
 		$result = $conn->query($sql);
-			if ($row = result ->fetch_assoc($result)) {
+			if ($row = $result->fetch_assoc()) {
 				$videoid= $row['id'];
 				error_log(" "."$videoid"." ", 3, "/home/screener/log/php.log");
 				//echo $videoid;
