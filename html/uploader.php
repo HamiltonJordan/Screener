@@ -64,11 +64,11 @@
 			if ($row = mysqli_fetch_assoc($result)) {
 				$videoid= $row['id'];
 				$classid=0;
-				error_log(" ".$videoid." ", 3, "/home/screener/log/php.log");
+				error_log(" "."$videoid"." ", 3, "/home/screener/log/php.log");
 				//echo $videoid;
 						
-				foreach($_POST["classopt"] as $selected){
-					error_log($selected." ", 3, "/home/screener/log/php.log");
+				foreach( $_POST["classopt"] as $selected){
+					error_log("$selected"." ", 3, "/home/screener/log/php.log");
 					$classid=(int)$selected;
 					$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
 					if($conn->query($sql)===TRUE){
