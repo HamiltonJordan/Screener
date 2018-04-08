@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	//var myId = Cookies.get('loginId');
-
+     alert("here");
  $.get("http://screener.onthewifi.com/check.php", "", function (response){
                login=JSON.parse(response);
 		alert(login);
