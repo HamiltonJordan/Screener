@@ -58,10 +58,11 @@
 	
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
 
-	if ($conn->query($sql) === TRUE) {
+	if (mysqli_query($conn,$sql) === TRUE) {
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address';";
-		$result = $conn->query($sql)
-			if ($row = mysqli_fetch_assoc($result)) {
+		$result = mysqli_query($conn,$sql);
+
+		$row=mysqli_fetch_assoc($result);
 				$videoid= $row['id'];
 				$classid=0;
 				error_log(" "."$videoid"." ", 3, "/home/screener/log/php.log");
@@ -71,12 +72,12 @@
 					error_log("$selected"." ", 3, "/home/screener/log/php.log");
 					$classid=(int)$selected;
 					$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
-					if($conn->query($sql)===TRUE){
+					if(mysqli_query($conn,$sql)===TRUE){
 					
 						error_log(" We ARE crazy ", 3, "/home/screener/log/php.log");
 					}
 				}
-			}
+			
 	}
 	echo "Hello";
 
