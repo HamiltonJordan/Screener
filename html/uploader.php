@@ -19,15 +19,20 @@
 	}
 */
 	$name=$_POST['name'];
+echo name;
 	$duedate=$_POST['duedate'];
+echo duedate;
 	$runtime=$_POST['runtime'];
-
+echo runtime;
  // Connect to the database
 	require("DBConnect.php");
 	$conn = db_connect();
 
-	/*
-	$target_address = "video/1523136945nold.mp4";
+
+	$target_address = "video/1523136945name.mp4";
+$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
+         error_log("here1 ", 3, "/home/screener/log/php.log");
+        if ($conn->query($sql) === TRUE) {
 	$sql = "SELECT id FROM Video WHERE URL= '$target_address'";
 	echo $sql;
 	if ($result = $conn->query($sql)) {
@@ -54,9 +59,9 @@
 				}
 			}
 		}
-	}
-	/////
-	*/
+	}}
+	
+	/*
 	
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
          error_log("here1 ", 3, "/home/screener/log/php.log");
@@ -83,6 +88,6 @@
 		
 	}
 	echo "Hello";
-
+*/
 ?>
 
