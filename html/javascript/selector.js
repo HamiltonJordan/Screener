@@ -1,10 +1,11 @@
-$(document).ready(function () {
+
 	//var myId = Cookies.get('loginId');
     
  $.get("http://screener.onthewifi.com/check.php", "", function (response){
                login=JSON.parse(response);
 if (!login){window.location = "http://screener.onthewifi.com";}
 else{
+$(document).ready(function () {
 	//PHP - request the JSON list of film information available to user
 	$.get("http://screener.onthewifi.com/fetchMyFilms.php", "", function (response){
 		myFilms=JSON.parse(response);
@@ -29,8 +30,9 @@ else{
 			})
 		})
 	});
-	}
+	
 })
+}
 	/*
 	//Sample Json Obj
 	var jsonOBJ = {
