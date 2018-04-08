@@ -92,9 +92,11 @@ function prepTable(argument){
 	});
 }
 function AJAX_loadClasses(argument){
+	alert("AJAX");
 	//var myId=4 Gousie
 	$.get("http://screener.onthewifi.com/instructor.php")
 		.done(function (response){
+			alert("upload func");
 			$myClasses = JSON.parse(response);
 			populateClass();	//Populate class button row with buttons
 			prepTable();
@@ -291,7 +293,7 @@ $(document).ready(function () {
 		}
 	});
 	*/
-	//setupUpload();
+	setupUpload();
 	alert("finished JS");
 }); // End of Document.Ready
 
