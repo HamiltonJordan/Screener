@@ -59,8 +59,8 @@
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
 
 	if ($conn->query($sql) === TRUE) {
-		$sql = "SELECT id FROM Video WHERE URL= '$target_address'";
-		if ($result = $conn->query($sql)) {
+		$sql = "SELECT id FROM Video WHERE URL= '$target_address';";
+		$result = $conn->query($sql)
 			if ($row = mysqli_fetch_assoc($result)) {
 				$videoid= $row['id'];
 				$classid=0;
@@ -77,7 +77,6 @@
 					}
 				}
 			}
-		}
 	}
 	echo "Hello";
 
