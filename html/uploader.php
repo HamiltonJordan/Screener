@@ -69,19 +69,18 @@
 				//echo $videoid;
 						
 				foreach( $_POST["classopt"] as $selected){
-					echo $selected;
 					error_log("$selected"." ", 3, "/home/screener/log/php.log");
 					$classid=(int)$selected;
 					$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
-					echo $sql;
-					//if($conn->query($sql)===TRUE){
+					if($conn->query($sql)===TRUE){
 					
-					//	error_log(" We ARE crazy ", 3, "/home/screener/log/php.log");
-					//}
+						error_log(" We ARE crazy ", 3, "/home/screener/log/php.log");
+					}
 				}
 			}
 		
 	}
+	echo "Hello";
 
 ?>
 
