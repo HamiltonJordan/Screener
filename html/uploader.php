@@ -62,7 +62,7 @@ $sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1
 	*/
 	
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
-         error_log($conn->error, 3, "/home/screener/log/php.log");
+         error_log($conn->query($sql), 3, "/home/screener/log/php.log");
  
 	if ($conn->query($sql) === TRUE) {
 		 error_log("here2 ", 3, "/home/screener/log/php.log");
