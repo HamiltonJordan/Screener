@@ -30,7 +30,7 @@
 	$target_address = "video/1523136945name.mp4";
 $sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
          error_log("here1 ", 3, "/home/screener/log/php.log");
-        if ($conn->query($sql) === TRUE) {
+        if (mysqli_query($conn,$sql) === TRUE) {
 	$sql = "SELECT id FROM Video WHERE URL= '$target_address'";
 	echo $sql;
 	if ($result = $conn->query($sql)) {
