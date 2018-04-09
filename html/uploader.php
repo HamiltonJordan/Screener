@@ -64,7 +64,7 @@ $sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
          error_log($conn->query($sql), 3, "/home/screener/log/php.log");
  
-	if (mysqli_query($conn,$sql) == FALSE) {
+	if (mysqli_query($conn,$sql) === TRUE) {
 		 error_log("here2 ", 3, "/home/screener/log/php.log");
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address';";
  		error_log("here3 ", 3, "/home/screener/log/php.log");
@@ -74,10 +74,13 @@ $sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1
 				error_log(" "."$videoid"." ", 3, "/home/screener/log/php.log");
 				//echo $videoid;
 						
-				foreach( $_POST["classopt"] as $selected){					error_log("$selected"." ", 3, "/home/screener/log/php.log");
+				foreach( $_POST["classopt"] as $selected){
+				error_log("here3 ", 3, "/home/screener/log/php.log");
+					error_log("$selected"." ", 3, "/home/screener/log/php.log");
 					$classid=(int)$selected;
 					$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
-					if($conn->query($sql)!== FALSE){
+					if($
+conn->query($sql)!== FALSE){
 					
 						error_log(" We ARE crazy ", 3, "/home/screener/log/php.log");
 					}
