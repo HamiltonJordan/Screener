@@ -61,7 +61,7 @@
 	
 	*/
 	
-	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
+	$sql = "INSERT INTO Video(Title,URL,Active,duedate,runtime)VALUES ('$name', '$target_address', 1,'$duedate','$runtime');";
  
 	if (mysqli_query($conn,$sql) == TRUE) {
 		 error_log("here2 ", 3, "/home/screener/log/php.log");
