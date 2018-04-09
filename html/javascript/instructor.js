@@ -250,7 +250,7 @@ $(document).ready(function () {
 
 	}); // End of Button.Click Function
 	/*
-	$("#form").validate(
+	$("#upload-form").validate(
 	{
 		rules:
 		{
