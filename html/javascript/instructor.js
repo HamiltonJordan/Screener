@@ -6,7 +6,7 @@ function populateClass(response){
 			continue;
 		}
 		$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[i].ClassNumber+'</button>');
-		$("#checkbox-entry-point").append('<input class="form-check-input" type="checkbox" id="inlineCheckbox'+i+' name="classopt[]" value='+$myClasses.ClassList[i].ClassId+'><label class="form-check-label margin-10-right" for="inlineCheckbox'+i+'">'+$myClasses.ClassList[i].ClassNumber+'</label>');
+		$("#checkbox-entry-point").append('<input class="form-check-input" type="checkbox" id="inlineCheckbox'+i+'" name="classopt[]" value='+$myClasses.ClassList[i].ClassId+'><label class="form-check-label margin-10-right" for="inlineCheckbox'+i+'">'+$myClasses.ClassList[i].ClassNumber+'</label>');
 
 	}
 	//$("#class-entry-point").append('<button type="button" class="btn btn-secondary" id="addClass"><b>+</b></button>');
@@ -293,7 +293,6 @@ $(document).ready(function () {
 		}
 	});
 	*/
-	setupUpload();
 	alert("finished JS");
 }); // End of Document.Ready
 
