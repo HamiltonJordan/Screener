@@ -29,30 +29,4 @@ $(document).ready(function () {
 		})
 		}
 	});
-	
-})
-}
-	/*
-	//Sample Json Obj
-	var jsonOBJ = {
-		"class": [
-			{
-				"name":"Biology",
-				"films": [
-					{"Title": "T1", "URL": "/source.mp4"},
-					{"Title": "T2", "URL": "/othersource.mp4"}
-				]
-			},	
-				{
-				"name":"English",
-				"films": [
-					{"Title": "T3", "URL": "/Newsource.mp4"},
-					{"Title": "T4", "URL": "/Whatsource.mp4"}
-				]
-			}
-		]
-	};
-	alert(jsonOBJ.class[0].films[1].Title);
-	*/
-
 });
