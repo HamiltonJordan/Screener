@@ -28,7 +28,7 @@
 
 /*
 	$target_address = "video/1523136945name.mp4";
-$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
+$sql = "INSERT INTO Video(Title,URL,Active,duedate,runtime)VALUES ('$name', '$target_address',1,'$duedate','$runtime');";
          error_log($sql, 3, "/home/screener/log/php.log");
         if (mysqli_query($conn,$sql) == TRUE) {
 	$sql = "SELECT id FROM Video WHERE URL= '$target_address'";
@@ -62,7 +62,6 @@ $sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1
 	*/
 	
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
-         error_log($conn->query($sql), 3, "/home/screener/log/php.log");
  
 	if (mysqli_query($conn,$sql) == TRUE) {
 		 error_log("here2 ", 3, "/home/screener/log/php.log");
