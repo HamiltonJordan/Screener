@@ -14,7 +14,7 @@ if ($_SESSION['auth'] == true) {
 	$return_arr = array();
 
 	if ($result = $conn->query("
-		SELECT Class.ClassName, Video.Title, Video.URL FROM User
+		SELECT Class.ClassName, Video.Title, Video.URL, Video.duedate, Video.runtime FROM User
 		INNER JOIN EnrolledIn ON
 		User.Id = EnrolledIn.UserId
 		INNER JOIN ClassVideo ON
@@ -32,6 +32,8 @@ if ($_SESSION['auth'] == true) {
 			$row_data['ClassName'] = $row['ClassName'];
 			$row_data['Title'] = $row['Title'];
 			$row_data['URL'] = $row['URL'];
+			$row_data['duedate'] = $row['duedate'];
+			$row_data['runtime'] = $row['runtime'];
 			array_push($return_arr, $row_data);
 		}
 		/* free result set */
