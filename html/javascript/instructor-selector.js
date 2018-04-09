@@ -4,10 +4,11 @@ $(document).ready(function () {
 
 	//PHP - request the JSON list of film information available to user
 	$.get("http://screener.onthewifi.com/fetchClassFilms.php", "", function (response){
+		//alert("B");
 		myFilms=JSON.parse(response);
 		//myFilms = {}
-		console.log("response: " + response);
-		alert("myFilms: " + myFilms);
+		//console.log("response: " + response);
+		//alert("myFilms: " + myFilms);
 		$last_class="null";
 		//For every film in the list returned, create a cell in the table
 		for (i = 0; i < myFilms.length; i++){
@@ -26,27 +27,5 @@ $(document).ready(function () {
 			})
 		})
 	});
-	/*
-	//Sample Json Obj
-	var jsonOBJ = {
-		"class": [
-			{
-				"name":"Biology",
-				"films": [
-					{"Title": "T1", "URL": "/source.mp4"},
-					{"Title": "T2", "URL": "/othersource.mp4"}
-				]
-			},	
-				{
-				"name":"English",
-				"films": [
-					{"Title": "T3", "URL": "/Newsource.mp4"},
-					{"Title": "T4", "URL": "/Whatsource.mp4"}
-				]
-			}
-		]
-	};
-	alert(jsonOBJ.class[0].films[1].Title);
-	*/
 
 });
