@@ -3,7 +3,9 @@ $(document).ready(function () {
 	//var myId = Cookies.get('loginId');
 
 	//PHP - request the JSON list of film information available to user
+	alert("A");
 	$.get("http://screener.onthewifi.com/fetchClassFilms.php", "", function (response){
+		alert("B");
 		myFilms=JSON.parse(response);
 		//myFilms = {}
 		console.log("response: " + response);
