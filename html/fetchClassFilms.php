@@ -10,7 +10,7 @@ if ($_SESSION['auth'] == true) {
     $conn = db_connect();	
 	//$teacherId=$_SESSION['id'];
 	//DELETE ME
-	$teacherId=4;
+	$teacherId=$_SESSION['id'];
 	//$userId=$_GET["userId"];
 	$return_arr = array();
 
