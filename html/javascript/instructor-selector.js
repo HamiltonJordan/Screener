@@ -3,13 +3,12 @@ $(document).ready(function () {
 	//var myId = Cookies.get('loginId');
 
 	//PHP - request the JSON list of film information available to user
-	alert("A");
 	$.get("http://screener.onthewifi.com/fetchClassFilms.php", "", function (response){
-		alert("B");
+		//alert("B");
 		myFilms=JSON.parse(response);
 		//myFilms = {}
-		console.log("response: " + response);
-		alert("myFilms: " + myFilms);
+		//console.log("response: " + response);
+		//alert("myFilms: " + myFilms);
 		$last_class="null";
 		//For every film in the list returned, create a cell in the table
 		for (i = 0; i < myFilms.length; i++){
