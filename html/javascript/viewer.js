@@ -1,3 +1,4 @@
+alert("hey");
 $(document).ready(function () {
 //	$.get("http://screener.onthewifi.com/check.php", "", function (response){
 //		login=JSON.parse(response);
