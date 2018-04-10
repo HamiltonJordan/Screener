@@ -110,7 +110,7 @@ function setupUpload(argument){
 	function uploadVideo($form){
 		var $video= $("#image");//$form.children("input").filter('#image');
 		var fsize = $video[0].files[0].size;
-		alert("size: "+fsize);
+		//alert("size: "+fsize);
 		var ftype =$video[0].files[0].type;
 		if($video.val()!="" && fsize<$system_max_fsize){
 			$form.find('.progress-bar').removeClass('progress-bar-success').removeClass('progress-bar-danger');
