@@ -92,13 +92,10 @@ function prepTable(argument){
 	});
 }
 function AJAX_loadClasses(argument){
-	alert("AJAX");
 	//var myId=4 Gousie
 	$.get("http://screener.onthewifi.com/instructor.php")
 		.done(function (response){
-			alert("upload func");
 			$myClasses = JSON.parse(response);
-			alert("Classes: "+$myClasses.ClassList.length);
 			populateClass();	//Populate class button row with buttons
 			prepTable();
 			setupUpload();
@@ -110,7 +107,6 @@ function AJAX_loadClasses(argument){
 }
 
 function setupUpload(argument){
-	alert("entered setupUpload");
 	function uploadVideo($form){
 		var $video= $("#image");//$form.children("input").filter('#image');
 		var fsize = $video[0].files[0].size;
