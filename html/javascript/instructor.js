@@ -111,6 +111,7 @@ function AJAX_loadClasses(argument){
 
 function setupUpload(argument){
 	alert("entered setupUpload");
+	/*
 	function uploadVideo($form){
 		var $video= $("#image");//$form.children("input").filter('#image');
 		var fsize = $video[0].files[0].size;
@@ -132,23 +133,6 @@ function setupUpload(argument){
 			});
 		
 			alert("start post");
-			/*
-			$name_entered = $("#title").val();
-			$duedate_entered = $("#dueDate").val();
-			$runtime_entered = $("#runtime").val();
-			alert($name_entered);
-			$.post("uploader.php", {name: $name_entered, duedate: $duedate_entered, runtime:$runtime_entered})
-				.done(function(result){
-					$("span").html(result);
-					alert("success!");
-				})
-				.fail(function(){
-					alert("post failed");
-				});
-			//End Post
-			alert("end post");
-			*/
-			alert("here");
 			//open pipe to php
 			request.open('post', 'uploader.php');
 			//send data to php
@@ -167,6 +151,7 @@ function setupUpload(argument){
 		});
 	}
 	alert("here now");
+	*/
 	$( "#upload-form" ).submit(function( event ) {
 		alert( "Handler for .submit() called." );
 		event.preventDefault();
