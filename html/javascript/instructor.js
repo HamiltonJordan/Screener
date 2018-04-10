@@ -3,7 +3,6 @@ $system_max_fsize = Math.pow(10,24);
 function populateClass(response){
 	for (var i = 0; i < $myClasses.ClassList.length; i++){
 		if ($myClasses.ClassList[i].studentList.length == 0){
-			alert(i);
 			continue;
 		}
 		$("#class-entry-point").append('<button type="button" class="btn btn-secondary classButton" id="b'+i+'">'+$myClasses.ClassList[i].ClassNumber+'</button>');
@@ -112,7 +111,6 @@ function AJAX_loadClasses(argument){
 
 function setupUpload(argument){
 	alert("entered setupUpload");
-	/*
 	function uploadVideo($form){
 		var $video= $("#image");//$form.children("input").filter('#image');
 		var fsize = $video[0].files[0].size;
@@ -133,7 +131,7 @@ function setupUpload(argument){
 				$form.find('#progress-bar').addClass('progress-bar-success').html('upload completed....');
 			});
 		
-			alert("start post");
+			//alert("start post");
 			//open pipe to php
 			request.open('post', 'uploader.php');
 			//send data to php
@@ -151,16 +149,12 @@ function setupUpload(argument){
 
 		});
 	}
-	alert("here now");
-	*/
-	/*
 	$( "#upload-form" ).submit(function( event ) {
 		alert( "Handler for .submit() called." );
 		event.preventDefault();
 		$form = $(this);
 		uploadVideo($form);
 	});
-	*/
 }
 
 //alert(myClass[0].student[3].FirstName);
