@@ -7,10 +7,10 @@ $("#submit").click(function() {
 		console.log(response);
 		var myObj = JSON.parse(response);
 		if (myObj.success && myObj.loginCheck) {
-			Cookies.remove('loginId');
-			Cookies.set('loginId', myObj.id);
+			//Cookies.remove('loginId');
+			//Cookies.set('loginId', myObj.id);
 			document.location.replace('selector.html');
-			if(myObj.professor ==0){
+			if(myObj.professor === 0){
 				document.location.replace('selector.html');
 			}
 			else{
