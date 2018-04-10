@@ -28,11 +28,12 @@
             $query2 = mysqli_real_escape_string($conn, $Id);
             $query1 = mysqli_real_escape_string($conn, $classId);
             $query ="INSERT INTO EnrolledIn (UserId, ClassId) VALUES ( '". $Id."','".$classId."' )";
-            mysqli_query($conn, $query);
-            $returnObj->rowCount = $returnObj->rowCount + 1;                  
+            if (mysqli_query($conn,$query)){
+                $returnObj->success = true;
+                $returnObj->rowCount = $returnObj->rowCount + 1; 
+            }
+                             
         }
-
-    	$returnObj->success = true;
     }
 
     echo json_encode($returnObj);
