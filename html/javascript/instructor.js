@@ -146,7 +146,7 @@ function setupUpload(argument){
 		});
 	}
 	$( "#upload-form" ).submit(function( event ) {
-		alert( "Handler for .submit() called." );
+		//alert( "Handler for .submit() called." );
 		event.preventDefault();
 		$form = $(this);
 		uploadVideo($form);
@@ -214,15 +214,15 @@ $(document).ready(function () {
 		newClass.Active = 1;
 		// Turns the object into JSON string
 		var json = JSON.stringify(newClass);
-		alert(json);
+		//alert(json);
 
 		//Sends the data to PHP to update the list.
 		$.get("AddClass.php?classObject="+json, function(response){
 			console.log(response);
 			var myObj = JSON.parse(response);
 			if (myObj.success) {
-				alert('we gucci, we added ' + newClass.classTitle + ' to the database.' 
-					+ 'We also enrolled '+ myObj.rowCount + ' students to the class.');
+				alert('Successfully added ' + newClass.classTitle + ' to the database.' 
+					+ 'Successfully enrolled '+ myObj.rowCount + ' students in the class.');
 				location.reload();
 			}
 			else {

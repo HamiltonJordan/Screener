@@ -10,14 +10,14 @@
 	// This will ensure that we keep all files organized on server while uploading.
 	$t=time();
 	$target_address = 'video/'.$t.$filename;
-/*
+
 	if(move_uploaded_file($tmp_file,$target_address)){
-		error_log("it worked", 3, "/home/screener/log/php.log");
+		error_log("successful file upload!", 3, "/home/screener/log/php.log");
 	}
 	else {
-		error_log($target_address, 3, "/home/screener/log/php.log");
+		error_log("failed upload", 3, "/home/screener/log/php.log");
 	}
-*/
+
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
 	$runtime=$_POST['runtime'];
@@ -64,20 +64,18 @@
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
  
 	if (mysqli_query($conn,$sql) == TRUE) {
-		 error_log("here2 ", 3, "/home/screener/log/php.log");
+		error_log("here2 ", 3, "/home/screener/log/php.log");
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address';";
  		error_log("here3 ", 3, "/home/screener/log/php.log");
 		$result = $conn->query($sql);
 			if ($row = $result->fetch_assoc()) {
 				$videoid= $row['id'];
 				error_log(" "."$videoid"." ", 3, "/home/screener/log/php.log");
-				//echo $videoid;
-						
 				foreach( $_POST["classopt"] as $selected){
-				error_log("here3 ", 3, "/home/screener/log/php.log");
+					error_log("here3 ", 3, "/home/screener/log/php.log");
 					error_log("$selected"." ", 3, "/home/screener/log/php.log");
 					$classid=(int)$selected;
-					$sql=" INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
+					$sql="INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
 					if($conn->query($sql)!= FALSE){
 					
 						error_log(" We ARE crazy ", 3, "/home/screener/log/php.log");
