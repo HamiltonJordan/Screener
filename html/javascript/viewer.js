@@ -1,4 +1,5 @@
 alert("hey");
+
 $(document).ready(function () {
 	$.get("http://screener.onthewifi.com/check.php", "", function (response){
 		$login=JSON.parse(response);
@@ -12,7 +13,7 @@ $(document).ready(function () {
 				$('#portal').get(0).pause(); 
 				$('#video_address').attr('src', $json.video);
 				$('#portal').get(0).load();
-			})
+			});
 		}
 	});
 });
