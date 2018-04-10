@@ -48,7 +48,7 @@ function populateStuds(target_class){
 					//populateStuds($class_selected);
 				})
 				.fail(function (){
-					alert("failed to connect to the database");
+					alert("Failed to connect to the database");
 				});
 		}
 	});
@@ -182,6 +182,9 @@ $(document).ready(function () {
 						alert("Student added successfully");
 						location.reload();
 					}
+					else{
+						alert("Failed to add student (may be bad data or duplicate)");
+					}
 
 				})
 				.fail(function (){
@@ -277,6 +280,6 @@ $(document).ready(function () {
 		}
 	});
 	*/
-	alert("finished JS");
+	//alert("finished JS");
 }); // End of Document.Ready
 
