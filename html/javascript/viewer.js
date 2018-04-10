@@ -3,6 +3,7 @@ $(document).ready(function () {
 //		login=JSON.parse(response);
 //		if (!login){window.location = "http://screener.onthewifi.com";}
 //		else{
+			alert("here");
 			.get("getvideo.php?video=already&titlev=already", "", function (response){
 	        	json=JSON.parse(response);
 	        	//alert("already " +json.video);
