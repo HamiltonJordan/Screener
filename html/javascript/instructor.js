@@ -166,6 +166,7 @@ function setupUpload(argument){
 
 		});
 	}
+	alert("here now");
 	$( "#upload-form" ).submit(function( event ) {
 		alert( "Handler for .submit() called." );
 		event.preventDefault();
