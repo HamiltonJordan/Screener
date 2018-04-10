@@ -13,7 +13,7 @@ $("#submit").click(function() {
 				document.location.replace('selector.html');
 			}
 			else{
-				document.location.replace('Instructor-Selector.html');
+				document.location.replace('instructor.html');
 			}
 		}
 		else {
