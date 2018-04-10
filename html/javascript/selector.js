@@ -17,7 +17,7 @@ $(document).ready(function () {
 				$("#entry-point").append('<tr class="table-primary"><th scope="row" colspan="4">'+myFilms[i].ClassName+'</th></tr>');
 				$last_class = myFilms[i].ClassName;
 			}
-			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+(i+1)+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>'+/*myFilms[i].runtime+*/'</td><td>'+/*myFilms[i].duedate+*/'</td></tr>');
+			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+(i+1)+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>'+myFilms[i].runtime+'</td><td>'+myFilms[i].duedate+'</td></tr>');
 			$("#a"+i).data("URL", myFilms[i].URL);
 		
 		$("#a"+i).click({p1:myFilms[i].URL,p2:myFilms[i].Title},function(event){
