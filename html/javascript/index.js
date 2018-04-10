@@ -4,6 +4,7 @@ $("#submit").click(function() {
 	var user = $("#username").val();
 	var pass = $("#password").val();
 	$.get("login.php?email="+user+"&password="+pass, function(response){
+		console.log(response);
 		var myObj = JSON.parse(response);
 		if (myObj.success && myObj.loginCheck) {
 			Cookies.remove('loginId');
