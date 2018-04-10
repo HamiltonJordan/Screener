@@ -148,6 +148,7 @@ function setupUpload(argument){
 			//End Post
 			alert("end post");
 			*/
+			alert("here");
 			//open pipe to php
 			request.open('post', 'uploader.php');
 			//send data to php
