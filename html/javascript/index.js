@@ -9,7 +9,7 @@ $("#submit").click(function() {
 		if (myObj.success && myObj.loginCheck) {
 			//Cookies.remove('loginId');
 			//Cookies.set('loginId', myObj.id);
-			document.location.replace('selector.html');
+			//document.location.replace('selector.html');
 			if(myObj.professor === 0){
 				document.location.replace('selector.html');
 			}
