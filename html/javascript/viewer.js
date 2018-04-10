@@ -1,9 +1,8 @@
-$(document).ready(function(){
-	$.get("http://screener.onthewifi.com/check.php", "", function (response){
-		alert("a");
-		login=JSON.parse(response);
-		if (!login){window.location = "http://screener.onthewifi.com";}
-		else{
+$(document).ready(function () {
+//	$.get("http://screener.onthewifi.com/check.php", "", function (response){
+//		login=JSON.parse(response);
+//		if (!login){window.location = "http://screener.onthewifi.com";}
+//		else{
 			.get("getvideo.php?video=already&titlev=already", "", function (response){
 	        	json=JSON.parse(response);
 	        	//alert("already " +json.video);
@@ -12,6 +11,6 @@ $(document).ready(function(){
 				$('#video_address').attr('src', json.video);
 				$('#portal').get(0).load();
 			})
-		}
-	});
+//		}
+//	});
 });
