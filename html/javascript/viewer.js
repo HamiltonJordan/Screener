@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$.get("http://screener.onthewifi.com/check.php", "", function (response){
+		alert("a");
 		login=JSON.parse(response);
 		if (!login){window.location = "http://screener.onthewifi.com";}
 		else{
