@@ -22,7 +22,7 @@ session_start();
             $returnObj->loginCheck = true;
             $returnObj->success = true;
             $returnObj->id = $row["Id"];
-	$returnObj->professor = $row["Falculty"];
+	$returnObj->professor = $row["Faculty"];
 	$_SESSION["professor"]=$row["Faculty"];
 	$_SESSION["id"]=$row["Id"];
 	   $_SESSION["auth"] = true;
