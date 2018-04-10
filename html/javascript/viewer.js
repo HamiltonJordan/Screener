@@ -1,5 +1,3 @@
-alert("hey");
-
 $(document).ready(function () {
 	$.get("http://screener.onthewifi.com/check.php", "", function (response){
 		$login=JSON.parse(response);
@@ -7,7 +5,6 @@ $(document).ready(function () {
 			window.location = "http://screener.onthewifi.com";
 		}
 		else{
-			alert("here");
 			$.get("getvideo.php?video=already&titlev=already", "", function (response){
 	        	$json=JSON.parse(response);
 	        	//alert("already " +$json.video);
