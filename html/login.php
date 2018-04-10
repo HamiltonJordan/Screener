@@ -11,6 +11,7 @@ session_start();
         public $success = false;
         public $loginCheck = false;
         public $id = 0;
+	public $professor=0;
     }
     $email = $_GET["email"];
     $pword = $_GET["password"];
