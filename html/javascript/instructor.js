@@ -152,12 +152,14 @@ function setupUpload(argument){
 	}
 	alert("here now");
 	*/
+	/*
 	$( "#upload-form" ).submit(function( event ) {
 		alert( "Handler for .submit() called." );
 		event.preventDefault();
 		$form = $(this);
 		uploadVideo($form);
 	});
+	*/
 }
 
 //alert(myClass[0].student[3].FirstName);
