@@ -9,11 +9,12 @@ $("#submit").click(function() {
 			Cookies.remove('loginId');
 			Cookies.set('loginId', myObj.id);
 			document.location.replace('selector.html');
-		}
-		if(myObj.professor ==0){
-		document.location.replace('selector.html');
-		}else{
-		document.location.replace('Instructor-Selector.html');
+			if(myObj.professor ==0){
+				document.location.replace('selector.html');
+			}
+			else{
+				document.location.replace('Instructor-Selector.html');
+			}
 		}
 		else {
 			alert('failed to login.');
