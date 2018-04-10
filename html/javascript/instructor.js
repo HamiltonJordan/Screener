@@ -98,6 +98,7 @@ function AJAX_loadClasses(argument){
 		.done(function (response){
 			alert("upload func");
 			$myClasses = JSON.parse(response);
+			alert("Classes: "+$myClasses.ClassList.length);
 			populateClass();	//Populate class button row with buttons
 			prepTable();
 			setupUpload();
