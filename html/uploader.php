@@ -26,7 +26,7 @@
 	require("DBConnect.php");
 	$conn = db_connect();
 	
-	$sql = "INSERT INTO Video(Title,URL,Active,duedate,runtime)VALUES ('$name', '$target_address', 1, '$duedate', '$runtime');";
+	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
  
 	if (mysqli_query($conn,$sql) == TRUE) {
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address';";
