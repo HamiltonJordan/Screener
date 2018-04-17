@@ -20,14 +20,13 @@
 
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
-	echo $duedate;
 	$runtime=$_POST['runtime'];
 
  // Connect to the database
 	require("DBConnect.php");
 	$conn = db_connect();
 	
-	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
+	$sql = "INSERT INTO Video(Title,URL,Active,duedate,runtime)VALUES ('$name', '$target_address', 1, '$duedate', '$runtime');";
  
 	if (mysqli_query($conn,$sql) == TRUE) {
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address';";
