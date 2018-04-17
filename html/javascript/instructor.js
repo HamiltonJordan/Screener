@@ -113,7 +113,7 @@ function setupUpload(argument){
 		//alert("size: "+fsize);
 		var ftype =$video[0].files[0].type;
 		if($video.val()!="" && fsize<$system_max_fsize){
-			$form.find('.progress-bar').removeClass('progress-bar-success').removeClass('progress-bar-danger');
+			$form.find('#progress-bar').removeClass('progress-bar-success').removeClass('progress-bar-danger');
 			var formdata = new FormData($form[0]); //formelement
 			var request = new XMLHttpRequest();
 			//progress event...
