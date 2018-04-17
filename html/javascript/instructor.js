@@ -137,8 +137,9 @@ function setupUpload(argument){
 			alert("no video selected to upload or File selected is too large");
 		}
 		$form.on('click','#cancel_icon',function(){
+			alert("Upload Canceled");
 			request.abort();
-			$form.find('.progress-bar')
+			$form.find('#progress-bar')
 				.addClass('progress-bar-danger')
 				.removeClass('progress-bar-success')
 				.html('upload aborted...');
@@ -155,8 +156,6 @@ function setupUpload(argument){
 
 //alert(myClass[0].student[3].FirstName);
 $(document).ready(function () {
-	//var myId = 4; //Gousie
-	//$userID = 4;
 	AJAX_loadClasses();
 	$("#dueDate").datepicker();
 	$("#new-class-field").hide();
