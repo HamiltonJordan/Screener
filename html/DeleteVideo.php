@@ -37,7 +37,7 @@
 		{	
 			$returnObj->rowCount = 1;
 			$returnObj->success = true;
-			echo "Record Delted From Database...";
+			echo "Record Deleted From Database...";
 		}
 		else
 		{
