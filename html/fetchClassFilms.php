@@ -15,7 +15,7 @@ if ($_SESSION['auth'] == true) {
 	$return_arr = array();
 
 	if ($result = $conn->query("
-		SELECT Class.ClassName, Video.Title, Video.URL FROM User
+		SELECT Class.ClassName, Video.Title, Video.URL, Video.duedate, Video.runtime, Video.Id FROM User
 		INNER JOIN Teaches ON
 		User.Id = Teaches.UserId
 		INNER JOIN ClassVideo ON
