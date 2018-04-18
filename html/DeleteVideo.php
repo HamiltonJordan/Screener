@@ -28,7 +28,7 @@
 		else{
 			echo "File not deleted...";
 		}
-		
+
 		//$query1 = mysqli_real_escape_string($conn, $videoId);
 		$query1 = "DELETE FROM Video WHERE Id = '$videoId';";
 		$query2 = "DELETE FROM ClassVideo WHERE VideoId = '$videoId';";
@@ -43,7 +43,6 @@
 		{
 			echo "Delete Failed...";
 		}
-		*/
 	}
 	echo json_encode($returnObj);
 ?>
