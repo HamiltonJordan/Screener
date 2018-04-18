@@ -15,7 +15,15 @@
 	$videoId = $_GET["videoId"];
 	$returnObj = new ReturnObject();
 	echo "Video Deleted: "+$videoId+"\n";
+
 	if($videoId != '') {
+		//$query0 = "SELECT URL FROM Video WHERE Id = '$videoId';";
+		$query0 = $conn->query("SELECT URL FROM Video WHERE Id = '$videoId';")
+		while ($row = mysqli_fetch_assoc($query0)){
+			$url = $row['URL'];
+		}
+		echo $url;
+		/*
 		//$query1 = mysqli_real_escape_string($conn, $videoId);
 		$query1 = "DELETE FROM Video WHERE Id = '$videoId';";
 		$query2 = "DELETE FROM ClassVideo WHERE VideoId = '$videoId';";
@@ -30,6 +38,7 @@
 		{
 			echo "Delete Failed...";
 		}
+		*/
 	}
 	echo json_encode($returnObj);
 ?>
