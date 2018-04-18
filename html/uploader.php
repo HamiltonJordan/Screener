@@ -29,24 +29,25 @@
 	$conn = db_connect();
 	
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
- 
+ 	error_log("A ", 3, "/home/screener/log/php.log");
 	if (mysqli_query($conn,$sql) == TRUE) {
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address';";
+		error_log("B ", 3, "/home/screener/log/php.log");
 		$result = $conn->query($sql);
-			if ($row = $result->fetch_assoc()) {
-				$videoid= $row['id'];
-				error_log(" "."$videoid"." ", 3, "/home/screener/log/php.log");
-				foreach( $_POST["classopt"] as $selected){
-					error_log("here3 ", 3, "/home/screener/log/php.log");
-					error_log("$selected"." ", 3, "/home/screener/log/php.log");
-					$classid=(int)$selected;
-					$sql="INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
-					if($conn->query($sql)!= FALSE){
-					
-						error_log("Success", 3, "/home/screener/log/php.log");
-					}
+		if ($row = $result->fetch_assoc()) {
+			$videoid= $row['id'];
+			error_log("C "."$videoid"." ", 3, "/home/screener/log/php.log");
+			foreach( $_POST["classopt"] as $selected){
+				error_log("here3 ", 3, "/home/screener/log/php.log");
+				error_log("$selected"." ", 3, "/home/screener/log/php.log");
+				$classid=(int)$selected;
+				$sql="INSERT INTO ClassVideo(ClassId,VideoId) VALUES($classid,$videoid)";
+				if($conn->query($sql)!= FALSE){
+				
+					error_log("Success", 3, "/home/screener/log/php.log");
 				}
 			}
+		}
 		
 	}
 ?>
