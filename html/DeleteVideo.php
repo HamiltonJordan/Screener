@@ -18,7 +18,7 @@
 
 	if($videoId != '') {
 		//$query0 = "SELECT URL FROM Video WHERE Id = '$videoId';";
-		$query0 = $conn->query("SELECT URL FROM Video WHERE Id = '$videoId';")
+		$query0 = $conn->query("SELECT URL FROM Video WHERE Id = '$videoId';");
 		while ($row = mysqli_fetch_assoc($query0)){
 			$url = $row['URL'];
 		}
