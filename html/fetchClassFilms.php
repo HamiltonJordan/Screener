@@ -33,6 +33,9 @@ if ($_SESSION['auth'] == true) {
 			$row_data['ClassName'] = $row['ClassName'];
 			$row_data['Title'] = $row['Title'];
 			$row_data['URL'] = $row['URL'];
+			$row_data['duedate'] = $row['duedate'];
+			$row_data['runtime'] = $row['runtime'];
+			$row_data['Id']= $row['Id'];
 			array_push($return_arr, $row_data);
 		}
 		/* free result set */

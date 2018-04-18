@@ -47,3 +47,13 @@ body {
 	background-color: #eee;
 	cursor: pointer;
 }
+.minus-frame {
+	fill: inherit;
+}
+.minus-symbol {
+	fill: inherit;
+	stroke:black;
+	stroke-width:2;
+	opacity:1
+
+}
