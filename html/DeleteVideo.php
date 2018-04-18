@@ -14,10 +14,10 @@
 
 	$videoId = $_GET["videoId"];
 	$returnObj = new ReturnObject();
-
+	echo $videoId+'\n';
 	if($videoId != '') {
 		$query1 = mysqli_real_escape_string($conn, $videoId);
-		$query = "DELETE FROM Video WHERE Id = '$videoId';DELETE FROM ClassVideo WHERE VideoId = '$videoId';";
+		$query = "DELETE FROM Video WHERE Id = '$videoId'; DELETE FROM ClassVideo WHERE VideoId = '$videoId';";
 		//mysqli_query($conn, $query);
 		if (mysqli_query($conn, $query))
 		{	
@@ -27,7 +27,7 @@
 		}
 		else
 		{
-			echo "Delete Failed...";
+			echo "Delete Still Failed...";
 		}
 	}
 	echo json_encode($returnObj);
