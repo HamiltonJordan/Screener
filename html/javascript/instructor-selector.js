@@ -35,6 +35,14 @@ $(document).ready(function () {
 				$index = $(this).attr("data-count");
 				$vid_id = myFilms[$index].Id;
 				alert($vid_id);
+				$.get("http://screener.onthewifi.com/DeleteVideo.php?videoId="+$vid_id)
+					.done(function (response){
+						alert("Film removed from Screener");
+						location.reload();
+					})
+					.fail(function (){
+						alert("Failed to connect to the database");
+					});
 			}
 		});
 	});
