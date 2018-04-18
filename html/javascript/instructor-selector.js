@@ -1,7 +1,7 @@
 //Instructor-Selector.js
 $(document).ready(function () {
 	//var myId = Cookies.get('loginId');
-
+	alert("hey");
 	//PHP - request the JSON list of film information available to user
 	$.get("http://screener.onthewifi.com/fetchClassFilms.php", "", function (response){
 		alert("B");
