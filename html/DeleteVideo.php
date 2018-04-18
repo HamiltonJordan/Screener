@@ -18,8 +18,8 @@
 	if($videoId != '') {
 		$query1 = mysqli_real_escape_string($conn, $videoId);
 		$query = "
-			DELETE FROM Video WHERE Id = 90;
-			DELETE FROM ClassVideo WHERE VideoId = 90;
+			DELETE FROM Video WHERE Id = '$videoId';
+			DELETE FROM ClassVideo WHERE VideoId = '$videoId';
 		";
 		if (mysqli_query($conn, $query))
 		{	
