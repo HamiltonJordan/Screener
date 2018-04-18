@@ -16,10 +16,11 @@
 	$returnObj = new ReturnObject();
 	echo $videoId+'\n';
 	if($videoId != '') {
-		$query1 = mysqli_real_escape_string($conn, $videoId);
-		$query = "DELETE FROM Video WHERE Id = '$videoId'; DELETE FROM ClassVideo WHERE VideoId = '$videoId';";
+		//$query1 = mysqli_real_escape_string($conn, $videoId);
+		$query1 = "DELETE FROM Video WHERE Id = '$videoId';";
+		$query2 = "DELETE FROM ClassVideo WHERE VideoId = '$videoId';";
 		//mysqli_query($conn, $query);
-		if (mysqli_query($conn, $query))
+		if (mysqli_query($conn, $query1))
 		{	
 			$returnObj->rowCount = 1;
 			$returnObj->success = true;
