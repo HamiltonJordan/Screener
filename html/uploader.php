@@ -12,7 +12,7 @@
 	$target_address = 'video/'.$t.$filename;
 
 	if(move_uploaded_file($tmp_file,$target_address)){
-		error_log("successful file upload!", 3, "/home/screener/log/php.log");
+		error_log("yo successhful file upload!", 3, "/home/screener/log/php.log");
 	}
 	else {
 		error_log("failed upload", 3, "/home/screener/log/php.log");
