@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 	//PHP - request the JSON list of film information available to user
 	$.get("http://screener.onthewifi.com/fetchClassFilms.php", "", function (response){
-		//alert("B");
+		alert("B");
 		myFilms=JSON.parse(response);
 		//myFilms = {}
 		//console.log("response: " + response);
