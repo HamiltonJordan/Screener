@@ -27,6 +27,7 @@ $(document).ready(function () {
 				json=JSON.parse(response);
 			});
 		});
+		/*
 		$('.delete').click(function() {
 			$c = confirm("Are you sure you want to delete this film?");
 			if ($c) {	//Delete video
@@ -35,6 +36,7 @@ $(document).ready(function () {
 				alert($vid_id);
 			}
 		});
+		*/
 
 	});
 
