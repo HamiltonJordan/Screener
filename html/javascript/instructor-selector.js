@@ -4,7 +4,7 @@ $(document).ready(function () {
 	alert("hey");
 	//PHP - request the JSON list of film information available to user
 	$.get("http://screener.onthewifi.com/fetchClassFilms.php", "", function (response){
-		alert(myFilms);
+		alert(response);
 		myFilms=JSON.parse(response);
 		$last_class="null";
 		//For every film in the list returned, create a cell in the table
