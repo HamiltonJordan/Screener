@@ -25,8 +25,8 @@ $(document).ready(function () {
 			title=event.data.p2;
 			$.get("getvideo.php?video="+url+"&titlev="+title, "", function (response){
 				json=JSON.parse(response);
-			})
-		})
+			});
+		});
 		$('.delete').click(function() {
 			$c = confirm("Are you sure you want to delete this film?");
 			if ($c) {	//Delete video
