@@ -22,7 +22,7 @@
 		if ($row = mysqli_fetch_assoc($query0)){
 			$url = $row['URL'];
 		}
-		if(unlink($url)){
+		if(unlink("../"+$url)){
 			echo "succ";
 		}
 
