@@ -16,6 +16,7 @@ if ($_SESSION['auth'] == true) {
 	$obj1 = (object)array("title"=> $title,"video"=> $video);
 	echo  json_encode($obj1);
 } 
+else{echo "hhhh";};
 
 
 ?>
