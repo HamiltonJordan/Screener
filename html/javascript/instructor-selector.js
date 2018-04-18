@@ -6,13 +6,11 @@ $(document).ready(function () {
 	$.get("http://screener.onthewifi.com/fetchClassFilms.php", "", function (response){
 		alert("B");
 		myFilms=JSON.parse(response);
-		//myFilms = {}
-		//console.log("response: " + response);
-		//alert("myFilms: " + myFilms);
 		$last_class="null";
 		//For every film in the list returned, create a cell in the table
 		for (i = 0; i < myFilms.length; i++){
 			if(myFilms[i].ClassName != $last_class){
+				alert("a");
 				$("#entry-point").append('<tr class="table-primary"><th scope="row" colspan="4">'+myFilms[i].ClassName+'</th></tr>');
 				$last_class = myFilms[i].ClassName;
 			}
