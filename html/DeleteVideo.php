@@ -21,6 +21,7 @@
 			DELETE FROM Video WHERE Id = '$videoId';
 			DELETE FROM ClassVideo WHERE VideoId = '$videoId';
 		";
+		mysqli_query($conn, $query);
 		if (mysqli_query($conn, $query))
 		{	
 			$returnObj->rowCount = 1;
