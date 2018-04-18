@@ -16,18 +16,18 @@ $(document).ready(function () {
 				$("#entry-point").append('<tr class="table-primary"><th scope="row" colspan="5">'+myFilms[i].ClassName+'</th></tr>');
 				$last_class = myFilms[i].ClassName;
 			}
-			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+(i+1)+'</th><td class="Title"><a href="viewer.html" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>'+myFilms[i].runtime+'</td><td>'+myFilms[i].duedate+'</td><td class="delete" data-count="'+i+'"><svg width="30" height="11" class="minus-frame"><rect x="2" y="1" rx="5" ry="5" width="26" height="8" class="minus-symbol" /></svg></td></tr>');
+			$("#entry-point").append('<tr class="movie-cell"><th scope="row">'+(i+1)+'</th><td class="Title"><a href="viewer.html" class="movie_link" id="a'+i+'">'+myFilms[i].Title+'</a></td><td>'+myFilms[i].runtime+'</td><td>'+myFilms[i].duedate+'</td><td class="delete" data-count="'+i+'"><svg width="30" height="11" class="minus-frame"><rect x="2" y="1" rx="5" ry="5" width="26" height="8" class="minus-symbol" /></svg></td></tr>');
 			$("#a"+i).data("URL", myFilms[i].URL);
 		}
-		/*
-		$("#a"+i).click({p1:myFilms[i].URL,p2:myFilms[i].Title},function(event){
+		
+		$(".movie_link").click({p1:myFilms[i].URL,p2:myFilms[i].Title},function(event){
 			url=event.data.p1;
 			title=event.data.p2;
 			$.get("getvideo.php?video="+url+"&titlev="+title, "", function (response){
 				json=JSON.parse(response);
 			});
 		});
-		*/
+		
 		alert("z");
 		$(".delete").click(function() {
 			$c = confirm("Are you sure you want to delete this film?");
