@@ -22,12 +22,13 @@
 		if ($row = mysqli_fetch_assoc($query0)){
 			$url = $row['URL'];
 		}
-		echo $url+"   ";
 		if(unlink($url)){
-			echo "succ";
+			echo "File Deleted From System...";
 		}
-
-		/*
+		else{
+			echo "File not deleted...";
+		}
+		
 		//$query1 = mysqli_real_escape_string($conn, $videoId);
 		$query1 = "DELETE FROM Video WHERE Id = '$videoId';";
 		$query2 = "DELETE FROM ClassVideo WHERE VideoId = '$videoId';";
@@ -36,7 +37,7 @@
 		{	
 			$returnObj->rowCount = 1;
 			$returnObj->success = true;
-			echo "Delete Successful";
+			echo "Record Delted From Database...";
 		}
 		else
 		{
