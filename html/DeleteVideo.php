@@ -20,7 +20,7 @@
 		$query1 = "DELETE FROM Video WHERE Id = '$videoId';";
 		$query2 = "DELETE FROM ClassVideo WHERE VideoId = '$videoId';";
 		//mysqli_query($conn, $query);
-		if (mysqli_query($conn, $query) && mysqli_query($conn, $query2))
+		if (mysqli_query($conn, $query1) && mysqli_query($conn, $query2))
 		{	
 			$returnObj->rowCount = 1;
 			$returnObj->success = true;
