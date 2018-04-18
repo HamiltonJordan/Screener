@@ -19,10 +19,13 @@
 	if($videoId != '') {
 		//$query0 = "SELECT URL FROM Video WHERE Id = '$videoId';";
 		$query0 = $conn->query("SELECT URL FROM Video WHERE Id = '$videoId';");
-		while ($row = mysqli_fetch_assoc($query0)){
+		if ($row = mysqli_fetch_assoc($query0)){
 			$url = $row['URL'];
 		}
-		echo $url;
+		if(unlink($url)){
+			echo "succ";
+		}
+
 		/*
 		//$query1 = mysqli_real_escape_string($conn, $videoId);
 		$query1 = "DELETE FROM Video WHERE Id = '$videoId';";
