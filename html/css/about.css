@@ -1,3 +1,6 @@
+/*About CSS*/
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 .navbar-brand h1
 {
     font-family: 'Roboto Condensed', sans-serif;
@@ -6,4 +9,7 @@
 	margin: 0px;
 	padding: 0px;
 	line-height: 0px;
+}
+.navbar{
+	height: 56px;
 }
