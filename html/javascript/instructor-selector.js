@@ -28,13 +28,11 @@ $(document).ready(function () {
 			});
 		});
 		*/
-		alert("java running...");
 		$(".delete").click(function() {
 			$c = confirm("Are you sure you want to delete this film?");
 			if ($c) {	//Delete video
 				$index = $(this).attr("data-count");
 				$vid_id = myFilms[$index].Id;
-				alert($vid_id);
 				$.get("http://screener.onthewifi.com/DeleteVideo.php?videoId="+$vid_id)
 					.done(function (response){
 						alert("Film removed from Screener");
