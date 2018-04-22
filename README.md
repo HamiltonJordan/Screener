@@ -1,6 +1,12 @@
 # Screener
 A video streaming server based on a LEMP stack and HLS streaming technology
 
+Written in HTML, Javascript and PHP.  Screener uses a MySQL DB for its data storing.
+
+![Alt text](Screenshots/login_page.PNG?raw=true "Login Page")
+
+
+
 ### Directory Layout
 <pre>
 
