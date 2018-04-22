@@ -19,13 +19,23 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-round-about/blob/master/LICENSE)
  */
-
-body {
-  padding-top: 54px;
+body{
+	background-color: #5d6a7f;
+}
+#central_field{
+	background-color: white;
+	padding-top: 15px;
+	padding-left: 35px;
+	padding-right: 35px;
+}
+#logo{
+	float: right;
+	display: inline;
+	width: 25%;
+	margin: 20px;
 }
 
+
 @media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  }
+
 }
