@@ -1,9 +1,18 @@
 # Screener
-A video streaming server based on a LEMP stack and HLS streaming technology
+A video streaming server based on a LEMP stack and HLS streaming technology.
 
-Written in HTML, Javascript and PHP.  Screener uses a MySQL DB for its data storing.
+Screener will help schools show screenings of movies and videos to classrooms without the difficulty of scheduling a place and time to show the movie/video.  Students can log into the service and stream the movies they need to watch for class on their own time, in their own setting. 
 
+Screener is written in HTML, Javascript and PHP.  Screener uses a MySQL DB for its data storing and Nginx as its web server.
+
+### Screenshots
 ![Alt text](Screenshots/login_page.PNG?raw=true "Login Page")
+
+![Alt text](Screenshots/instructor_page.PNG?raw=true "Login Page")
+
+![Alt text](Screenshots/instructor_video_page.PNG?raw=true "Login Page")
+
+![Alt text](Screenshots/video_page.PNG?raw=true "Login Page")
 
 
 
