@@ -21,6 +21,9 @@
 
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
+	$date_list = preg_split("#/#",$duedate);
+	$newDate = $date_list[2].'-'.$date_list[0].'-'.$date_list[1];
+	error_log($newDate, 3, "/home/screener/log/php.log");
 	$runtime=$_POST['runtime'];
 	//Jordan: The program makes it this far at least
 
@@ -29,7 +32,7 @@
 	require("DBConnect.php");
 	$conn = db_connect();
 	
-	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
+	$sql = "INSERT INTO Video(Title,URL,Active, duedate)VALUES ('$name', '$target_address', 1, '$duedate');";
  	//error_log("A ", 3, "/home/screener/log/php.log");
 	if (mysqli_query($conn,$sql) == TRUE) {
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address';";
