@@ -23,7 +23,7 @@
 	$duedate=$_POST['duedate'];
 	$date_list = explode("/",$duedate);
 	$newDate = $date_list[2]."-".$date_list[0]."-".$date_list[1];
-	error_log($newDate, 3, "/home/screener/log/php.log");
+	error_log($duedate, 3, "/home/screener/log/php.log");
 	$runtime=$_POST['runtime'];
 	//Jordan: The program makes it this far at least
 
