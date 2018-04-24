@@ -7,7 +7,7 @@
 
 
 	// Directory for uploads should be as follows:
-	//		-UploadFolder/TeacherUserName/ClassCode/$filename
+	//		-Screener/html/video/x.mp4
 	// This will ensure that we keep all files organized on server while uploading.
 	$t=time();
 	$target_address = 'video/'.$t.$filename;
@@ -30,10 +30,10 @@
 	$conn = db_connect();
 	
 	$sql = "INSERT INTO Video(Title,URL,Active)VALUES ('$name', '$target_address', 1);";
- 	error_log("A ", 3, "/home/screener/log/php.log");
+ 	//error_log("A ", 3, "/home/screener/log/php.log");
 	if (mysqli_query($conn,$sql) == TRUE) {
 		$sql = "SELECT id FROM Video WHERE URL= '$target_address';";
-		error_log("B ", 3, "/home/screener/log/php.log");
+		//error_log("B ", 3, "/home/screener/log/php.log");
 		$result = $conn->query($sql);
 		if ($row = $result->fetch_assoc()) {
 			$videoid= $row['id'];
