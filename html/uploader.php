@@ -21,7 +21,7 @@
 
 	$name=$_POST['name'];
 	$duedate=$_POST['duedate'];
-	$date_list = preg_split("#/#",$duedate);
+	$date_list = explode("/",$duedate);
 	$newDate = $date_list[2]."-".$date_list[0]."-".$date_list[1];
 	error_log($newDate, 3, "/home/screener/log/php.log");
 	$runtime=$_POST['runtime'];
